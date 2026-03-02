@@ -1,0 +1,258 @@
+{
+  "personalInfo": {
+    "name": "Abhishek Verma",
+    "title": "Full Stack Developer",
+    "phone": "+91 8874250240",
+    "email": "abhishekayu3008@gmail.com",
+    "linkedin": "https://linkedin.com/in/abhishekverma",
+    "github": "https://github.com/abhishekverma",
+    "portfolio": "#",
+    "location": "Mumbai, Maharashtra, India",
+    "summary": "Full Stack Developer with 4+ years of experience building scalable, data-driven web applications using React, Next.js, Node.js, and Python. Experienced in integrating Generative AI features such as LLM-powered chat, document analysis, and AI scoring into production systems.",
+    "typingTexts": [
+      "Full Stack Developer",
+      "AI Integrator",
+      "Frontend Architect",
+      "Performance Engineer"
+    ]
+  },
+
+  "siteConfig": {
+    "title": "Abhishek Verma | Full Stack Developer",
+    "description": "Full Stack Developer with 4+ years of experience building scalable web applications with React, Next.js, Node.js, and Generative AI integration.",
+    "keywords": [
+      "abhishek verma",
+      "full stack developer",
+      "react developer",
+      "next.js developer",
+      "generative ai",
+      "langchain",
+      "node.js",
+      "python",
+      "fastapi",
+      "portfolio",
+      "frontend architect",
+      "web developer",
+      "javascript",
+      "typescript"
+    ]
+  },
+
+  "socials": [
+    { "name": "GitHub", "icon": "RxGithubLogo", "link": "https://github.com/abhishekverma" },
+    { "name": "LinkedIn", "icon": "RxLinkedinLogo", "link": "https://linkedin.com/in/abhishekverma" },
+    { "name": "Email", "icon": "SiGmail", "link": "mailto:abhishekayu3008@gmail.com" }
+  ],
+
+  "navLinks": [
+    { "title": "About", "link": "#about-me" },
+    { "title": "Experience", "link": "#experience" },
+    { "title": "Skills", "link": "#skills" },
+    { "title": "Projects", "link": "#projects" },
+    { "title": "Contact", "link": "#contact" }
+  ],
+
+  "experience": [
+    {
+      "company": "Futurense (Aditya Birla Group)",
+      "role": "Full Stack Developer",
+      "duration": "Jan 2024 – Present",
+      "location": "Mumbai, Maharashtra",
+      "highlights": [
+        "Leading frontend development for web and mobile applications, focusing on scalable UI architecture, performance optimization, and maintainable component systems.",
+        "Built and delivered Generative AI–driven projects, integrating LLM-powered features such as AI analysis, multimedia responses, document research, summarization, and workflow automation.",
+        "Collaborated with backend and product teams to design APIs and data flows supporting AI-powered features and real-time interactions.",
+        "Owned frontend architecture decisions and mentored team members during feature development and releases."
+      ],
+      "tech": ["React.js", "Python", "FastAPI", "LangChain", "PostgreSQL", "Tailwind", "WebView"],
+      "color": "from-purple-500 to-cyan-500"
+    },
+    {
+      "company": "Lepton Software",
+      "role": "Full Stack Developer",
+      "duration": "April 2022 – Dec 2023",
+      "location": "Gurugram, Haryana",
+      "highlights": [
+        "Delivered full-stack solutions for enterprise clients including KPMG, RBL, Vodafone, Indian Oil, American Express, Croma, and Asian Paints.",
+        "Led client discussions to gather requirements, proposed technical solutions, and owned the execution of key features across multiple projects.",
+        "Built scalable React and Next.js applications while integrating backend APIs and authentication flows."
+      ],
+      "tech": ["React.js", "Next.js", "Node.js", "Express.js", "PostgreSQL", "DeckGL", "Google Maps"],
+      "color": "from-cyan-500 to-blue-500"
+    },
+    {
+      "company": "Newton School",
+      "role": "Full Stack Developer Intern",
+      "duration": "July 2021 – March 2022",
+      "location": "Bengaluru, Karnataka",
+      "highlights": [
+        "Worked on in-house full stack web applications, contributing to feature development, problem-solving, and clean code practices.",
+        "Gained foundational experience in React, Node.js, and production deployment workflows."
+      ],
+      "tech": ["React.js", "JavaScript", "Node.js", "Express.js"],
+      "color": "from-blue-500 to-violet-500"
+    }
+  ],
+
+  "projects": [
+    {
+      "title": "Sophius AI",
+      "description": "Led frontend development and complete architectural redesign of an AI-powered platform. Reduced bundle size by 50%, built in-browser code editor, AI image editor, Plotly dashboards, and shipped Android/iOS apps via WebView.",
+      "highlights": [
+        "Built in-browser code editor/runner, AI-integrated image editor, interactive Plotly dashboards, and Google Maps–based visualizations.",
+        "Integrated Generative AI workflows using LangChain for AI responses, document research, multimedia multilanguage outputs.",
+        "Developed and shipped Android and iOS applications using WebView-based architecture.",
+        "Reduced bundle size and improved load performance by 50% through code splitting and Service Workers."
+      ],
+      "tech": ["React.js", "Redux", "Python", "FastAPI", "PostgreSQL", "LangChain", "Tailwind", "Plotly", "Google Maps", "Service Workers", "WebView"],
+      "gradient": "from-purple-600 via-violet-600 to-indigo-600",
+      "link": "#"
+    },
+    {
+      "title": "Indian Oil Dashboard",
+      "description": "Designed and implemented the frontend architecture for Indian Oil's enterprise platform. Redesigned with Vite.js, Web Workers, and React Memoization — improving UI performance by 50%.",
+      "highlights": [
+        "Optimized and redesigned components using Vite.js, Web Workers and React Memoization Technique.",
+        "Enhanced UI performance and scalability by up to 50%."
+      ],
+      "tech": ["React.js", "Redux.js", "Ant Design", "Antd Charts", "DeckGL", "GMaps", "Node.js", "Jest", "Express.js", "PostgreSQL"],
+      "gradient": "from-orange-600 via-red-600 to-rose-600",
+      "link": "#"
+    },
+    {
+      "title": "Lepton Maps",
+      "description": "Data visualization dashboard using DeckGL.js, providing stakeholders with real-time insights and improving decision-making processes.",
+      "highlights": [
+        "Built role-based dynamic user interfaces with real-time data visualization.",
+        "Built a CI/CD pipeline using Git and Vercel, reducing deployment time by 40%."
+      ],
+      "tech": ["React.js", "Next.js", "TypeScript", "Shadcn", "Tailwind", "Zustand", "Tanstack", "Python", "DeckGL", "Google Maps", "Jest"],
+      "gradient": "from-emerald-600 via-teal-600 to-cyan-600",
+      "link": "#"
+    },
+    {
+      "title": "Smart Market",
+      "description": "Enterprise application with role-based dynamic UI, resizable panels, data caching, and reusable component packages.",
+      "highlights": [
+        "Converted data fetching to Tanstack Query for enhanced performance with large datasets.",
+        "Implemented Web Workers and custom hooks with React Memoization for 45% UI performance improvement."
+      ],
+      "tech": ["React.js", "Next.js", "TypeScript", "Shadcn", "Tailwind", "Zustand", "Tanstack", "Python", "DeckGL", "Google Maps", "Vite", "Jest"],
+      "gradient": "from-blue-600 via-indigo-600 to-purple-600",
+      "link": "#"
+    },
+    {
+      "title": "API Health Monitor",
+      "description": "API health check system integrated with Slack and email notifications for real-time API monitoring and failure tracking.",
+      "highlights": [
+        "Built health check script with Slack and email integration for markdown-designed failure notifications.",
+        "Track records in database to show tracking and API status on the UI."
+      ],
+      "tech": ["React.js", "JavaScript", "Tailwind", "Node.js", "Express", "SQLite", "Slack API", "Vite"],
+      "gradient": "from-amber-600 via-yellow-600 to-orange-600",
+      "link": "#"
+    },
+    {
+      "title": "RBL Gateway",
+      "description": "Secure communication gateway with OpenPGP encryption for banking operations and secure transactions.",
+      "highlights": [
+        "Implemented secure communication with encryption using OpenPGP.",
+        "Established a secure gateway for banking transactions."
+      ],
+      "tech": ["React.js", "JavaScript", "Tailwind", "Node.js", "Express", "SQLite", "OpenPGP"],
+      "gradient": "from-rose-600 via-pink-600 to-fuchsia-600",
+      "link": "#"
+    },
+    {
+      "title": "Smart Campus",
+      "description": "3D visualization platform with Three.js for enhanced telecom client campus visibility and interactive navigation.",
+      "highlights": [
+        "Created 3D objects and buildings for telecom client visualization.",
+        "Real-time 3D rendering with interactive campus navigation."
+      ],
+      "tech": ["React.js", "JavaScript", "Tailwind", "Three.js", "Supabase", "Jest"],
+      "gradient": "from-sky-600 via-blue-600 to-indigo-600",
+      "link": "#"
+    }
+  ],
+
+  "skillsCategories": [
+    {
+      "title": "FRONTEND",
+      "skills": ["React.js", "Next.js", "TypeScript", "JavaScript", "Redux.js", "Zustand", "Tailwind CSS", "Shadcn", "Ant Design", "Bootstrap"],
+      "color": "#7042f8"
+    },
+    {
+      "title": "BACKEND & APIS",
+      "skills": ["Node.js", "Express.js", "FastAPI", "Python", "REST API", "PostgreSQL", "SQLite"],
+      "color": "#06b6d4"
+    },
+    {
+      "title": "DATA & VISUALIZATION",
+      "skills": ["DeckGL", "Google Maps API", "Plotly", "Antd Charts", "React Charts", "Three.js"],
+      "color": "#f59e0b"
+    },
+    {
+      "title": "GENERATIVE AI",
+      "skills": ["LangChain", "LLM Integration", "Prompt Engineering", "Document Analysis", "AI Workflows"],
+      "color": "#10b981"
+    },
+    {
+      "title": "PERFORMANCE & TESTING",
+      "skills": ["Web Workers", "Service Workers", "React Memoization", "Code Splitting", "TanStack Query", "Jest", "Playwright", "Vite"],
+      "color": "#8b5cf6"
+    },
+    {
+      "title": "DEVOPS & TOOLS",
+      "skills": ["Git", "Vercel", "CI/CD", "WebView", "SEO"],
+      "color": "#ec4899"
+    }
+  ],
+
+  "techTicker": [
+    "TypeScript", "Python", "FastAPI", "LangChain", "PostgreSQL",
+    "Three.js", "DeckGL", "Tailwind", "Node.js", "Redux",
+    "Jest", "React", "Next.js", "Vite", "Express.js",
+    "Zustand", "Playwright", "Google Maps", "Plotly", "WebView"
+  ],
+
+  "education": {
+    "degree": "Bachelor of Computer Applications",
+    "university": "Integral University",
+    "location": "Lucknow, Uttar Pradesh",
+    "duration": "July 2018 – June 2021",
+    "gpa": "8.0",
+    "npmPackages": [
+      { "name": "secured-storage-web", "link": "https://www.npmjs.com/package/secured-storage-web" },
+      { "name": "npm-profiler", "link": "https://www.npmjs.com/package/npm-profiler" }
+    ]
+  },
+
+  "footerData": [
+    {
+      "title": "Connect",
+      "data": [
+        { "name": "GitHub", "icon": "RxGithubLogo", "link": "https://github.com/abhishekverma" },
+        { "name": "LinkedIn", "icon": "RxLinkedinLogo", "link": "https://linkedin.com/in/abhishekverma" }
+      ]
+    },
+    {
+      "title": "Published Packages",
+      "data": [
+        { "name": "secured-storage-web", "icon": "FaNpm", "link": "https://www.npmjs.com/package/secured-storage-web" },
+        { "name": "npm-profiler", "icon": "FaNpm", "link": "https://www.npmjs.com/package/npm-profiler" }
+      ]
+    },
+    {
+      "title": "Contact",
+      "data": [
+        { "name": "abhishekayu3008@gmail.com", "icon": "SiGmail", "link": "mailto:abhishekayu3008@gmail.com" },
+        { "name": "+91 8874250240", "icon": "BsPhone", "link": "tel:+918874250240" }
+      ]
+    }
+  ],
+
+  "links": {
+    "sourceCode": "https://github.com/abhishekverma"
+  }
+}

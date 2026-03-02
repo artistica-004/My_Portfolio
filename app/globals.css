@@ -1,0 +1,291 @@
+@import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --purple-primary: #7042f8;
+  --purple-secondary: #b49bff;
+  --cyan-primary: #06b6d4;
+  --bg-dark: #030014;
+}
+
+.font-space {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.font-mono {
+  font-family: "JetBrains Mono", monospace;
+}
+
+.font-serif {
+  font-family: "Playfair Display", serif;
+}
+
+.cursive {
+  font-family: "Cedarville Cursive", cursive;
+}
+
+.Welcome-text {
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.4),
+      rgba(255, 255, 255, 0.4)
+    ),
+    linear-gradient(90.01deg, #e59cff 0.01%, #ba9cff 50.01%, #9cb2ff 100%);
+  background-blend-mode: normal, screen;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.Welcome-box {
+  isolation: isolate;
+  overflow: hidden;
+  align-items: center;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  border-radius: 32px;
+  box-shadow: inset 0 -7px 11px #a48fff1f;
+  display: flex;
+  position: relative;
+  width: -moz-max-content;
+  width: max-content;
+  transition: 0.45s cubic-bezier(0.6, 0.6, 0, 1) box-shadow;
+}
+
+.button-primary {
+  background: linear-gradient(
+      180deg,
+      rgba(60, 8, 126, 0) 0%,
+      rgba(60, 8, 126, 0.32) 100%
+    ),
+    rgba(113, 47, 255, 0.12);
+  box-shadow: inset 0 0 12px #bf97ff3d;
+}
+.button-primary:hover {
+  background: linear-gradient(
+      180deg,
+      rgba(60, 8, 126, 0) 0%,
+      rgba(60, 8, 126, 0.42) 100%
+    ),
+    rgba(113, 47, 255, 0.24);
+  box-shadow: inset 0 0 12px #bf97ff70;
+}
+
+/* Glass morphism card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(112, 66, 248, 0.3);
+  box-shadow: 0 8px 32px rgba(112, 66, 248, 0.15);
+  transform: translateY(-4px);
+}
+
+/* Project card 3D tilt */
+.project-card-3d {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.project-card-3d:hover {
+  transform: perspective(1000px) rotateY(-2deg) rotateX(2deg);
+}
+
+/* Timeline */
+.timeline-line {
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(112, 66, 248, 0.5) 10%,
+    rgba(112, 66, 248, 0.8) 50%,
+    rgba(112, 66, 248, 0.5) 90%,
+    transparent 100%
+  );
+}
+
+.timeline-dot {
+  box-shadow: 0 0 20px rgba(112, 66, 248, 0.6), 0 0 40px rgba(112, 66, 248, 0.3);
+}
+
+/* Skill badge */
+.skill-badge {
+  background: rgba(112, 66, 248, 0.08);
+  border: 1px solid rgba(112, 66, 248, 0.2);
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  color: #c4b5fd;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.skill-badge:hover {
+  background: rgba(112, 66, 248, 0.2);
+  border-color: rgba(112, 66, 248, 0.5);
+  color: #e0d4ff;
+  box-shadow: 0 0 15px rgba(112, 66, 248, 0.2);
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* Tech pill for project cards */
+.tech-pill {
+  background: rgba(6, 182, 212, 0.1);
+  border: 1px solid rgba(6, 182, 212, 0.2);
+  border-radius: 999px;
+  padding: 3px 10px;
+  font-size: 0.7rem;
+  color: #67e8f9;
+  font-family: "JetBrains Mono", monospace;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.tech-pill:hover {
+  background: rgba(6, 182, 212, 0.2);
+  border-color: rgba(6, 182, 212, 0.4);
+}
+
+/* Section heading glow */
+.section-heading {
+  text-shadow: 0 0 30px rgba(112, 66, 248, 0.3);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #7042f8 0%, #06b6d4 50%, #b49bff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+/* Typewriter cursor */
+.typewriter-cursor {
+  display: inline-block;
+  width: 3px;
+  height: 1em;
+  background: #7042f8;
+  margin-left: 4px;
+  animation: typewriter-blink 1s step-end infinite;
+  vertical-align: text-bottom;
+}
+
+@keyframes typewriter-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+  animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Shimmer effect for tech tags */
+.shimmer-bg {
+  background: linear-gradient(
+    90deg,
+    rgba(112, 66, 248, 0.05) 0%,
+    rgba(112, 66, 248, 0.15) 50%,
+    rgba(112, 66, 248, 0.05) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Glowing border */
+.glow-border {
+  position: relative;
+}
+
+.glow-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, #7042f8, #06b6d4, #7042f8);
+  background-size: 300% 300%;
+  animation: gradient-shift 4s ease infinite;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.glow-border:hover::before {
+  opacity: 1;
+}
+
+/* Hide scrollbar */
+.scrollbar-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #030014;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(112, 66, 248, 0.4);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(112, 66, 248, 0.6);
+}
+
+/* Stats counter */
+.stat-number {
+  font-variant-numeric: tabular-nums;
+}
+
+/* 3D scene container */
+.scene-container {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
