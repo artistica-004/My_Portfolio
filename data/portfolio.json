@@ -8,7 +8,7 @@
     "github": "https://github.com/abhishekverma",
     "portfolio": "#",
     "location": "Mumbai, Maharashtra, India",
-    "summary": "Full Stack Developer with 4+ years of experience building scalable, data-driven web applications using React, Next.js, Node.js, and Python. Experienced in integrating Generative AI features such as LLM-powered chat, document analysis, and AI scoring into production systems.",
+    "summary": "Full Stack Developer with 4+ years of experience building scalable, data-driven web applications using React, Next.js, Node.js, and Python. Experienced in integrating Generative AI features such as LLM-powered chat, document analysis, and AI scoring into production systems, with a strong focus on performance, system design, and real-world business use cases.",
     "typingTexts": [
       "Full Stack Developer",
       "AI Integrator",
@@ -60,7 +60,7 @@
       "location": "Mumbai, Maharashtra",
       "highlights": [
         "Leading frontend development for web and mobile applications, focusing on scalable UI architecture, performance optimization, and maintainable component systems.",
-        "Built and delivered Generative AI–driven projects, integrating LLM-powered features such as AI analysis, multimedia responses, document research, summarization, and workflow automation.",
+        "Built and delivered Generative AI–driven projects, integrating LLM-powered features such as AI analysis, multimedia responses, document research, summarization, and workflow automation into production applications.",
         "Collaborated with backend and product teams to design APIs and data flows supporting AI-powered features and real-time interactions.",
         "Owned frontend architecture decisions and mentored team members during feature development and releases."
       ],
@@ -73,7 +73,7 @@
       "duration": "April 2022 – Dec 2023",
       "location": "Gurugram, Haryana",
       "highlights": [
-        "Delivered full-stack solutions for enterprise clients including KPMG, RBL, Vodafone, Indian Oil, American Express, Croma, and Asian Paints.",
+        "Delivered full-stack solutions for enterprise clients, including KPMG, RBL, Vodafone, Indian Oil, American Express, Croma, and Asian Paints.",
         "Led client discussions to gather requirements, proposed technical solutions, and owned the execution of key features across multiple projects.",
         "Built scalable React and Next.js applications while integrating backend APIs and authentication flows."
       ],
@@ -86,8 +86,7 @@
       "duration": "July 2021 – March 2022",
       "location": "Bengaluru, Karnataka",
       "highlights": [
-        "Worked on in-house full stack web applications, contributing to feature development, problem-solving, and clean code practices.",
-        "Gained foundational experience in React, Node.js, and production deployment workflows."
+        "Worked on in-house full stack web applications, contributing to feature development, problem-solving, and clean code practices."
       ],
       "tech": ["React.js", "JavaScript", "Node.js", "Express.js"],
       "color": "from-blue-500 to-violet-500"
@@ -97,36 +96,36 @@
   "projects": [
     {
       "title": "Sophius AI",
-      "description": "Led frontend development and complete architectural redesign of an AI-powered platform. Reduced bundle size by 50%, built in-browser code editor, AI image editor, Plotly dashboards, and shipped Android/iOS apps via WebView.",
+      "description": "Led frontend development and took ownership of Sophius AI, redesigning the entire frontend architecture to improve scalability, maintainability, and performance.",
       "highlights": [
-        "Built in-browser code editor/runner, AI-integrated image editor, interactive Plotly dashboards, and Google Maps–based visualizations.",
-        "Integrated Generative AI workflows using LangChain for AI responses, document research, multimedia multilanguage outputs.",
-        "Developed and shipped Android and iOS applications using WebView-based architecture.",
-        "Reduced bundle size and improved load performance by 50% through code splitting and Service Workers."
+        "Optimized the application by reducing bundle size and improving load performance by 50% through architectural refactoring, code splitting, and Service Worker implementation.",
+        "Built advanced interactive features including an in-browser code editor and runner, AI-integrated image editor, interactive Plotly dashboards, and Google Maps–based visualizations.",
+        "Integrated Generative AI workflows using LangChain and backend services to support AI responses, document research, multimedia multilanguage outputs, and data-driven analysis.",
+        "Developed and shipped Android and iOS applications using WebView-based architecture, ensuring feature and performance across platforms."
       ],
-      "tech": ["React.js", "Redux", "Python", "FastAPI", "PostgreSQL", "LangChain", "Tailwind", "Plotly", "Google Maps", "Service Workers", "WebView"],
+      "tech": ["React.js", "Redux", "JavaScript", "Python", "FastAPI", "PostgreSQL", "Tailwind", "Plotly", "Google Maps", "Service Workers", "WebView", "SEO"],
       "gradient": "from-purple-600 via-violet-600 to-indigo-600",
       "link": "#"
     },
     {
-      "title": "Indian Oil Dashboard",
-      "description": "Designed and implemented the frontend architecture for Indian Oil's enterprise platform. Redesigned with Vite.js, Web Workers, and React Memoization — improving UI performance by 50%.",
+      "title": "Indian Oil",
+      "description": "Designed and implemented the frontend architecture of the application, ensuring optimal performance and scalability.",
       "highlights": [
-        "Optimized and redesigned components using Vite.js, Web Workers and React Memoization Technique.",
-        "Enhanced UI performance and scalability by up to 50%."
+        "Designed and implemented the frontend architecture of the application, ensuring optimal performance and scalability.",
+        "After a year, optimized and redesigned several components, and redesigned the base using Vite.js, Web Workers and React Memoization Technique to enhance the performance and scalability of the UI and development by up to 50%."
       ],
-      "tech": ["React.js", "Redux.js", "Ant Design", "Antd Charts", "DeckGL", "GMaps", "Node.js", "Jest", "Express.js", "PostgreSQL"],
+      "tech": ["React.js", "Redux.js", "JavaScript", "Ant Design", "Antd Charts", "Google Maps API", "DeckGL", "Node.js", "Jest", "Express.js", "PostgreSQL"],
       "gradient": "from-orange-600 via-red-600 to-rose-600",
       "link": "#"
     },
     {
       "title": "Lepton Maps",
-      "description": "Data visualization dashboard using DeckGL.js, providing stakeholders with real-time insights and improving decision-making processes.",
+      "description": "Developed a data visualization dashboard using DeckGL.js, providing stakeholders with real-time insights and improving decision-making processes.",
       "highlights": [
-        "Built role-based dynamic user interfaces with real-time data visualization.",
-        "Built a CI/CD pipeline using Git and Vercel, reducing deployment time by 40%."
+        "Developed a data visualization dashboard using DeckGL.js, providing stakeholders with real-time insights and improving decision-making processes and built role-based dynamic user interfaces.",
+        "Built a CI/CD pipeline using Git and Vercel, reducing deployment time by 40% and ensuring consistent and reliable releases."
       ],
-      "tech": ["React.js", "Next.js", "TypeScript", "Shadcn", "Tailwind", "Zustand", "Tanstack", "Python", "DeckGL", "Google Maps", "Jest"],
+      "tech": ["React.js", "Next.js", "JavaScript", "TypeScript", "Shadcn", "Tailwind", "Zustand", "TanStack", "Python", "DeckGL", "Google Maps", "Jest", "Charts"],
       "gradient": "from-emerald-600 via-teal-600 to-cyan-600",
       "link": "#"
     },
@@ -134,41 +133,40 @@
       "title": "Smart Market",
       "description": "Enterprise application with role-based dynamic UI, resizable panels, data caching, and reusable component packages.",
       "highlights": [
-        "Converted data fetching to Tanstack Query for enhanced performance with large datasets.",
-        "Implemented Web Workers and custom hooks with React Memoization for 45% UI performance improvement."
+        "Developed a role-based dynamic UI with resizable panels, implemented data caching to enhance frontend data, integrated session timeout functionality, and created reusable packages and components for improved reusability.",
+        "Converted data fetching to TanStack (using Query) to enhance performance and handle large data amounts.",
+        "Implemented Web Workers and custom hooks and React Memoization Technique to enhance UI performance by 45%."
       ],
-      "tech": ["React.js", "Next.js", "TypeScript", "Shadcn", "Tailwind", "Zustand", "Tanstack", "Python", "DeckGL", "Google Maps", "Vite", "Jest"],
+      "tech": ["React.js", "Next.js", "JavaScript", "TypeScript", "Shadcn", "Tailwind", "Zustand", "TanStack", "Python", "DeckGL", "Google Maps", "Vite", "Jest"],
       "gradient": "from-blue-600 via-indigo-600 to-purple-600",
       "link": "#"
     },
     {
-      "title": "API Health Monitor",
-      "description": "API health check system integrated with Slack and email notifications for real-time API monitoring and failure tracking.",
+      "title": "API Health and Consumption Monitor",
+      "description": "Built an API health check script and interface integrated with Slack and email for real-time API monitoring and failure tracking.",
       "highlights": [
-        "Built health check script with Slack and email integration for markdown-designed failure notifications.",
-        "Track records in database to show tracking and API status on the UI."
+        "Built an API health check script and interface integrated with Slack and email. Send markdown-designed messages to Slack and email regarding API failures.",
+        "Track records in a database to show tracking and API status on the UI."
       ],
-      "tech": ["React.js", "JavaScript", "Tailwind", "Node.js", "Express", "SQLite", "Slack API", "Vite"],
+      "tech": ["React.js", "JavaScript", "Tailwind", "Node.js", "Express", "SQLite", "Slack API", "Vite", "Jest"],
       "gradient": "from-amber-600 via-yellow-600 to-orange-600",
       "link": "#"
     },
     {
       "title": "RBL Gateway",
-      "description": "Secure communication gateway with OpenPGP encryption for banking operations and secure transactions.",
+      "description": "Implemented secure communication with encryption using OpenPGP and established a secure gateway.",
       "highlights": [
-        "Implemented secure communication with encryption using OpenPGP.",
-        "Established a secure gateway for banking transactions."
+        "Implemented secure communication with encryption using OpenPGP and established a secure gateway."
       ],
-      "tech": ["React.js", "JavaScript", "Tailwind", "Node.js", "Express", "SQLite", "OpenPGP"],
+      "tech": ["React.js", "JavaScript", "Tailwind", "Node.js", "Express", "SQLite", "Jest"],
       "gradient": "from-rose-600 via-pink-600 to-fuchsia-600",
       "link": "#"
     },
     {
       "title": "Smart Campus",
-      "description": "3D visualization platform with Three.js for enhanced telecom client campus visibility and interactive navigation.",
+      "description": "Created 3D objects and buildings to enhance the visibility of telecom clients.",
       "highlights": [
-        "Created 3D objects and buildings for telecom client visualization.",
-        "Real-time 3D rendering with interactive campus navigation."
+        "Created 3D objects and buildings to enhance the visibility of telecom clients."
       ],
       "tech": ["React.js", "JavaScript", "Tailwind", "Three.js", "Supabase", "Jest"],
       "gradient": "from-sky-600 via-blue-600 to-indigo-600",
@@ -178,42 +176,44 @@
 
   "skillsCategories": [
     {
-      "title": "FRONTEND",
-      "skills": ["React.js", "Next.js", "TypeScript", "JavaScript", "Redux.js", "Zustand", "Tailwind CSS", "Shadcn", "Ant Design", "Bootstrap"],
+      "title": "LANGUAGES",
+      "skills": ["JavaScript", "TypeScript", "Python"],
       "color": "#7042f8"
     },
     {
-      "title": "BACKEND & APIS",
-      "skills": ["Node.js", "Express.js", "FastAPI", "Python", "REST API", "PostgreSQL", "SQLite"],
+      "title": "TECHNOLOGIES",
+      "skills": ["React.js", "Jest", "Redux.js", "Zustand", "TanStack (UseQuery)", "FastAPI", "Next.js", "Ant Design", "Shadcn", "Tailwind CSS", "Playwright Automation Testing", "Node.js", "Express.js", "Bootstrap", "Antd Charts", "React Charts", "Google Maps API", "DeckGL", "Git", "REST API", "HTML", "CSS"],
       "color": "#06b6d4"
     },
     {
-      "title": "DATA & VISUALIZATION",
-      "skills": ["DeckGL", "Google Maps API", "Plotly", "Antd Charts", "React Charts", "Three.js"],
+      "title": "CONCEPTS & DATABASE",
+      "skills": ["PostgreSQL", "SQLite", "Cache Memory", "Agile Methodology", "ES6"],
       "color": "#f59e0b"
     },
     {
       "title": "GENERATIVE AI",
-      "skills": ["LangChain", "LLM Integration", "Prompt Engineering", "Document Analysis", "AI Workflows"],
+      "skills": ["LLM API Integration", "Prompt Engineering", "LangChain Workflows"],
       "color": "#10b981"
     },
     {
-      "title": "PERFORMANCE & TESTING",
-      "skills": ["Web Workers", "Service Workers", "React Memoization", "Code Splitting", "TanStack Query", "Jest", "Playwright", "Vite"],
+      "title": "SHOWCASE",
+      "skills": ["Sophius AI", "Smart Market", "Indian Oil", "Lepton Maps"],
       "color": "#8b5cf6"
     },
     {
-      "title": "DEVOPS & TOOLS",
-      "skills": ["Git", "Vercel", "CI/CD", "WebView", "SEO"],
+      "title": "PERFORMANCE & TOOLS",
+      "skills": ["Web Workers", "Service Workers", "React Memoization", "Code Splitting", "Vite", "Plotly", "Three.js", "SEO", "WebView", "Vercel", "CI/CD"],
       "color": "#ec4899"
     }
   ],
 
   "techTicker": [
-    "TypeScript", "Python", "FastAPI", "LangChain", "PostgreSQL",
-    "Three.js", "DeckGL", "Tailwind", "Node.js", "Redux",
-    "Jest", "React", "Next.js", "Vite", "Express.js",
-    "Zustand", "Playwright", "Google Maps", "Plotly", "WebView"
+    "JavaScript", "TypeScript", "Python", "React.js", "Next.js",
+    "Node.js", "Express.js", "FastAPI", "Redux.js", "Zustand",
+    "TanStack", "LangChain", "PostgreSQL", "SQLite", "DeckGL",
+    "Google Maps API", "Plotly", "Three.js", "Tailwind CSS", "Shadcn",
+    "Ant Design", "Jest", "Playwright", "Vite", "Git",
+    "Service Workers", "Web Workers", "WebView", "SEO", "Bootstrap"
   ],
 
   "education": {

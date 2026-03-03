@@ -72,21 +72,22 @@ export const About = () => {
           className="space-y-6"
         >
           <p className="text-gray-300 leading-relaxed text-[15px]">
-            I&apos;m a Full Stack Developer with{" "}
+            Full Stack Developer with{" "}
             <strong className="text-white">4+ years of experience</strong>{" "}
-            building production-grade web applications that scale. Currently at{" "}
+            building scalable, data-driven web applications using React, Next.js,
+            Node.js, and Python. Currently at{" "}
             <strong className="text-white">
               Futurense (Aditya Birla Group)
             </strong>
-            , leading frontend architecture and shipping Generative AI features
-            into real products.
+            , leading frontend development and shipping Generative AI features
+            into production systems.
           </p>
 
           <p className="text-gray-300 leading-relaxed text-[15px]">
-            My stack spans React, Next.js, Node.js, Python, and FastAPI — with
-            deep experience integrating LLM workflows via LangChain, building
-            AI-powered document analysis, multimedia responses, and real-time
-            data dashboards. I&apos;ve delivered solutions for{" "}
+            Experienced in integrating Generative AI features such as LLM-powered
+            chat, document analysis, and AI scoring into production systems, with
+            a strong focus on performance, system design, and real-world business
+            use cases. I&apos;ve delivered solutions for enterprise clients including{" "}
             <strong className="text-white">
               KPMG, RBL, Vodafone, Indian Oil, American Express, Croma,
             </strong>{" "}

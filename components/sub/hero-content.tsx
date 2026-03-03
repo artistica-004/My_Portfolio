@@ -5,117 +5,210 @@ import Link from "next/link";
 import { RxGithubLogo, RxLinkedinLogo } from "react-icons/rx";
 import { HiOutlineGlobeAlt } from "react-icons/hi";
 
-/* ─── Astronaut SVG ─── */
-const Astronaut = () => (
-  <svg viewBox="0 0 200 280" className="w-[160px] h-[220px] md:w-[200px] md:h-[280px] drop-shadow-[0_0_50px_rgba(139,92,246,0.25)]">
-    {/* Helmet outer glow ring */}
-    <ellipse cx="100" cy="72" rx="54" ry="58" fill="none" stroke="url(#helmetGlow)" strokeWidth="3" opacity="0.3">
-      <animate attributeName="opacity" values="0.3;0.5;0.3" dur="4s" repeatCount="indefinite" />
-    </ellipse>
-    {/* Helmet shell */}
-    <ellipse cx="100" cy="72" rx="50" ry="54" fill="#1e2033" stroke="#2a2d3e" strokeWidth="2.5" />
-    {/* Helmet inner ring */}
-    <ellipse cx="100" cy="72" rx="46" ry="50" fill="none" stroke="#1f2234" strokeWidth="1" opacity="0.4" />
-    {/* Visor background */}
-    <ellipse cx="100" cy="68" rx="38" ry="42" fill="#0f0f2e" />
-    {/* Visor glass - layered gradients for depth */}
-    <ellipse cx="100" cy="66" rx="34" ry="38" fill="url(#visorGrad)" opacity="0.9" />
-    <ellipse cx="100" cy="64" rx="30" ry="34" fill="url(#visorGrad2)" opacity="0.5" />
-    {/* Visor highlight / reflection */}
-    <ellipse cx="88" cy="54" rx="16" ry="10" fill="white" opacity="0.06" transform="rotate(-15,88,54)" />
-    {/* Eyes — blinking */}
-    <circle cx="87" cy="68" r="5" fill="#06b6d4" opacity="0.9">
-      <animate attributeName="opacity" values="0.9;0.1;0.9" dur="4s" repeatCount="indefinite" />
-    </circle>
-    <circle cx="113" cy="68" r="5" fill="#06b6d4" opacity="0.9">
-      <animate attributeName="opacity" values="0.9;0.1;0.9" dur="4s" repeatCount="indefinite" />
-    </circle>
-    {/* Eye glow */}
-    <circle cx="87" cy="68" r="10" fill="#06b6d4" opacity="0.12">
-      <animate attributeName="opacity" values="0.12;0.02;0.12" dur="4s" repeatCount="indefinite" />
-    </circle>
-    <circle cx="113" cy="68" r="10" fill="#06b6d4" opacity="0.12">
-      <animate attributeName="opacity" values="0.12;0.02;0.12" dur="4s" repeatCount="indefinite" />
-    </circle>
+/* ─── Reusable Mini Code Terminal ─── */
+const MiniTerminal = ({
+  fileName,
+  lang,
+  statusText,
+  accentColor,
+  bgColor,
+  borderColor,
+  dotColors,
+  cursorColor,
+  glowColor,
+  codeLines,
+  size = "md",
+}: {
+  fileName: string;
+  lang: string;
+  statusText: string;
+  accentColor: string;
+  bgColor: string;
+  borderColor: string;
+  dotColors: [string, string, string];
+  cursorColor: string;
+  glowColor: string;
+  codeLines: { indent: number; tokens: { text: string; color: string }[] }[];
+  size?: "sm" | "md";
+}) => {
+  const isSm = size === "sm";
+  return (
+    <div
+      className={
+        isSm
+          ? "w-[150px] h-[120px] md:w-[170px] md:h-[135px]"
+          : "w-[180px] h-[200px] md:w-[220px] md:h-[240px]"
+      }
+      style={{ filter: `drop-shadow(0 0 40px ${glowColor})` }}
+    >
+      <div
+        className="w-full h-full rounded-xl overflow-hidden backdrop-blur-xl relative"
+        style={{ background: bgColor, border: `1px solid ${borderColor}` }}
+      >
+        {/* Title bar */}
+        <div
+          className="flex items-center gap-1.5 px-2.5 py-1.5 border-b"
+          style={{ borderColor, background: `${bgColor}` }}
+        >
+          <span className="w-[6px] h-[6px] rounded-full" style={{ background: dotColors[0] }} />
+          <span className="w-[6px] h-[6px] rounded-full" style={{ background: dotColors[1] }} />
+          <span className="w-[6px] h-[6px] rounded-full" style={{ background: dotColors[2] }} />
+          <span
+            className="ml-1.5 font-mono tracking-wide"
+            style={{ fontSize: isSm ? "6.5px" : "8px", color: accentColor, opacity: 0.8 }}
+          >
+            {fileName}
+          </span>
+        </div>
 
-    {/* Antenna */}
-    <line x1="100" y1="18" x2="100" y2="4" stroke="#2a2d3e" strokeWidth="2" strokeLinecap="round" />
-    <circle cx="100" cy="3" r="3.5" fill="#06b6d4">
-      <animate attributeName="fill" values="#06b6d4;#8b5cf6;#f59e0b;#06b6d4" dur="3s" repeatCount="indefinite" />
-    </circle>
-    <circle cx="100" cy="3" r="7" fill="#06b6d4" opacity="0.1">
-      <animate attributeName="r" values="7;10;7" dur="2s" repeatCount="indefinite" />
-      <animate attributeName="opacity" values="0.1;0.05;0.1" dur="2s" repeatCount="indefinite" />
-    </circle>
+        {/* Code area */}
+        <div
+          className="px-2.5 py-2 font-mono"
+          style={{
+            fontSize: isSm ? "5.5px" : "7.5px",
+            lineHeight: isSm ? "1.6" : "1.75",
+          }}
+        >
+          {codeLines.map((line, lineIdx) => (
+            <div key={lineIdx} className="flex items-center">
+              <span
+                className="mr-1.5 text-right select-none"
+                style={{
+                  width: isSm ? 10 : 14,
+                  fontSize: isSm ? "5px" : "6.5px",
+                  color: "rgba(255,255,255,0.2)",
+                }}
+              >
+                {lineIdx + 1}
+              </span>
+              {line.indent > 0 && <span style={{ width: line.indent * (isSm ? 8 : 12) }} />}
+              {line.tokens.map((token, tIdx) => (
+                <span key={tIdx} style={{ color: token.color }}>
+                  {token.text}
+                </span>
+              ))}
+              {lineIdx === codeLines.length - 1 && (
+                <span
+                  className="inline-block ml-0.5 animate-pulse rounded-[1px]"
+                  style={{
+                    width: isSm ? 3 : 4,
+                    height: isSm ? 8 : 11,
+                    background: cursorColor,
+                  }}
+                />
+              )}
+            </div>
+          ))}
+        </div>
 
-    {/* Neck connector */}
-    <rect x="85" y="120" width="30" height="12" rx="4" fill="#2a2d3e" stroke="#1f2234" strokeWidth="1" />
-    <rect x="90" y="122" width="20" height="8" rx="3" fill="#374151" />
+        {/* Status bar */}
+        <div
+          className="absolute bottom-0 left-0 right-0 px-2.5 py-1 border-t flex items-center justify-between"
+          style={{ borderColor, background: `${bgColor}` }}
+        >
+          <span className="font-mono" style={{ fontSize: isSm ? "5px" : "6.5px", color: accentColor, opacity: 0.7 }}>
+            ● {statusText}
+          </span>
+          <span className="font-mono" style={{ fontSize: isSm ? "5px" : "6.5px", color: "rgba(255,255,255,0.25)" }}>
+            {lang}
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+};
 
-    {/* Body / Torso */}
-    <rect x="62" y="128" rx="22" ry="10" width="76" height="78" fill="#1e2033" stroke="#2a2d3e" strokeWidth="1.8" />
-    {/* Chest panel */}
-    <rect x="78" y="140" rx="6" width="44" height="24" fill="#0f0f2e" stroke="#1f2234" strokeWidth="1" />
-    {/* LED lights row */}
-    <circle cx="88" cy="152" r="3.5" fill="#f59e0b" opacity="0.9">
-      <animate attributeName="opacity" values="0.9;0.3;0.9" dur="2.5s" repeatCount="indefinite" />
-    </circle>
-    <circle cx="100" cy="152" r="3.5" fill="#06b6d4" opacity="0.9">
-      <animate attributeName="opacity" values="0.9;0.5;0.9" dur="2s" repeatCount="indefinite" />
-    </circle>
-    <circle cx="112" cy="152" r="3.5" fill="#10b981" opacity="0.9">
-      <animate attributeName="opacity" values="0.9;0.4;0.9" dur="1.8s" repeatCount="indefinite" />
-    </circle>
-    {/* Chest badge / emblem */}
-    <circle cx="100" cy="175" r="8" fill="none" stroke="#2a2d3e" strokeWidth="1" opacity="0.5" />
-    <circle cx="100" cy="175" r="4" fill="#2a2d3e" opacity="0.3" />
+/* ─── Center: developer.ts (Purple theme) ─── */
+const CenterTerminal = () => (
+  <MiniTerminal
+    fileName="developer.ts"
+    lang="TypeScript"
+    statusText="ready"
+    accentColor="rgba(196, 181, 253, 0.7)"
+    bgColor="rgba(10, 10, 26, 0.75)"
+    borderColor="rgba(255, 255, 255, 0.08)"
+    dotColors={["rgba(255,255,255,0.25)", "rgba(255,255,255,0.18)", "rgba(255,255,255,0.12)"]}
+    cursorColor="rgba(167, 139, 250, 0.6)"
+    glowColor="rgba(139, 92, 246, 0.08)"
+    codeLines={[
+      { indent: 0, tokens: [{ text: "const", color: "rgba(198,160,221,0.7)" }, { text: " dev", color: "rgba(229,192,123,0.65)" }, { text: " = {", color: "rgba(171,178,191,0.5)" }] },
+      { indent: 1, tokens: [{ text: "name", color: "rgba(224,108,117,0.6)" }, { text: ": ", color: "rgba(171,178,191,0.4)" }, { text: "'Abhishek'", color: "rgba(152,195,121,0.65)" }, { text: ",", color: "rgba(171,178,191,0.4)" }] },
+      { indent: 1, tokens: [{ text: "role", color: "rgba(224,108,117,0.6)" }, { text: ": ", color: "rgba(171,178,191,0.4)" }, { text: "'FullStack'", color: "rgba(152,195,121,0.65)" }, { text: ",", color: "rgba(171,178,191,0.4)" }] },
+      { indent: 1, tokens: [{ text: "stack", color: "rgba(224,108,117,0.6)" }, { text: ": ", color: "rgba(171,178,191,0.4)" }, { text: "'React+AI'", color: "rgba(152,195,121,0.65)" }] },
+      { indent: 0, tokens: [{ text: "};", color: "rgba(171,178,191,0.5)" }] },
+      { indent: 0, tokens: [] },
+      { indent: 0, tokens: [{ text: "export", color: "rgba(198,160,221,0.7)" }, { text: " dev", color: "rgba(229,192,123,0.65)" }, { text: ";", color: "rgba(171,178,191,0.5)" }] },
+    ]}
+  />
+);
 
-    {/* Arms */}
-    <rect x="38" y="132" rx="12" width="28" height="56" fill="#1e2033" stroke="#2a2d3e" strokeWidth="1.5" />
-    <rect x="134" y="132" rx="12" width="28" height="56" fill="#1e2033" stroke="#2a2d3e" strokeWidth="1.5" />
-    {/* Shoulder joints */}
-    <circle cx="62" cy="136" r="6" fill="#2a2d3e" stroke="#1f2234" strokeWidth="1" />
-    <circle cx="138" cy="136" r="6" fill="#2a2d3e" stroke="#1f2234" strokeWidth="1" />
-    {/* Gloves */}
-    <ellipse cx="52" cy="194" rx="14" ry="9" fill="#374151" stroke="#2a2d3e" strokeWidth="1" />
-    <ellipse cx="148" cy="194" rx="14" ry="9" fill="#374151" stroke="#2a2d3e" strokeWidth="1" />
+/* ─── Card: Current Role (Cyan tint) ─── */
+const RoleTerminal = () => (
+  <MiniTerminal
+    fileName="role.config.ts"
+    lang="Config"
+    statusText="active"
+    accentColor="rgba(103, 232, 249, 0.6)"
+    bgColor="rgba(10, 10, 26, 0.75)"
+    borderColor="rgba(255, 255, 255, 0.08)"
+    dotColors={["rgba(255,255,255,0.25)", "rgba(255,255,255,0.18)", "rgba(255,255,255,0.12)"]}
+    cursorColor="rgba(34, 211, 238, 0.5)"
+    glowColor="rgba(6, 182, 212, 0.06)"
+    size="sm"
+    codeLines={[
+      { indent: 0, tokens: [{ text: "export", color: "rgba(103,232,249,0.6)" }, { text: " const", color: "rgba(198,160,221,0.6)" }, { text: " role", color: "rgba(229,192,123,0.55)" }, { text: " = {", color: "rgba(143,171,190,0.45)" }] },
+      { indent: 1, tokens: [{ text: "company", color: "rgba(86,182,194,0.55)" }, { text: ": ", color: "rgba(143,171,190,0.4)" }, { text: "'Futurense'", color: "rgba(136,221,237,0.55)" }, { text: ",", color: "rgba(143,171,190,0.4)" }] },
+      { indent: 1, tokens: [{ text: "group", color: "rgba(86,182,194,0.55)" }, { text: ": ", color: "rgba(143,171,190,0.4)" }, { text: "'Aditya Birla'", color: "rgba(136,221,237,0.55)" }, { text: ",", color: "rgba(143,171,190,0.4)" }] },
+      { indent: 1, tokens: [{ text: "title", color: "rgba(86,182,194,0.55)" }, { text: ": ", color: "rgba(143,171,190,0.4)" }, { text: "'Full Stack'", color: "rgba(136,221,237,0.55)" }] },
+      { indent: 0, tokens: [{ text: "};", color: "rgba(143,171,190,0.45)" }] },
+    ]}
+  />
+);
 
-    {/* Legs */}
-    <rect x="70" y="200" rx="10" width="26" height="48" fill="#1e2033" stroke="#2a2d3e" strokeWidth="1.5" />
-    <rect x="104" y="200" rx="10" width="26" height="48" fill="#1e2033" stroke="#2a2d3e" strokeWidth="1.5" />
-    {/* Knee joints */}
-    <circle cx="83" cy="222" r="4" fill="#2a2d3e" stroke="#1f2234" strokeWidth="1" />
-    <circle cx="117" cy="222" r="4" fill="#2a2d3e" stroke="#1f2234" strokeWidth="1" />
-    {/* Boots */}
-    <rect x="65" y="242" rx="8" width="36" height="16" fill="#374151" stroke="#2a2d3e" strokeWidth="1" />
-    <rect x="99" y="242" rx="8" width="36" height="16" fill="#374151" stroke="#2a2d3e" strokeWidth="1" />
-    {/* Boot soles */}
-    <rect x="65" y="254" rx="4" width="36" height="5" fill="#2a2d3e" opacity="0.3" />
-    <rect x="99" y="254" rx="4" width="36" height="5" fill="#2a2d3e" opacity="0.3" />
+/* ─── Card: Experience (Emerald tint) ─── */
+const ExperienceTerminal = () => (
+  <MiniTerminal
+    fileName="experience.ts"
+    lang="Runtime"
+    statusText="verified"
+    accentColor="rgba(110, 231, 183, 0.6)"
+    bgColor="rgba(10, 10, 26, 0.75)"
+    borderColor="rgba(255, 255, 255, 0.08)"
+    dotColors={["rgba(255,255,255,0.25)", "rgba(255,255,255,0.18)", "rgba(255,255,255,0.12)"]}
+    cursorColor="rgba(52, 211, 153, 0.5)"
+    glowColor="rgba(16, 185, 129, 0.06)"
+    size="sm"
+    codeLines={[
+      { indent: 0, tokens: [{ text: "const", color: "rgba(110,231,183,0.6)" }, { text: " exp", color: "rgba(229,192,123,0.55)" }, { text: " = {", color: "rgba(143,187,170,0.45)" }] },
+      { indent: 1, tokens: [{ text: "years", color: "rgba(85,185,138,0.55)" }, { text: ": ", color: "rgba(143,187,170,0.4)" }, { text: "4", color: "rgba(181,232,204,0.55)" }, { text: ",", color: "rgba(143,187,170,0.4)" }] },
+      { indent: 1, tokens: [{ text: "level", color: "rgba(85,185,138,0.55)" }, { text: ": ", color: "rgba(143,187,170,0.4)" }, { text: "'Production'", color: "rgba(134,239,172,0.5)" }, { text: ",", color: "rgba(143,187,170,0.4)" }] },
+      { indent: 1, tokens: [{ text: "apps", color: "rgba(85,185,138,0.55)" }, { text: ": ", color: "rgba(143,187,170,0.4)" }, { text: "'Enterprise'", color: "rgba(134,239,172,0.5)" }] },
+      { indent: 0, tokens: [{ text: "};", color: "rgba(143,187,170,0.45)" }] },
+    ]}
+  />
+);
 
-    {/* Backpack / jetpack */}
-    <rect x="75" y="130" rx="4" width="8" height="50" fill="#374151" opacity="0.6" stroke="#1f2234" strokeWidth="0.5" />
-    <rect x="117" y="130" rx="4" width="8" height="50" fill="#374151" opacity="0.6" stroke="#1f2234" strokeWidth="0.5" />
-
-    {/* Defs */}
-    <defs>
-      <radialGradient id="visorGrad" cx="40%" cy="35%">
-        <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0.35" />
-        <stop offset="40%" stopColor="#6366f1" stopOpacity="0.2" />
-        <stop offset="70%" stopColor="#06b6d4" stopOpacity="0.25" />
-        <stop offset="100%" stopColor="#0f172a" stopOpacity="0.8" />
-      </radialGradient>
-      <radialGradient id="visorGrad2" cx="60%" cy="60%">
-        <stop offset="0%" stopColor="#06b6d4" stopOpacity="0.2" />
-        <stop offset="100%" stopColor="transparent" stopOpacity="0" />
-      </radialGradient>
-      <linearGradient id="helmetGlow" x1="0" y1="0" x2="200" y2="144">
-        <stop offset="0%" stopColor="#2a2d3e" />
-        <stop offset="50%" stopColor="#1f2234" />
-        <stop offset="100%" stopColor="#2a2d3e" />
-      </linearGradient>
-    </defs>
-  </svg>
+/* ─── Card: AI Projects (Amber tint) ─── */
+const AITerminal = () => (
+  <MiniTerminal
+    fileName="ai-engine.py"
+    lang="Python"
+    statusText="running"
+    accentColor="rgba(252, 211, 77, 0.6)"
+    bgColor="rgba(10, 10, 26, 0.75)"
+    borderColor="rgba(255, 255, 255, 0.08)"
+    dotColors={["rgba(255,255,255,0.25)", "rgba(255,255,255,0.18)", "rgba(255,255,255,0.12)"]}
+    cursorColor="rgba(245, 158, 11, 0.5)"
+    glowColor="rgba(245, 158, 11, 0.06)"
+    size="sm"
+    codeLines={[
+      { indent: 0, tokens: [{ text: "from", color: "rgba(251,191,36,0.6)" }, { text: " langchain ", color: "rgba(252,211,77,0.55)" }, { text: "import", color: "rgba(251,191,36,0.6)" }, { text: " LLM", color: "rgba(229,192,123,0.55)" }] },
+      { indent: 0, tokens: [] },
+      { indent: 0, tokens: [{ text: "model", color: "rgba(212,164,74,0.55)" }, { text: " = ", color: "rgba(187,162,110,0.4)" }, { text: "LLM", color: "rgba(229,192,123,0.55)" }, { text: "(", color: "rgba(187,162,110,0.4)" }] },
+      { indent: 1, tokens: [{ text: "engine", color: "rgba(212,164,74,0.55)" }, { text: "=", color: "rgba(187,162,110,0.4)" }, { text: "'GenAI'", color: "rgba(253,230,138,0.5)" }] },
+      { indent: 0, tokens: [{ text: ")", color: "rgba(187,162,110,0.4)" }] },
+    ]}
+  />
 );
 
 /* ─── Revolving dot that orbits around center ─── */
@@ -194,92 +287,64 @@ const HeroScene = () => (
     <OrbitRing radius={190} delay={0.5} />
     <OrbitRing radius={240} delay={0.6} />
 
-    {/* Astronaut center */}
+    {/* Code terminal center */}
     <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
       <motion.div
         animate={{ y: [0, -12, 0] }}
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
       >
-        <Astronaut />
+        <CenterTerminal />
       </motion.div>
     </div>
 
-    {/* Glow behind astronaut */}
+    {/* Glow behind terminal */}
     <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] rounded-full bg-purple-500/8 blur-[80px] z-0" />
 
-    {/* Card: Current Role — top right */}
+    {/* Card: Current Role (Cyan terminal) — top right */}
     <motion.div
       initial={{ opacity: 0, scale: 0.7 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ delay: 0.6, duration: 0.7 }}
       className="absolute z-20"
-      style={{ right: "-5%", top: "8%" }}
+      style={{ right: "-5%", top: "5%" }}
     >
       <motion.div
         animate={{ y: [0, -6, 0] }}
         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
       >
-        <div className="rounded-xl border border-white/[0.08] bg-[#0a0a1a]/80 backdrop-blur-xl px-5 py-3.5 min-w-[170px] shadow-xl shadow-black/30">
-          <span className="text-[9px] font-mono tracking-[0.2em] text-cyan-400 uppercase block mb-1.5">
-            Current Role
-          </span>
-          <p className="text-white text-[13px] font-bold leading-tight">
-            Futurense · Aditya Birla
-          </p>
-          <p className="text-gray-400 text-[11px] font-mono mt-0.5">
-            Full Stack Developer
-          </p>
-        </div>
+        <RoleTerminal />
       </motion.div>
     </motion.div>
 
-    {/* Card: Experience — bottom left */}
+    {/* Card: Experience (Emerald terminal) — bottom left */}
     <motion.div
       initial={{ opacity: 0, scale: 0.7 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ delay: 0.9, duration: 0.7 }}
       className="absolute z-20"
-      style={{ left: "-8%", bottom: "15%" }}
+      style={{ left: "-8%", bottom: "12%" }}
     >
       <motion.div
         animate={{ y: [0, 8, 0] }}
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
       >
-        <div className="rounded-xl border border-white/[0.08] bg-[#0a0a1a]/80 backdrop-blur-xl px-5 py-3.5 min-w-[160px] shadow-xl shadow-black/30">
-          <span className="text-[9px] font-mono tracking-[0.2em] text-emerald-400 uppercase block mb-1.5">
-            Experience
-          </span>
-          <p className="text-white text-2xl font-bold leading-tight">
-            4+ Years
-          </p>
-          <p className="text-gray-400 text-[11px] font-mono mt-0.5">
-            Production-grade apps
-          </p>
-        </div>
+        <ExperienceTerminal />
       </motion.div>
     </motion.div>
 
-    {/* Card: AI Projects — bottom right */}
+    {/* Card: AI Projects (Amber terminal) — bottom right */}
     <motion.div
       initial={{ opacity: 0, scale: 0.7 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ delay: 1.2, duration: 0.7 }}
       className="absolute z-20"
-      style={{ right: "-2%", bottom: "10%" }}
+      style={{ right: "-2%", bottom: "8%" }}
     >
       <motion.div
         animate={{ y: [0, -5, 0] }}
         transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
       >
-        <div className="rounded-xl border border-white/[0.08] bg-[#0a0a1a]/80 backdrop-blur-xl px-5 py-3.5 min-w-[130px] shadow-xl shadow-black/30">
-          <span className="text-[9px] font-mono tracking-[0.2em] text-purple-400 uppercase block mb-1.5">
-            AI Projects
-          </span>
-          <p className="text-white text-lg font-bold leading-tight">Gen AI</p>
-          <p className="text-gray-400 text-[11px] font-mono mt-0.5">
-            LangChain · LLMs
-          </p>
-        </div>
+        <AITerminal />
       </motion.div>
     </motion.div>
 
@@ -373,9 +438,12 @@ export const HeroContent = () => {
               transition={{ delay: 0.6, duration: 0.7 }}
               className="text-gray-400 text-[15px] md:text-base leading-relaxed max-w-[480px] mb-9"
             >
-              4+ years building scalable, data-driven web applications.
-              Specializing in React, Next.js, and Generative AI integrations
-              — from LLM-powered chat to production-grade AI workflows.
+              4+ years building scalable, data-driven web applications
+              using React, Next.js, Node.js, and Python. Experienced in
+              integrating Generative AI features such as LLM-powered chat,
+              document analysis, and AI scoring into production systems, with
+              a strong focus on performance, system design, and real-world
+              business use cases.
             </motion.p>
 
             {/* CTA Buttons */}

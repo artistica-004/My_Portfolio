@@ -10,7 +10,7 @@ const PROJECT_BADGES: Record<string, string[]> = {
     "LangChain AI workflow",
     "Cross-platform mobile apps",
   ],
-  "Indian Oil Dashboard": [
+  "Indian Oil": [
     "50% performance uplift",
     "DeckGL geo-visualization",
     "Vite.js migration",
@@ -25,7 +25,7 @@ const PROJECT_BADGES: Record<string, string[]> = {
     "Web Workers + Memoization",
     "TanStack Query migration",
   ],
-  "API Health Monitor": [
+  "API Health and Consumption Monitor": [
     "Slack + Email alerts",
     "Real-time health tracking",
     "Markdown message design",

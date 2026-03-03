@@ -23,7 +23,7 @@ const SkillCategory = ({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-30px" }}
       transition={{ delay: index * 0.08, duration: 0.5 }}
-      className="glass-card p-4 sm:p-5 group"
+      className="glass-card p-3 sm:p-4 md:p-5 group min-w-0 w-full"
     >
       {/* Category header with colored dot */}
       <div className="flex items-center gap-2.5 mb-4">
@@ -31,13 +31,13 @@ const SkillCategory = ({
           className="w-2.5 h-2.5 rounded-full flex-shrink-0"
           style={{ backgroundColor: category.color }}
         />
-        <h3 className="text-[10px] font-bold text-gray-300 tracking-[0.15em] font-mono uppercase">
+        <h3 className="text-[9px] sm:text-[10px] font-bold text-gray-300 tracking-[0.15em] font-mono uppercase">
           {category.title}
         </h3>
       </div>
 
       {/* Skills */}
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-1.5 sm:gap-2 w-full min-w-0">
         {category.skills.map((skill, i) => (
           <motion.span
             key={skill}
@@ -45,7 +45,7 @@ const SkillCategory = ({
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.05 + i * 0.03, duration: 0.3 }}
-            className="cursor-default text-[11px] sm:text-xs rounded-lg px-2.5 py-1 sm:px-3 sm:py-1.5 border whitespace-nowrap transition-all duration-300 hover:scale-105 hover:-translate-y-0.5 font-mono"
+            className="cursor-default text-[10px] sm:text-[11px] md:text-xs rounded-md sm:rounded-lg px-2 py-0.5 sm:px-2.5 sm:py-1 md:px-3 md:py-1.5 border transition-all duration-300 hover:scale-105 hover:-translate-y-0.5 font-mono"
             style={{
               backgroundColor: hexToRgba(category.color, 0.08),
               borderColor: hexToRgba(category.color, 0.2),
@@ -95,7 +95,7 @@ export const Skills = () => {
   return (
     <section
       id="skills"
-      className="relative py-24 px-6 md:px-16 lg:px-24 max-w-7xl mx-auto overflow-hidden"
+      className="relative py-16 sm:py-24 px-4 sm:px-6 md:px-16 lg:px-24 w-full max-w-7xl mx-auto overflow-hidden"
     >
       {/* Background effect */}
       <div className="absolute inset-0 z-[-1]">
@@ -123,9 +123,9 @@ export const Skills = () => {
         transition={{ delay: 0.1, duration: 0.6 }}
         className="mb-4"
       >
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
           Tech{" "}
-          <span className="cursive gradient-text text-5xl md:text-6xl lg:text-7xl">
+          <span className="cursive gradient-text text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
             Constellation
           </span>
         </h2>
@@ -143,8 +143,8 @@ export const Skills = () => {
         enterprise applications.
       </motion.p>
 
-      {/* Skills Grid - 3 columns */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+      {/* Skills Grid - responsive */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-5">
         {SKILLS_CATEGORIES.map((category, i) => (
           <SkillCategory key={category.title} category={category} index={i} />
         ))}
