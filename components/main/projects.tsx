@@ -100,7 +100,6 @@ const FeaturedProjectCard = ({
       transition={{ delay: index * 0.15, duration: 0.6 }}
       className="glass-card p-6 md:p-8 flex flex-col"
     >
-      {/* Header */}
       <div className="flex items-center justify-between mb-5">
         <span className="text-gray-500 font-mono text-[10px] tracking-[0.15em] uppercase">
           {"Mission " + String(index + 1).padStart(2, "0")}
@@ -117,17 +116,14 @@ const FeaturedProjectCard = ({
         </div>
       </div>
 
-      {/* Title */}
       <h3 className="text-xl font-bold text-cyan-400 font-space mb-3">
         {project.title}
       </h3>
 
-      {/* Description */}
       <p className="text-gray-400 text-[13px] leading-relaxed mb-4">
         {project.description}
       </p>
 
-      {/* Resume highlights */}
       <ul className="space-y-2.5 mb-5">
         {project.highlights.map((highlight, i) => (
           <li key={i} className="flex gap-2.5 text-[12px] text-gray-300/90 leading-[1.7]">
@@ -137,7 +133,6 @@ const FeaturedProjectCard = ({
         ))}
       </ul>
 
-      {/* Feature badges */}
       <div className="flex flex-wrap gap-2 mb-5">
         {badges.map((badge, i) => {
           const color = BADGE_COLORS[i % BADGE_COLORS.length];
@@ -153,7 +148,6 @@ const FeaturedProjectCard = ({
         })}
       </div>
 
-      {/* Tech pills */}
       <div className="flex flex-wrap gap-1.5 mt-auto mb-4">
         {visibleTech.map((tech) => (
           <span key={tech} className="tech-pill">
@@ -165,7 +159,6 @@ const FeaturedProjectCard = ({
         )}
       </div>
 
-      {/* View Project link */}
       {hasLink && (
         <Link
           href={project.link}
@@ -201,7 +194,6 @@ const StandardProjectCard = ({
       transition={{ delay: (index - 2) * 0.1 + 0.3, duration: 0.5 }}
       className="glass-card p-5 md:p-6 flex flex-col"
     >
-      {/* Header */}
       <div className="flex items-center justify-between mb-4">
         <span className="text-gray-500 font-mono text-[10px] tracking-[0.15em] uppercase">
           {"Mission " + String(index + 1).padStart(2, "0")}
@@ -213,17 +205,14 @@ const StandardProjectCard = ({
         )}
       </div>
 
-      {/* Title */}
       <h3 className="text-base font-bold text-cyan-400 font-space mb-2">
         {project.title}
       </h3>
 
-      {/* Description */}
       <p className="text-gray-400 text-[12px] leading-relaxed mb-3">
         {project.description}
       </p>
 
-      {/* Resume highlights */}
       <ul className="space-y-2 mb-4">
         {project.highlights.map((highlight, i) => (
           <li key={i} className="flex gap-2 text-[12px] text-gray-300/90 leading-[1.7]">
@@ -233,7 +222,6 @@ const StandardProjectCard = ({
         ))}
       </ul>
 
-      {/* Tech pills */}
       <div className="flex flex-wrap gap-1.5 mt-auto mb-3">
         {visibleTech.map((tech) => (
           <span key={tech} className="tech-pill">
@@ -245,7 +233,6 @@ const StandardProjectCard = ({
         )}
       </div>
 
-      {/* View link */}
       {hasLink && (
         <Link
           href={project.link}
@@ -270,7 +257,6 @@ export const Projects = () => {
       id="projects"
       className="relative py-24 px-6 md:px-16 lg:px-24 max-w-7xl mx-auto"
     >
-      {/* Decorative dots */}
       <div
         className="hidden md:block absolute right-[10%] top-[45%] w-1.5 h-1.5 rounded-full bg-emerald-400/40 animate-pulse"
       />
@@ -279,7 +265,6 @@ export const Projects = () => {
         style={{ animationDelay: "1s" }}
       />
 
-      {/* Section label */}
       <motion.div
         initial={{ opacity: 0, x: -20 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -292,7 +277,6 @@ export const Projects = () => {
         </span>
       </motion.div>
 
-      {/* Title + Description */}
       <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-16">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -319,7 +303,6 @@ export const Projects = () => {
         </motion.p>
       </div>
 
-      {/* Featured projects (2-col) */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
         {featured.map((project, i) => (
           <FeaturedProjectCard
@@ -330,7 +313,6 @@ export const Projects = () => {
         ))}
       </div>
 
-      {/* Standard projects (3-col) */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {standard.map((project, i) => (
           <StandardProjectCard

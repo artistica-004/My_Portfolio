@@ -7,7 +7,6 @@ import { RxGithubLogo, RxLinkedinLogo } from "react-icons/rx";
 import { HiOutlineGlobeAlt } from "react-icons/hi";
 import { PERSONAL_INFO } from "@/constants";
 
-/* ─── Reusable Mini Code Terminal ─── */
 const MiniTerminal = ({
   fileName,
   lang,
@@ -47,8 +46,7 @@ const MiniTerminal = ({
         className="w-full h-full rounded-xl overflow-hidden backdrop-blur-xl relative"
         style={{ background: bgColor, border: `1px solid ${borderColor}` }}
       >
-        {/* Title bar */}
-        <div
+          <div
           className="flex items-center gap-1.5 px-2.5 py-1.5 border-b"
           style={{ borderColor, background: `${bgColor}` }}
         >
@@ -63,7 +61,6 @@ const MiniTerminal = ({
           </span>
         </div>
 
-        {/* Code area */}
         <div
           className="px-2.5 py-2 font-mono"
           style={{
@@ -103,7 +100,6 @@ const MiniTerminal = ({
           ))}
         </div>
 
-        {/* Status bar */}
         <div
           className="absolute bottom-0 left-0 right-0 px-2.5 py-1 border-t flex items-center justify-between"
           style={{ borderColor, background: `${bgColor}` }}
@@ -120,7 +116,6 @@ const MiniTerminal = ({
   );
 };
 
-/* ─── Center: developer.ts (Purple theme) ─── */
 const CenterTerminal = () => (
   <MiniTerminal
     fileName="developer.ts"
@@ -148,7 +143,6 @@ const CenterTerminal = () => (
   />
 );
 
-/* ─── Card: Current Role (Cyan tint) ─── */
 const RoleTerminal = () => (
   <MiniTerminal
     fileName="role.config.ts"
@@ -173,7 +167,6 @@ const RoleTerminal = () => (
   />
 );
 
-/* ─── Card: Experience (Emerald tint) ─── */
 const ExperienceTerminal = () => (
   <MiniTerminal
     fileName="experience.ts"
@@ -198,7 +191,6 @@ const ExperienceTerminal = () => (
   />
 );
 
-/* ─── Card: AI Projects (Amber tint) ─── */
 const AITerminal = () => (
   <MiniTerminal
     fileName="ai-engine.py"
@@ -224,21 +216,16 @@ const AITerminal = () => (
   />
 );
 
-/* ─── Revolving dot that orbits around center ─── */
-const RevolvingDot = ({
+const SpaceOrbit = ({
   radius,
-  size,
-  color,
   duration,
   startAngle = 0,
-  pulse = false,
+  children,
 }: {
   radius: number;
-  size: number;
-  color: string;
   duration: number;
   startAngle?: number;
-  pulse?: boolean;
+  children: React.ReactNode;
 }) => (
   <div
     className="absolute left-1/2 top-1/2"
@@ -251,32 +238,32 @@ const RevolvingDot = ({
       transform: `rotate(${startAngle}deg)`,
     }}
   >
-    <span
-      className="absolute rounded-full"
+    <div
+      className="absolute"
       style={{
         top: 0,
         left: "50%",
-        width: size,
-        height: size,
-        marginLeft: -size / 2,
-        marginTop: -size / 2,
-        backgroundColor: color,
-        boxShadow: pulse
-          ? `0 0 ${size * 4}px ${size}px ${color}50, 0 0 ${size * 2}px ${color}30`
-          : `0 0 ${size * 2}px ${color}20`,
+        transform: "translate(-50%, -50%)",
+        animation: `spin ${duration}s linear infinite reverse`,
       }}
     >
-      {pulse && (
-        <span
-          className="absolute inset-0 rounded-full animate-ping"
-          style={{ backgroundColor: color, opacity: 0.3 }}
-        />
-      )}
-    </span>
+      {children}
+    </div>
   </div>
 );
 
-/* ─── Orbit ring ─── */
+const Planetoid = ({ size, color, glow }: { size: number; color: string; glow: string }) => (
+  <div
+    className="rounded-full animate-pulse"
+    style={{
+      width: size,
+      height: size,
+      background: `radial-gradient(circle at 35% 35%, ${color}, ${glow})`,
+      boxShadow: `0 0 ${size * 2}px ${size / 2}px ${glow}, 0 0 ${size}px ${color}`,
+    }}
+  />
+);
+
 const OrbitRing = ({ radius, delay }: { radius: number; delay: number }) => (
   <motion.div
     initial={{ opacity: 0, scale: 0.8 }}
@@ -292,15 +279,12 @@ const OrbitRing = ({ radius, delay }: { radius: number; delay: number }) => (
   />
 );
 
-/* ─── Right side scene ─── */
 const HeroScene = () => (
   <div className="relative w-[380px] h-[380px] md:w-[460px] md:h-[460px] lg:w-[520px] lg:h-[520px] flex-shrink-0 overflow-visible">
-    {/* Orbit rings */}
     <OrbitRing radius={130} delay={0.3} />
     <OrbitRing radius={190} delay={0.5} />
     <OrbitRing radius={240} delay={0.6} />
 
-    {/* Code terminal center */}
     <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
       <motion.div
         animate={{ y: [0, -12, 0] }}
@@ -310,10 +294,8 @@ const HeroScene = () => (
       </motion.div>
     </div>
 
-    {/* Glow behind terminal */}
     <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] rounded-full bg-purple-500/8 blur-[80px] z-0" />
 
-    {/* Card: Current Role (Cyan terminal) — top right */}
     <motion.div
       initial={{ opacity: 0, scale: 0.7 }}
       animate={{ opacity: 1, scale: 1 }}
@@ -329,7 +311,6 @@ const HeroScene = () => (
       </motion.div>
     </motion.div>
 
-    {/* Card: Experience (Emerald terminal) — bottom left */}
     <motion.div
       initial={{ opacity: 0, scale: 0.7 }}
       animate={{ opacity: 1, scale: 1 }}
@@ -345,7 +326,6 @@ const HeroScene = () => (
       </motion.div>
     </motion.div>
 
-    {/* Card: AI Projects (Amber terminal) — bottom right */}
     <motion.div
       initial={{ opacity: 0, scale: 0.7 }}
       animate={{ opacity: 1, scale: 1 }}
@@ -361,15 +341,25 @@ const HeroScene = () => (
       </motion.div>
     </motion.div>
 
-    {/* Revolving dots — actually orbiting! */}
-    <RevolvingDot radius={130} size={8} color="#f59e0b" duration={12} startAngle={0} pulse />
-    <RevolvingDot radius={130} size={5} color="#06b6d4" duration={12} startAngle={180} pulse />
-    <RevolvingDot radius={190} size={7} color="#f59e0b" duration={20} startAngle={90} pulse />
-    <RevolvingDot radius={190} size={4} color="#8b5cf6" duration={20} startAngle={270} />
-    <RevolvingDot radius={240} size={5} color="#06b6d4" duration={28} startAngle={45} pulse />
-    <RevolvingDot radius={240} size={4} color="#10b981" duration={28} startAngle={200} />
+    <SpaceOrbit radius={130} duration={18} startAngle={0}>
+      <Planetoid size={10} color="#f59e0b" glow="rgba(245,158,11,0.35)" />
+    </SpaceOrbit>
+    <SpaceOrbit radius={130} duration={18} startAngle={180}>
+      <Planetoid size={8} color="#06b6d4" glow="rgba(6,182,212,0.35)" />
+    </SpaceOrbit>
+    <SpaceOrbit radius={190} duration={30} startAngle={90}>
+      <Planetoid size={7} color="#8b5cf6" glow="rgba(139,92,246,0.35)" />
+    </SpaceOrbit>
+    <SpaceOrbit radius={190} duration={30} startAngle={270}>
+      <Planetoid size={9} color="#f59e0b" glow="rgba(245,158,11,0.3)" />
+    </SpaceOrbit>
+    <SpaceOrbit radius={240} duration={42} startAngle={45}>
+      <Planetoid size={6} color="#06b6d4" glow="rgba(6,182,212,0.3)" />
+    </SpaceOrbit>
+    <SpaceOrbit radius={240} duration={42} startAngle={200}>
+      <Planetoid size={5} color="#10b981" glow="rgba(16,185,129,0.3)" />
+    </SpaceOrbit>
 
-    {/* Connecting line from top */}
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -382,7 +372,6 @@ const HeroScene = () => (
   </div>
 );
 
-/* ─── Typing Text Hook ─── */
 const useTypingText = (texts: string[], typingSpeed = 80, deletingSpeed = 40, pauseTime = 2000) => {
   const [displayText, setDisplayText] = useState("");
   const [textIndex, setTextIndex] = useState(0);
@@ -392,14 +381,12 @@ const useTypingText = (texts: string[], typingSpeed = 80, deletingSpeed = 40, pa
     const currentFullText = texts[textIndex];
 
     if (!isDeleting) {
-      // Typing
       setDisplayText(currentFullText.substring(0, displayText.length + 1));
       if (displayText.length + 1 === currentFullText.length) {
         setTimeout(() => setIsDeleting(true), pauseTime);
         return;
       }
     } else {
-      // Deleting
       setDisplayText(currentFullText.substring(0, displayText.length - 1));
       if (displayText.length - 1 === 0) {
         setIsDeleting(false);
@@ -418,7 +405,6 @@ const useTypingText = (texts: string[], typingSpeed = 80, deletingSpeed = 40, pa
   return displayText;
 };
 
-/* ─── Main HeroContent ─── */
 export const HeroContent = () => {
   const typedText = useTypingText(
     PERSONAL_INFO.typingTexts || ["Full Stack Developer"],
@@ -430,14 +416,12 @@ export const HeroContent = () => {
   return (
     <div className="relative flex items-center justify-center w-full min-h-screen z-[20] px-6 md:px-12 lg:px-20 overflow-hidden">
       <div className="w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-8 lg:gap-8 mt-16 lg:mt-0">
-        {/* LEFT: Text content — blackhole pull effect */}
         <motion.div
           initial={{ opacity: 0, y: 60 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
           className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left"
         >
-          {/* Available badge */}
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -450,7 +434,6 @@ export const HeroContent = () => {
             </span>
           </motion.div>
 
-          {/* Typing subtitle */}
           <motion.div
             initial={{ opacity: 0, y: -15 }}
             animate={{ opacity: 1, y: 0 }}
@@ -463,7 +446,6 @@ export const HeroContent = () => {
             <span className="inline-block w-[2px] h-[14px] bg-cyan-400/70 ml-[2px] animate-pulse" />
           </motion.div>
 
-          {/* Name — pulled upward with stagger */}
           <motion.h1
             className="text-6xl sm:text-7xl md:text-8xl lg:text-[6.5rem] font-bold leading-[0.95] tracking-tight mb-7 font-serif"
           >
@@ -485,12 +467,10 @@ export const HeroContent = () => {
             </motion.span>
           </motion.h1>
 
-          {/* Subtle upward float animation on the whole text area */}
           <motion.div
             animate={{ y: [0, -6, 0] }}
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
           >
-            {/* Description */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -505,7 +485,6 @@ export const HeroContent = () => {
               business use cases.
             </motion.p>
 
-            {/* CTA Buttons */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -534,7 +513,6 @@ export const HeroContent = () => {
             </motion.div>
           </motion.div>
 
-          {/* Bottom: Social icons + phone */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -564,7 +542,6 @@ export const HeroContent = () => {
           </motion.div>
         </motion.div>
 
-        {/* RIGHT: Astronaut scene with orbiting cards */}
         <motion.div
           initial={{ opacity: 0, scale: 0.85 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -575,20 +552,47 @@ export const HeroContent = () => {
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
-        <div className="w-6 h-10 border-2 border-purple-500/30 rounded-full flex justify-center">
-          <motion.div
-            animate={{ y: [0, 12, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-            className="w-1.5 h-1.5 bg-purple-400 rounded-full mt-2"
-          />
-        </div>
+        <motion.div
+          animate={{ y: [0, 6, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <svg width="18" height="28" viewBox="0 0 18 28" fill="none">
+            <path
+              d="M9 2C9 2 3 7 3 14c0 4 2.5 7 6 10 3.5-3 6-6 6-10 0-7-6-12-6-12z"
+              fill="none"
+              stroke="rgba(139,92,246,0.4)"
+              strokeWidth="1.2"
+            />
+            <path
+              d="M3 14l-2 4 3-1z"
+              fill="none"
+              stroke="rgba(139,92,246,0.25)"
+              strokeWidth="0.8"
+            />
+            <path
+              d="M15 14l2 4-3-1z"
+              fill="none"
+              stroke="rgba(139,92,246,0.25)"
+              strokeWidth="0.8"
+            />
+            <circle cx="9" cy="9" r="2" fill="rgba(139,92,246,0.5)" />
+            <motion.line
+              x1="9" x2="9" y1="22" y2="28"
+              stroke="rgba(139,92,246,0.3)"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+            />
+          </svg>
+        </motion.div>
+        <span className="text-[9px] font-mono tracking-[0.2em] text-purple-400/40 uppercase">
+          scroll
+        </span>
       </motion.div>
     </div>
   );

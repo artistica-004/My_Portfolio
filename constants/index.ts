@@ -6,7 +6,6 @@ import type { IconType } from "react-icons";
 
 import data from "@/data/portfolio.json";
 
-/* ─── Icon map: JSON string → React component ─── */
 const ICON_MAP: Record<string, IconType> = {
   RxGithubLogo,
   RxLinkedinLogo,
@@ -17,8 +16,6 @@ const ICON_MAP: Record<string, IconType> = {
 
 const resolveIcon = (name: string): IconType =>
   ICON_MAP[name] ?? RxGithubLogo;
-
-/* ─── Exports (all driven by data/portfolio.json) ─── */
 
 export const PERSONAL_INFO = data.personalInfo;
 

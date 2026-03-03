@@ -1,15 +1,8 @@
 import { HeroContent } from "@/components/sub/hero-content";
-import { HeroScene } from "@/components/sub/hero-3d-scene";
 
 export const Hero = () => {
   return (
     <div className="relative flex flex-col h-full w-full min-h-screen">
-      {/* 3D Scene Background */}
-      {/* <div className="absolute inset-0 opacity-60">
-        <HeroScene />
-      </div> */}
-
-      {/* Video background - subtle */}
       <video
         autoPlay
         muted

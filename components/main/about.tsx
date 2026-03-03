@@ -35,7 +35,6 @@ export const About = () => {
       id="about-me"
       className="relative py-24 px-6 md:px-16 lg:px-24 max-w-7xl mx-auto"
     >
-      {/* Section label */}
       <motion.div
         initial={{ opacity: 0, x: -20 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -48,7 +47,6 @@ export const About = () => {
         </span>
       </motion.div>
 
-      {/* Section title */}
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -63,7 +61,6 @@ export const About = () => {
       </motion.h2>
 
       <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-12 lg:gap-16">
-        {/* Left - About text */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -121,7 +118,6 @@ export const About = () => {
             ensuring feature parity and consistent performance across platforms.
           </p>
 
-          {/* Badges */}
           <div className="flex flex-wrap gap-3 pt-4">
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 text-sm">
               <svg
@@ -194,9 +190,7 @@ export const About = () => {
           </div>
         </motion.div>
 
-        {/* Right - Stats + Packages */}
         <div className="space-y-6">
-          {/* Stats Grid */}
           <div className="grid grid-cols-2 gap-4">
             <StatCard value="4+" label="Years Experience" delay={0.2} />
             <StatCard value="8+" label="Enterprise Clients" delay={0.3} />
@@ -204,7 +198,6 @@ export const About = () => {
             <StatCard value="8" label="GPA · BCA" delay={0.5} />
           </div>
 
-          {/* Published Packages */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

@@ -28,7 +28,6 @@ export const Navbar = () => {
         }`}
       >
         <div className="max-w-7xl mx-auto h-full flex items-center justify-between px-5 md:px-10 lg:px-16">
-          {/* Logo */}
           <Link href="#about-me" className="flex items-center gap-2.5 group">
             <div
               className={`flex items-center justify-center
@@ -36,15 +35,10 @@ export const Navbar = () => {
                 ${scrolled ? "w-8 h-8" : "w-9 h-9"}`}
             >
               <svg viewBox="0 0 40 40" className="w-full h-full animate-[spin_20s_linear_infinite]">
-                {/* Outer orbit ring */}
                 <circle cx="20" cy="20" r="18" fill="none" stroke="url(#logoGrad1)" strokeWidth="1.5" opacity="0.8" />
-                {/* Inner orbit ring rotated */}
                 <circle cx="20" cy="20" r="12" fill="none" stroke="url(#logoGrad2)" strokeWidth="1.5" opacity="0.7" transform="rotate(60,20,20)" />
-                {/* Diagonal orbit */}
                 <ellipse cx="20" cy="20" rx="16" ry="8" fill="none" stroke="url(#logoGrad3)" strokeWidth="1.2" opacity="0.6" transform="rotate(-30,20,20)" />
-                {/* Center glow */}
                 <circle cx="20" cy="20" r="3" fill="url(#logoCenterGrad)" />
-                {/* Orbiting dots */}
                 <circle cx="20" cy="2" r="2" fill="#8b5cf6" />
                 <circle cx="32" cy="20" r="1.5" fill="#06b6d4" />
                 <circle cx="8" cy="24" r="1.5" fill="#f59e0b" />
@@ -77,7 +71,6 @@ export const Navbar = () => {
             </span>
           </Link>
 
-          {/* Desktop nav links */}
           <div className="hidden md:flex items-center">
             <div
               className={`flex items-center gap-0.5 rounded-full border transition-all duration-500 ${
@@ -100,7 +93,6 @@ export const Navbar = () => {
             </div>
           </div>
 
-          {/* Desktop social icons */}
           <div className="hidden md:flex items-center gap-3">
             {SOCIALS.map(({ link, name, icon: Icon }) => (
               <Link
@@ -115,7 +107,6 @@ export const Navbar = () => {
             ))}
           </div>
 
-          {/* Mobile hamburger */}
           <button
             className="md:hidden relative w-8 h-8 flex items-center justify-center"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -142,7 +133,6 @@ export const Navbar = () => {
         </div>
       </motion.nav>
 
-      {/* Mobile menu overlay */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
@@ -171,7 +161,6 @@ export const Navbar = () => {
                 </motion.div>
               ))}
 
-              {/* Divider + socials */}
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}

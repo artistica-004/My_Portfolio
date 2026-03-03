@@ -31,7 +31,6 @@ export const Encryption = () => {
         style={{ opacity, scale }}
         className="relative z-10 px-6 md:px-16 lg:px-24 max-w-7xl mx-auto"
       >
-        {/* Section label */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -58,7 +57,6 @@ export const Encryption = () => {
           enterprise clients and millions of users.
         </p>
 
-        {/* Floating tech badges */}
         <div className="flex flex-wrap gap-3 max-w-xl">
           {AI_BADGES.map((tech, i) => (
             <motion.span
@@ -75,7 +73,6 @@ export const Encryption = () => {
         </div>
       </motion.div>
 
-      {/* Background video */}
       <div className="w-full flex items-start justify-center absolute inset-0 opacity-15">
         <video
           loop

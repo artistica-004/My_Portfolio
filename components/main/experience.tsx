@@ -28,7 +28,6 @@ const ExperienceCard = ({
         border-l-[3px] ${accent.border} p-7 md:p-9 hover:bg-white/[0.04] hover:border-white/[0.1]
         hover:shadow-xl ${accent.glow} transition-all duration-500 group`}
     >
-      {/* Row 1: Company + CURRENT | Duration */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-1.5">
         <div className="flex items-center gap-3 flex-wrap">
           <h3 className="text-[17px] md:text-[19px] font-extrabold text-white tracking-tight">
@@ -52,7 +51,6 @@ const ExperienceCard = ({
         </span>
       </div>
 
-      {/* Row 2: Role | Location */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6">
         <p className="text-purple-400 text-[13px] font-semibold tracking-wide">
           {experience.role}
@@ -62,7 +60,6 @@ const ExperienceCard = ({
         </span>
       </div>
 
-      {/* Highlights */}
       <ul className="space-y-3.5">
         {experience.highlights.map((highlight, i) => (
           <motion.li
@@ -92,7 +89,6 @@ export const Experience = () => {
       id="experience"
       className="relative py-28 px-6 md:px-16 lg:px-24 max-w-7xl mx-auto"
     >
-      {/* Section label */}
       <motion.div
         initial={{ opacity: 0, x: -20 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -105,7 +101,6 @@ export const Experience = () => {
         </span>
       </motion.div>
 
-      {/* Section title */}
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -119,15 +114,12 @@ export const Experience = () => {
         </span>
       </motion.h2>
 
-      {/* Cards with connecting dots */}
       <div className="relative max-w-4xl mx-auto">
-        {/* Vertical connecting line */}
         <div className="hidden md:block absolute left-[-28px] top-8 bottom-8 w-px bg-gradient-to-b from-purple-500/30 via-cyan-500/20 to-amber-500/30" />
 
         <div className="space-y-8">
           {EXPERIENCE_DATA.map((exp, i) => (
             <div key={exp.company} className="relative">
-              {/* Dot on the connecting line */}
               <motion.div
                 initial={{ scale: 0 }}
                 whileInView={{ scale: 1 }}
@@ -145,7 +137,6 @@ export const Experience = () => {
           ))}
         </div>
 
-        {/* Bottom decorative dot */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

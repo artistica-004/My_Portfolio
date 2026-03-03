@@ -15,7 +15,6 @@ export const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSending(true);
-    // Open mailto with pre-filled data
     const subject = encodeURIComponent(
       `Portfolio Contact from ${formData.name}`
     );
@@ -31,7 +30,6 @@ export const Contact = () => {
       id="contact"
       className="relative py-28 px-6 md:px-16 lg:px-24 max-w-7xl mx-auto"
     >
-      {/* Section label */}
       <motion.div
         initial={{ opacity: 0, x: -20 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -44,7 +42,6 @@ export const Contact = () => {
         </span>
       </motion.div>
 
-      {/* Section title */}
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -69,9 +66,7 @@ export const Contact = () => {
         collaborations. Let&apos;s build something remarkable.
       </motion.p>
 
-      {/* Two-column layout */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 max-w-5xl mx-auto">
-        {/* Left: Contact Info */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -79,7 +74,6 @@ export const Contact = () => {
           transition={{ delay: 0.2, duration: 0.6 }}
           className="space-y-8"
         >
-          {/* Primary Signal - Email */}
           <div>
             <div className="flex items-center gap-2 mb-3">
               <span className="w-1.5 h-1.5 rounded-full bg-purple-400" />
@@ -96,7 +90,6 @@ export const Contact = () => {
             <div className="h-px bg-white/[0.06] mt-5" />
           </div>
 
-          {/* Direct Line - Phone */}
           <div>
             <div className="flex items-center gap-2 mb-3">
               <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
@@ -112,7 +105,6 @@ export const Contact = () => {
             </Link>
           </div>
 
-          {/* Coordinates - LinkedIn & GitHub */}
           <div>
             <div className="flex items-center gap-2 mb-4">
               <span className="w-1.5 h-1.5 rounded-full bg-blue-400" />
@@ -165,7 +157,6 @@ export const Contact = () => {
             </div>
           </div>
 
-          {/* Location card */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -187,7 +178,6 @@ export const Contact = () => {
           </motion.div>
         </motion.div>
 
-        {/* Right: Contact Form */}
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -198,7 +188,6 @@ export const Contact = () => {
             onSubmit={handleSubmit}
             className="rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-xl p-6 sm:p-8 space-y-6"
           >
-            {/* Name */}
             <div>
               <label className="block text-gray-500 text-[10px] font-mono tracking-[0.2em] uppercase mb-2">
                 Name
@@ -218,7 +207,6 @@ export const Contact = () => {
               />
             </div>
 
-            {/* Email */}
             <div>
               <label className="block text-gray-500 text-[10px] font-mono tracking-[0.2em] uppercase mb-2">
                 Email
@@ -238,7 +226,6 @@ export const Contact = () => {
               />
             </div>
 
-            {/* Message */}
             <div>
               <label className="block text-gray-500 text-[10px] font-mono tracking-[0.2em] uppercase mb-2">
                 Message
@@ -258,7 +245,6 @@ export const Contact = () => {
               />
             </div>
 
-            {/* Submit */}
             <button
               type="submit"
               disabled={sending}

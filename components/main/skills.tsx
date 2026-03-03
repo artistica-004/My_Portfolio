@@ -25,7 +25,6 @@ const SkillCategory = ({
       transition={{ delay: index * 0.08, duration: 0.5 }}
       className="glass-card p-3 sm:p-4 md:p-5 group min-w-0 w-full"
     >
-      {/* Category header with colored dot */}
       <div className="flex items-center gap-2.5 mb-4">
         <span
           className="w-2.5 h-2.5 rounded-full flex-shrink-0"
@@ -36,7 +35,6 @@ const SkillCategory = ({
         </h3>
       </div>
 
-      {/* Skills */}
       <div className="flex flex-wrap gap-1.5 sm:gap-2 w-full min-w-0">
         {category.skills.map((skill, i) => (
           <motion.span
@@ -61,7 +59,6 @@ const SkillCategory = ({
 };
 
 const TechTicker = () => {
-  // Double for seamless loop
   const doubled = [...TECH_TICKER, ...TECH_TICKER];
 
   return (
@@ -97,12 +94,10 @@ export const Skills = () => {
       id="skills"
       className="relative py-16 sm:py-24 px-4 sm:px-6 md:px-16 lg:px-24 w-full max-w-7xl mx-auto overflow-hidden"
     >
-      {/* Background effect */}
       <div className="absolute inset-0 z-[-1]">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-500/5 rounded-full blur-[100px]" />
       </div>
 
-      {/* Section label */}
       <motion.div
         initial={{ opacity: 0, x: -20 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -115,7 +110,6 @@ export const Skills = () => {
         </span>
       </motion.div>
 
-      {/* Section title */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -131,7 +125,6 @@ export const Skills = () => {
         </h2>
       </motion.div>
 
-      {/* Subtitle */}
       <motion.p
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -143,14 +136,12 @@ export const Skills = () => {
         enterprise applications.
       </motion.p>
 
-      {/* Skills Grid - responsive */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-5">
         {SKILLS_CATEGORIES.map((category, i) => (
           <SkillCategory key={category.title} category={category} index={i} />
         ))}
       </div>
 
-      {/* Tech Ticker */}
       <TechTicker />
     </section>
   );
