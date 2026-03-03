@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { EXPERIENCE_DATA } from "@/constants";
+import { EXPERIENCE_DATA, SECTIONS } from "@/constants";
 
 const CARD_ACCENTS = [
   { border: "border-l-purple-500/60", dot: "bg-purple-400", glow: "shadow-purple-500/10" },
@@ -97,7 +97,7 @@ export const Experience = () => {
         className="mb-3"
       >
         <span className="text-emerald-400/60 font-mono text-[11px] tracking-[0.2em]">
-          {"// 03. EXPERIENCE"}
+          {SECTIONS.experience.label}
         </span>
       </motion.div>
 
@@ -108,9 +108,9 @@ export const Experience = () => {
         transition={{ delay: 0.1, duration: 0.6 }}
         className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-20 leading-tight"
       >
-        Mission{" "}
+        {SECTIONS.experience.heading}{" "}
         <span className="cursive gradient-text text-5xl md:text-6xl lg:text-7xl">
-          Log
+          {SECTIONS.experience.accent}
         </span>
       </motion.h2>
 

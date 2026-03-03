@@ -2,45 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { PROJECTS } from "@/constants";
-
-const PROJECT_BADGES: Record<string, string[]> = {
-  "Sophius AI": [
-    "50% load performance improvement",
-    "LangChain AI workflow",
-    "Cross-platform mobile apps",
-  ],
-  "Indian Oil": [
-    "50% performance uplift",
-    "DeckGL geo-visualization",
-    "Vite.js migration",
-  ],
-  "Lepton Maps": [
-    "40% faster deployments",
-    "Role-based dynamic UI",
-    "Real-time insights",
-  ],
-  "Smart Market": [
-    "45% UI performance gain",
-    "Web Workers + Memoization",
-    "TanStack Query migration",
-  ],
-  "API Health and Consumption Monitor": [
-    "Slack + Email alerts",
-    "Real-time health tracking",
-    "Markdown message design",
-  ],
-  "RBL Gateway": [
-    "OpenPGP encryption",
-    "Banking-grade security",
-    "Secure gateway",
-  ],
-  "Smart Campus": [
-    "Three.js 3D visualization",
-    "Telecom infrastructure map",
-    "Real-time Supabase data",
-  ],
-};
+import { PROJECTS, SECTIONS } from "@/constants";
 
 const BADGE_COLORS = [
   {
@@ -86,7 +48,7 @@ const FeaturedProjectCard = ({
   project: (typeof PROJECTS)[number];
   index: number;
 }) => {
-  const badges = PROJECT_BADGES[project.title] || [];
+  const badges = project.badges || [];
   const maxTech = 15;
   const visibleTech = project.tech.slice(0, maxTech);
   const remaining = project.tech.length - maxTech;
@@ -273,7 +235,7 @@ export const Projects = () => {
         className="mb-4"
       >
         <span className="text-emerald-400/60 font-mono text-[11px] tracking-[0.2em]">
-          {"// 04. PROJECTS"}
+          {SECTIONS.projects.label}
         </span>
       </motion.div>
 
@@ -285,9 +247,9 @@ export const Projects = () => {
           transition={{ delay: 0.1, duration: 0.6 }}
           className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
         >
-          Space{" "}
+          {SECTIONS.projects.heading}{" "}
           <span className="cursive gradient-text text-5xl md:text-6xl lg:text-7xl">
-            Missions
+            {SECTIONS.projects.accent}
           </span>
         </motion.h2>
 
@@ -298,8 +260,7 @@ export const Projects = () => {
           transition={{ delay: 0.2, duration: 0.5 }}
           className="text-gray-400 text-[13px] max-w-xs leading-relaxed md:text-right"
         >
-          Production-grade applications shipped for enterprise clients and built
-          as flagship products.
+          {SECTIONS.projects.description}
         </motion.p>
       </div>
 

@@ -45,3 +45,11 @@ export const FOOTER_DATA = data.footerData.map((col) => ({
 }));
 
 export const LINKS = data.links;
+
+export const HERO_SECTION = data.heroSection;
+
+export const SECTIONS = data.sections;
+
+export const ABOUT_SECTION = data.aboutSection;
+
+export const AI_INNOVATION = data.aiInnovation;

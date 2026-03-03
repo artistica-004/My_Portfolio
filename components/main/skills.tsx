@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { SKILLS_CATEGORIES, TECH_TICKER } from "@/constants";
+import { SKILLS_CATEGORIES, TECH_TICKER, SECTIONS } from "@/constants";
 
 const hexToRgba = (hex: string, alpha: number) => {
   const r = parseInt(hex.slice(1, 3), 16);
@@ -106,7 +106,7 @@ export const Skills = () => {
         className="mb-4"
       >
         <span className="text-cyan-400/70 font-mono text-[11px] tracking-[0.2em]">
-          {"// 02. SKILLS"}
+          {SECTIONS.skills.label}
         </span>
       </motion.div>
 
@@ -118,9 +118,9 @@ export const Skills = () => {
         className="mb-4"
       >
         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-          Tech{" "}
+          {SECTIONS.skills.heading}{" "}
           <span className="cursive gradient-text text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
-            Constellation
+            {SECTIONS.skills.accent}
           </span>
         </h2>
       </motion.div>
@@ -132,8 +132,7 @@ export const Skills = () => {
         transition={{ delay: 0.2, duration: 0.5 }}
         className="text-gray-400 text-[13px] sm:text-[15px] mb-8 sm:mb-12 max-w-lg leading-relaxed"
       >
-        Every tool I&apos;ve used in production across 4+ years of building
-        enterprise applications.
+        {SECTIONS.skills.description}
       </motion.p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-5">

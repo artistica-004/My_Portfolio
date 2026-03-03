@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { PERSONAL_INFO, SECTIONS } from "@/constants";
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
@@ -11,6 +12,7 @@ export const Contact = () => {
     message: "",
   });
   const [sending, setSending] = useState(false);
+  const section = SECTIONS.contact;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -21,7 +23,7 @@ export const Contact = () => {
     const body = encodeURIComponent(
       `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`
     );
-    window.location.href = `mailto:abhishekayu3008@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:${PERSONAL_INFO.email}?subject=${subject}&body=${body}`;
     setTimeout(() => setSending(false), 2000);
   };
 
@@ -38,7 +40,7 @@ export const Contact = () => {
         className="mb-3 text-center"
       >
         <span className="text-emerald-400/60 font-mono text-[11px] tracking-[0.2em]">
-          {"// 05. CONTACT"}
+          {section.label}
         </span>
       </motion.div>
 
@@ -49,9 +51,9 @@ export const Contact = () => {
         transition={{ delay: 0.1, duration: 0.6 }}
         className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-5 leading-tight text-center"
       >
-        Begin the{" "}
+        {section.heading}{" "}
         <span className="cursive gradient-text text-5xl md:text-6xl lg:text-7xl">
-          Transmission
+          {section.accent}
         </span>
       </motion.h2>
 
@@ -62,8 +64,7 @@ export const Contact = () => {
         transition={{ delay: 0.2, duration: 0.5 }}
         className="text-gray-400 text-[14px] mb-16 max-w-xl mx-auto leading-relaxed text-center"
       >
-        Open to full-time roles, freelance projects, and interesting
-        collaborations. Let&apos;s build something remarkable.
+        {section.description}
       </motion.p>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 max-w-5xl mx-auto">
@@ -82,10 +83,10 @@ export const Contact = () => {
               </span>
             </div>
             <Link
-              href="mailto:abhishekayu3008@gmail.com"
+              href={`mailto:${PERSONAL_INFO.email}`}
               className="text-white text-xl font-mono italic sm:text-2xl md:text-3xl font-bold hover:text-purple-300 transition-colors duration-300 break-all"
             >
-              abhishekayu3008@gmail.com
+              {PERSONAL_INFO.email}
             </Link>
             <div className="h-px bg-white/[0.06] mt-5" />
           </div>
@@ -98,10 +99,10 @@ export const Contact = () => {
               </span>
             </div>
             <Link
-              href="tel:+918874250240"
+              href={`tel:${PERSONAL_INFO.phone}`}
               className="text-white text-lg sm:text-xl font-semibold hover:text-cyan-300 transition-colors duration-300"
             >
-              +91 88742 50240
+              {PERSONAL_INFO.phoneFormatted}
             </Link>
           </div>
 
@@ -114,7 +115,7 @@ export const Contact = () => {
             </div>
             <div className="space-y-3">
               <Link
-                href="https://www.linkedin.com/in/abhishek-ayu"
+                href={PERSONAL_INFO.linkedin}
                 target="_blank"
                 rel="noreferrer noopener"
                 className="flex items-center gap-3 group"
@@ -129,13 +130,13 @@ export const Contact = () => {
                     LinkedIn
                   </p>
                   <p className="text-gray-600 text-[12px] font-mono">
-                    /in/abhishek-verma
+                    {PERSONAL_INFO.linkedinHandle}
                   </p>
                 </div>
               </Link>
 
               <Link
-                href="https://github.com/abhishekayu"
+                href={PERSONAL_INFO.github}
                 target="_blank"
                 rel="noreferrer noopener"
                 className="flex items-center gap-3 group"
@@ -150,7 +151,7 @@ export const Contact = () => {
                     GitHub
                   </p>
                   <p className="text-gray-600 text-[12px] font-mono">
-                    /abhishek-verma
+                    {PERSONAL_INFO.githubHandle}
                   </p>
                 </div>
               </Link>
@@ -168,10 +169,10 @@ export const Contact = () => {
               <span className="text-red-400 text-lg">📍</span>
               <div>
                 <p className="text-white text-[14px] font-semibold">
-                  Mumbai, Maharashtra, India
+                  {PERSONAL_INFO.location}
                 </p>
                 <p className="text-gray-500 text-[11px] font-mono">
-                  IST (UTC+5:30) · Open to remote globally
+                  {PERSONAL_INFO.timezone}
                 </p>
               </div>
             </div>

@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { SECTIONS, AI_INNOVATION } from "@/constants";
 
 export const Encryption = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -12,15 +13,7 @@ export const Encryption = () => {
 
   const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0.95, 1, 1, 0.95]);
-
-  const AI_BADGES = [
-    "LangChain",
-    "LLM APIs",
-    "Prompt Engineering",
-    "Document Analysis",
-    "AI Scoring",
-    "Workflow Automation",
-  ];
+  const section = SECTIONS.innovation;
 
   return (
     <div
@@ -39,26 +32,24 @@ export const Encryption = () => {
           className="mb-4"
         >
           <span className="text-emerald-400/60 font-mono text-[11px] tracking-[0.2em]">
-            {"// AI & INNOVATION"}
+            {section.label}
           </span>
         </motion.div>
 
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
-          Building the{" "}
+          {section.heading}{" "}
           <span className="cursive gradient-text text-5xl md:text-6xl lg:text-7xl">
-            Future
+            {section.accent}
           </span>{" "}
-          with AI
+          {section.suffix}
         </h2>
 
         <p className="text-gray-400 text-[15px] max-w-2xl leading-relaxed mb-10">
-          Integrating Generative AI workflows, LLM-powered features, and
-          intelligent automation into production applications that serve
-          enterprise clients and millions of users.
+          {section.description}
         </p>
 
         <div className="flex flex-wrap gap-3 max-w-xl">
-          {AI_BADGES.map((tech, i) => (
+          {AI_INNOVATION.badges.map((tech, i) => (
             <motion.span
               key={tech}
               initial={{ opacity: 0, y: 20 }}

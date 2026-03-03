@@ -1,11 +1,11 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect, useCallback, useRef } from "react";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { RxGithubLogo, RxLinkedinLogo } from "react-icons/rx";
 import { HiOutlineGlobeAlt } from "react-icons/hi";
-import { PERSONAL_INFO } from "@/constants";
+import { PERSONAL_INFO, HERO_SECTION } from "@/constants";
 
 const MiniTerminal = ({
   fileName,
@@ -279,98 +279,209 @@ const OrbitRing = ({ radius, delay }: { radius: number; delay: number }) => (
   />
 );
 
-const HeroScene = () => (
-  <div className="relative w-[380px] h-[380px] md:w-[460px] md:h-[460px] lg:w-[520px] lg:h-[520px] flex-shrink-0 overflow-visible">
-    <OrbitRing radius={130} delay={0.3} />
-    <OrbitRing radius={190} delay={0.5} />
-    <OrbitRing radius={240} delay={0.6} />
+const HeroScene = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const centerRef = useRef<HTMLDivElement>(null);
+  const roleRef = useRef<HTMLDivElement>(null);
+  const expRef = useRef<HTMLDivElement>(null);
+  const aiRef = useRef<HTMLDivElement>(null);
+  const [conns, setConns] = useState<{ d: string; color: string; flow: string }[]>([]);
 
-    <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+  const updateConns = useCallback(() => {
+    const box = containerRef.current;
+    if (!box) return;
+    const cr = box.getBoundingClientRect();
+    const pos = (el: HTMLDivElement | null) => {
+      if (!el) return { x: cr.width / 2, y: cr.height / 2 };
+      const r = el.getBoundingClientRect();
+      return { x: r.left + r.width / 2 - cr.left, y: r.top + r.height / 2 - cr.top };
+    };
+    const c = pos(centerRef.current);
+    const targets = [
+      { el: roleRef.current, color: "rgba(103,232,249,0.1)", flow: "rgba(103,232,249,0.35)" },
+      { el: expRef.current, color: "rgba(110,231,183,0.1)", flow: "rgba(110,231,183,0.35)" },
+      { el: aiRef.current, color: "rgba(252,211,77,0.1)", flow: "rgba(252,211,77,0.35)" },
+    ];
+    setConns(targets.map(({ el, color, flow }) => {
+      const p = pos(el);
+      const cx1 = c.x + (p.x - c.x) * 0.5;
+      const cx2 = p.x - (p.x - c.x) * 0.5;
+      return { d: `M${c.x},${c.y} C${cx1},${c.y} ${cx2},${p.y} ${p.x},${p.y}`, color, flow };
+    }));
+  }, []);
+
+  useEffect(() => {
+    const t = setTimeout(updateConns, 500);
+    window.addEventListener("resize", updateConns);
+    return () => { clearTimeout(t); window.removeEventListener("resize", updateConns); };
+  }, [updateConns]);
+
+  const onNodeDrag = useCallback(() => {
+    requestAnimationFrame(updateConns);
+  }, [updateConns]);
+
+  return (
+    <div ref={containerRef} className="relative w-[380px] h-[380px] md:w-[460px] md:h-[460px] lg:w-[520px] lg:h-[520px] flex-shrink-0 overflow-visible">
+      <OrbitRing radius={130} delay={0.3} />
+      <OrbitRing radius={190} delay={0.5} />
+      <OrbitRing radius={240} delay={0.6} />
+
+      <svg className="absolute inset-0 w-full h-full pointer-events-none z-[15]" style={{ overflow: "visible" }}>
+        {conns.map((conn, i) => (
+          <g key={i}>
+            <path d={conn.d} fill="none" stroke={conn.color} strokeWidth="1.5" strokeLinecap="round" />
+            <motion.path
+              d={conn.d}
+              fill="none"
+              stroke={conn.flow}
+              strokeWidth="1.5"
+              strokeDasharray="4 14"
+              strokeLinecap="round"
+              animate={{ strokeDashoffset: [0, -36] }}
+              transition={{ duration: 1.8, repeat: Infinity, ease: "linear" }}
+            />
+            <circle r="2.5" fill={conn.flow} opacity="0.9">
+              <animateMotion dur="3.5s" repeatCount="indefinite" path={conn.d} />
+            </circle>
+          </g>
+        ))}
+      </svg>
+
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+        <motion.div
+          ref={centerRef}
+          drag
+          dragMomentum={false}
+          dragElastic={0.1}
+          onDrag={onNodeDrag}
+          onDragEnd={onNodeDrag}
+          whileDrag={{ scale: 1.05 }}
+          whileHover={{ scale: 1.02 }}
+          className="cursor-grab active:cursor-grabbing"
+        >
+          <motion.div
+            animate={{ y: [0, -12, 0] }}
+            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <CenterTerminal />
+          </motion.div>
+        </motion.div>
+      </div>
+
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] rounded-full bg-purple-500/8 blur-[80px] z-0" />
+
       <motion.div
-        animate={{ y: [0, -12, 0] }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+        initial={{ opacity: 0, scale: 0.7 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 0.6, duration: 0.7 }}
+        className="absolute z-20"
+        style={{ right: "-5%", top: "5%" }}
       >
-        <CenterTerminal />
+        <motion.div
+          ref={roleRef}
+          drag
+          dragMomentum={false}
+          dragElastic={0.1}
+          onDrag={onNodeDrag}
+          onDragEnd={onNodeDrag}
+          whileDrag={{ scale: 1.05 }}
+          whileHover={{ scale: 1.02 }}
+          className="cursor-grab active:cursor-grabbing"
+        >
+          <motion.div
+            animate={{ y: [0, -6, 0] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <RoleTerminal />
+          </motion.div>
+        </motion.div>
       </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, scale: 0.7 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 0.9, duration: 0.7 }}
+        className="absolute z-20"
+        style={{ left: "-8%", bottom: "12%" }}
+      >
+        <motion.div
+          ref={expRef}
+          drag
+          dragMomentum={false}
+          dragElastic={0.1}
+          onDrag={onNodeDrag}
+          onDragEnd={onNodeDrag}
+          whileDrag={{ scale: 1.05 }}
+          whileHover={{ scale: 1.02 }}
+          className="cursor-grab active:cursor-grabbing"
+        >
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+          >
+            <ExperienceTerminal />
+          </motion.div>
+        </motion.div>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, scale: 0.7 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 1.2, duration: 0.7 }}
+        className="absolute z-20"
+        style={{ right: "-2%", bottom: "8%" }}
+      >
+        <motion.div
+          ref={aiRef}
+          drag
+          dragMomentum={false}
+          dragElastic={0.1}
+          onDrag={onNodeDrag}
+          onDragEnd={onNodeDrag}
+          whileDrag={{ scale: 1.05 }}
+          whileHover={{ scale: 1.02 }}
+          className="cursor-grab active:cursor-grabbing"
+        >
+          <motion.div
+            animate={{ y: [0, -5, 0] }}
+            transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          >
+            <AITerminal />
+          </motion.div>
+        </motion.div>
+      </motion.div>
+
+      <SpaceOrbit radius={130} duration={18} startAngle={0}>
+        <Planetoid size={10} color="#f59e0b" glow="rgba(245,158,11,0.35)" />
+      </SpaceOrbit>
+      <SpaceOrbit radius={130} duration={18} startAngle={180}>
+        <Planetoid size={8} color="#06b6d4" glow="rgba(6,182,212,0.35)" />
+      </SpaceOrbit>
+      <SpaceOrbit radius={190} duration={30} startAngle={90}>
+        <Planetoid size={7} color="#8b5cf6" glow="rgba(139,92,246,0.35)" />
+      </SpaceOrbit>
+      <SpaceOrbit radius={190} duration={30} startAngle={270}>
+        <Planetoid size={9} color="#f59e0b" glow="rgba(245,158,11,0.3)" />
+      </SpaceOrbit>
+      <SpaceOrbit radius={240} duration={42} startAngle={45}>
+        <Planetoid size={6} color="#06b6d4" glow="rgba(6,182,212,0.3)" />
+      </SpaceOrbit>
+      <SpaceOrbit radius={240} duration={42} startAngle={200}>
+        <Planetoid size={5} color="#10b981" glow="rgba(16,185,129,0.3)" />
+      </SpaceOrbit>
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5, duration: 0.8 }}
+        className="absolute left-1/2 top-[5%] w-px h-[20%] -translate-x-1/2"
+        style={{
+          background: "linear-gradient(to bottom, transparent, rgba(6,182,212,0.3), transparent)",
+        }}
+      />
     </div>
-
-    <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] rounded-full bg-purple-500/8 blur-[80px] z-0" />
-
-    <motion.div
-      initial={{ opacity: 0, scale: 0.7 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ delay: 0.6, duration: 0.7 }}
-      className="absolute z-20"
-      style={{ right: "-5%", top: "5%" }}
-    >
-      <motion.div
-        animate={{ y: [0, -6, 0] }}
-        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-      >
-        <RoleTerminal />
-      </motion.div>
-    </motion.div>
-
-    <motion.div
-      initial={{ opacity: 0, scale: 0.7 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ delay: 0.9, duration: 0.7 }}
-      className="absolute z-20"
-      style={{ left: "-8%", bottom: "12%" }}
-    >
-      <motion.div
-        animate={{ y: [0, 8, 0] }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-      >
-        <ExperienceTerminal />
-      </motion.div>
-    </motion.div>
-
-    <motion.div
-      initial={{ opacity: 0, scale: 0.7 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ delay: 1.2, duration: 0.7 }}
-      className="absolute z-20"
-      style={{ right: "-2%", bottom: "8%" }}
-    >
-      <motion.div
-        animate={{ y: [0, -5, 0] }}
-        transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-      >
-        <AITerminal />
-      </motion.div>
-    </motion.div>
-
-    <SpaceOrbit radius={130} duration={18} startAngle={0}>
-      <Planetoid size={10} color="#f59e0b" glow="rgba(245,158,11,0.35)" />
-    </SpaceOrbit>
-    <SpaceOrbit radius={130} duration={18} startAngle={180}>
-      <Planetoid size={8} color="#06b6d4" glow="rgba(6,182,212,0.35)" />
-    </SpaceOrbit>
-    <SpaceOrbit radius={190} duration={30} startAngle={90}>
-      <Planetoid size={7} color="#8b5cf6" glow="rgba(139,92,246,0.35)" />
-    </SpaceOrbit>
-    <SpaceOrbit radius={190} duration={30} startAngle={270}>
-      <Planetoid size={9} color="#f59e0b" glow="rgba(245,158,11,0.3)" />
-    </SpaceOrbit>
-    <SpaceOrbit radius={240} duration={42} startAngle={45}>
-      <Planetoid size={6} color="#06b6d4" glow="rgba(6,182,212,0.3)" />
-    </SpaceOrbit>
-    <SpaceOrbit radius={240} duration={42} startAngle={200}>
-      <Planetoid size={5} color="#10b981" glow="rgba(16,185,129,0.3)" />
-    </SpaceOrbit>
-
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ delay: 1.5, duration: 0.8 }}
-      className="absolute left-1/2 top-[5%] w-px h-[20%] -translate-x-1/2"
-      style={{
-        background: "linear-gradient(to bottom, transparent, rgba(6,182,212,0.3), transparent)",
-      }}
-    />
-  </div>
-);
+  );
+};
 
 const useTypingText = (texts: string[], typingSpeed = 80, deletingSpeed = 40, pauseTime = 2000) => {
   const [displayText, setDisplayText] = useState("");
@@ -430,7 +541,7 @@ export const HeroContent = () => {
           >
             <span className="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_3px_rgba(52,211,153,0.4)]" />
             <span className="text-emerald-400 text-[12px] font-mono tracking-wide">
-              Building Full Stack Web With Gen AI
+              {HERO_SECTION.badge}
             </span>
           </motion.div>
 
@@ -455,7 +566,7 @@ export const HeroContent = () => {
               transition={{ delay: 0.3, duration: 1, ease: [0.22, 1, 0.36, 1] }}
               className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-300"
             >
-              Abhishek
+              {PERSONAL_INFO.firstName}
             </motion.span>
             <motion.span
               initial={{ opacity: 0, y: 100 }}
@@ -463,7 +574,7 @@ export const HeroContent = () => {
               transition={{ delay: 0.45, duration: 1, ease: [0.22, 1, 0.36, 1] }}
               className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-300"
             >
-              Verma
+              {PERSONAL_INFO.lastName}
             </motion.span>
           </motion.h1>
 
@@ -477,12 +588,7 @@ export const HeroContent = () => {
               transition={{ delay: 0.6, duration: 0.7 }}
               className="text-gray-400 text-[15px] md:text-base leading-relaxed max-w-[480px] mb-9"
             >
-              4+ years building scalable, data-driven web applications
-              using React, Next.js, Node.js, and Python. Experienced in
-              integrating Generative AI features such as LLM-powered chat,
-              document analysis, and AI scoring into production systems, with
-              a strong focus on performance, system design, and real-world
-              business use cases.
+              {PERSONAL_INFO.shortSummary}
             </motion.p>
 
             <motion.div
@@ -492,7 +598,7 @@ export const HeroContent = () => {
               className="flex flex-wrap gap-4 mb-10"
             >
               <Link
-                href="#projects"
+                href={HERO_SECTION.ctaButtons[0].href}
                 className="flex items-center gap-2 py-3 px-7 rounded-full bg-gradient-to-r from-purple-600 to-purple-500
                   text-white text-[14px] font-semibold hover:shadow-lg hover:shadow-purple-500/25
                   hover:scale-105 active:scale-[0.98] transition-all duration-300"
@@ -500,15 +606,15 @@ export const HeroContent = () => {
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
                 </svg>
-                View My Work
+                {HERO_SECTION.ctaButtons[0].text}
               </Link>
               <Link
-                href="#contact"
+                href={HERO_SECTION.ctaButtons[1].href}
                 className="py-3 px-7 rounded-full border border-white/[0.12] text-white text-[14px] font-semibold
                   hover:bg-white/[0.05] hover:border-white/[0.2] hover:scale-105
                   active:scale-[0.98] transition-all duration-300"
               >
-                Get In Touch
+                {HERO_SECTION.ctaButtons[1].text}
               </Link>
             </motion.div>
           </motion.div>
@@ -520,7 +626,7 @@ export const HeroContent = () => {
             className="flex items-center gap-5 text-gray-500"
           >
             <Link
-              href="https://www.linkedin.com/in/abhishek-ayu"
+              href={PERSONAL_INFO.linkedin}
               target="_blank"
               rel="noreferrer noopener"
               className="hover:text-blue-400 transition-colors duration-300"
@@ -528,7 +634,7 @@ export const HeroContent = () => {
               <RxLinkedinLogo className="w-[18px] h-[18px]" />
             </Link>
             <Link
-              href="https://github.com/abhishekayu"
+              href={PERSONAL_INFO.github}
               target="_blank"
               rel="noreferrer noopener"
               className="hover:text-white transition-colors duration-300"
@@ -537,7 +643,7 @@ export const HeroContent = () => {
             </Link>
             <HiOutlineGlobeAlt className="w-[18px] h-[18px]" />
             <span className="text-[12px] font-mono tracking-wide text-gray-500">
-              +91 88742 50240
+              {PERSONAL_INFO.phoneFormatted}
             </span>
           </motion.div>
         </motion.div>

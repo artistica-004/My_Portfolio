@@ -1,14 +1,21 @@
 {
   "personalInfo": {
     "name": "Abhishek Verma",
+    "firstName": "Abhishek",
+    "lastName": "Verma",
     "title": "Full Stack Developer",
     "phone": "+91 8874250240",
+    "phoneFormatted": "+91 88742 50240",
     "email": "abhishekayu3008@gmail.com",
     "linkedin": "https://www.linkedin.com/in/abhishek-ayu",
+    "linkedinHandle": "/in/abhishek-ayu",
     "github": "https://github.com/abhishekayu",
+    "githubHandle": "/abhishekayu",
     "portfolio": "#",
     "location": "Mumbai, Maharashtra, India",
+    "timezone": "IST (UTC+5:30) · Open to remote globally",
     "summary": "Full Stack Gen AI Developer with 4+ years of experience building scalable, data-driven web applications using React, Next.js, Node.js, and Python. Experienced in integrating Generative AI features such as LLM-powered chat, document analysis, and AI scoring into production systems, with a strong focus on performance, system design, and real-world business use cases.",
+    "shortSummary": "4+ years building scalable, data-driven web applications using React, Next.js, Node.js, and Python. Experienced in integrating Generative AI features such as LLM-powered chat, document analysis, and AI scoring into production systems, with a strong focus on performance, system design, and real-world business use cases.",
     "typingTexts": [
       "Full Stack Gen AI Developer",
       "Frontend Architect and Engineer",
@@ -52,6 +59,70 @@
     { "title": "Projects", "link": "#projects" },
     { "title": "Contact", "link": "#contact" }
   ],
+
+  "heroSection": {
+    "badge": "Building Full Stack Web With Gen AI",
+    "ctaButtons": [
+      { "text": "View My Work", "href": "#projects", "primary": true },
+      { "text": "Get In Touch", "href": "#contact", "primary": false }
+    ]
+  },
+
+  "sections": {
+    "about": {
+      "label": "// 01. ABOUT",
+      "heading": "Exploring the",
+      "accent": "Digital Cosmos"
+    },
+    "skills": {
+      "label": "// 02. SKILLS",
+      "heading": "Tech",
+      "accent": "Constellation",
+      "description": "Every tool I've used in production across 4+ years of building enterprise applications."
+    },
+    "experience": {
+      "label": "// 03. EXPERIENCE",
+      "heading": "Mission",
+      "accent": "Log"
+    },
+    "projects": {
+      "label": "// 04. PROJECTS",
+      "heading": "Space",
+      "accent": "Missions",
+      "description": "Production-grade applications shipped for enterprise clients and built as flagship products."
+    },
+    "contact": {
+      "label": "// 05. CONTACT",
+      "heading": "Begin the",
+      "accent": "Transmission",
+      "description": "Open to full-time roles, freelance projects, and interesting collaborations. Let's build something remarkable."
+    },
+    "innovation": {
+      "label": "// AI & INNOVATION",
+      "heading": "Building the",
+      "accent": "Future",
+      "suffix": "with AI",
+      "description": "Integrating Generative AI workflows, LLM-powered features, and intelligent automation into production applications that serve enterprise clients and millions of users."
+    }
+  },
+
+  "aboutSection": {
+    "stats": [
+      { "value": "4+", "label": "Years Experience" },
+      { "value": "8+", "label": "Enterprise Clients" },
+      { "value": "7+", "label": "Projects Delivered" },
+      { "value": "8", "label": "GPA · BCA" }
+    ],
+    "badges": [
+      { "text": "Mumbai, Maharashtra", "colorScheme": "purple" },
+      { "text": "BCA · Integral University, Lucknow", "colorScheme": "cyan" },
+      { "text": "2 NPM Packages Published", "colorScheme": "emerald" },
+      { "text": "Android & iOS Apps Shipped", "colorScheme": "amber" }
+    ],
+    "enterpriseClients": ["KPMG", "RBL", "Vodafone", "Indian Oil", "American Express", "Croma", "Asian Paints"],
+    "currentCompany": "Futurense (Aditya Birla Group)",
+    "currentRole": "leading frontend development and shipping Generative AI features into production systems"
+  },
 
   "experience": [
     {
@@ -106,7 +177,12 @@
       ],
       "tech": ["React.js", "Redux", "JavaScript", "Python", "FastAPI", "PostgreSQL", "Tailwind", "Plotly", "Google Maps", "Service Workers", "WebView", "SEO"],
       "gradient": "from-purple-600 via-violet-600 to-indigo-600",
-      "link": "#"
+      "link": "#",
+      "badges": [
+        "50% load performance improvement",
+        "LangChain AI workflow",
+        "Cross-platform mobile apps"
+      ]
     },
     {
       "title": "Indian Oil",
@@ -117,7 +193,12 @@
       ],
       "tech": ["React.js", "Redux.js", "JavaScript", "Ant Design", "Antd Charts", "Google Maps API", "DeckGL", "Node.js", "Jest", "Express.js", "PostgreSQL"],
       "gradient": "from-orange-600 via-red-600 to-rose-600",
-      "link": "#"
+      "link": "#",
+      "badges": [
+        "50% performance uplift",
+        "DeckGL geo-visualization",
+        "Vite.js migration"
+      ]
     },
     {
       "title": "Lepton Maps",
@@ -128,7 +209,12 @@
       ],
       "tech": ["React.js", "Next.js", "JavaScript", "TypeScript", "Shadcn", "Tailwind", "Zustand", "TanStack", "Python", "DeckGL", "Google Maps", "Jest", "Charts"],
       "gradient": "from-emerald-600 via-teal-600 to-cyan-600",
-      "link": "#"
+      "link": "#",
+      "badges": [
+        "40% faster deployments",
+        "Role-based dynamic UI",
+        "Real-time insights"
+      ]
     },
     {
       "title": "Smart Market",
@@ -140,7 +226,12 @@
       ],
       "tech": ["React.js", "Next.js", "JavaScript", "TypeScript", "Shadcn", "Tailwind", "Zustand", "TanStack", "Python", "DeckGL", "Google Maps", "Vite", "Jest"],
       "gradient": "from-blue-600 via-indigo-600 to-purple-600",
-      "link": "#"
+      "link": "#",
+      "badges": [
+        "45% UI performance gain",
+        "Web Workers + Memoization",
+        "TanStack Query migration"
+      ]
     },
     {
       "title": "API Health and Consumption Monitor",
@@ -151,7 +242,12 @@
       ],
       "tech": ["React.js", "JavaScript", "Tailwind", "Node.js", "Express", "SQLite", "Slack API", "Vite", "Jest"],
       "gradient": "from-amber-600 via-yellow-600 to-orange-600",
-      "link": "#"
+      "link": "#",
+      "badges": [
+        "Slack + Email alerts",
+        "Real-time health tracking",
+        "Markdown message design"
+      ]
     },
     {
       "title": "RBL Gateway",
@@ -161,7 +257,12 @@
       ],
       "tech": ["React.js", "JavaScript", "Tailwind", "Node.js", "Express", "SQLite", "Jest"],
       "gradient": "from-rose-600 via-pink-600 to-fuchsia-600",
-      "link": "#"
+      "link": "#",
+      "badges": [
+        "OpenPGP encryption",
+        "Banking-grade security",
+        "Secure gateway"
+      ]
     },
     {
       "title": "Smart Campus",
@@ -171,7 +272,12 @@
       ],
       "tech": ["React.js", "JavaScript", "Tailwind", "Three.js", "Supabase", "Jest"],
       "gradient": "from-sky-600 via-blue-600 to-indigo-600",
-      "link": "#"
+      "link": "#",
+      "badges": [
+        "Three.js 3D visualization",
+        "Telecom infrastructure map",
+        "Real-time Supabase data"
+      ]
     }
   ],
 
@@ -216,6 +322,10 @@
     "Ant Design", "Jest", "Playwright", "Vite", "Git",
     "Service Workers", "Web Workers", "WebView", "SEO", "Bootstrap"
   ],
+
+  "aiInnovation": {
+    "badges": ["LangChain", "LLM APIs", "Prompt Engineering", "Document Analysis", "AI Scoring", "Workflow Automation"]
+  },
 
   "education": {
     "degree": "Bachelor of Computer Applications",
