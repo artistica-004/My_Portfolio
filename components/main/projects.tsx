@@ -87,9 +87,10 @@ const FeaturedProjectCard = ({
   index: number;
 }) => {
   const badges = PROJECT_BADGES[project.title] || [];
-  const maxTech = 6;
+  const maxTech = 15;
   const visibleTech = project.tech.slice(0, maxTech);
   const remaining = project.tech.length - maxTech;
+  const hasLink = project.link && project.link !== "#";
 
   return (
     <motion.div
@@ -108,7 +109,11 @@ const FeaturedProjectCard = ({
           <span className="text-[10px] px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/25 font-semibold tracking-wider uppercase flex items-center gap-1">
             ★ Features
           </span>
-          <ExternalLinkIcon className="w-4 h-4 text-gray-600 hover:text-white transition-colors cursor-pointer" />
+          {hasLink && (
+            <Link href={project.link} target="_blank" rel="noreferrer noopener">
+              <ExternalLinkIcon className="w-4 h-4 text-gray-600 hover:text-white transition-colors cursor-pointer" />
+            </Link>
+          )}
         </div>
       </div>
 
@@ -118,9 +123,19 @@ const FeaturedProjectCard = ({
       </h3>
 
       {/* Description */}
-      <p className="text-gray-400 text-[13px] leading-relaxed mb-5">
+      <p className="text-gray-400 text-[13px] leading-relaxed mb-4">
         {project.description}
       </p>
+
+      {/* Resume highlights */}
+      <ul className="space-y-2.5 mb-5">
+        {project.highlights.map((highlight, i) => (
+          <li key={i} className="flex gap-2.5 text-[12px] text-gray-300/90 leading-[1.7]">
+            <span className="text-amber-400/70 flex-shrink-0 text-[9px] mt-[3px]">✦</span>
+            <span>{highlight}</span>
+          </li>
+        ))}
+      </ul>
 
       {/* Feature badges */}
       <div className="flex flex-wrap gap-2 mb-5">
@@ -151,15 +166,17 @@ const FeaturedProjectCard = ({
       </div>
 
       {/* View Project link */}
-      <Link
-        href={project.link || "#"}
-        target={project.link !== "#" ? "_blank" : undefined}
-        rel="noreferrer noopener"
-        className="inline-flex items-center gap-2 text-sm text-cyan-400 hover:text-cyan-300 transition-colors font-mono"
-      >
-        <ExternalLinkIcon className="w-3.5 h-3.5" />
-        View Project →
-      </Link>
+      {hasLink && (
+        <Link
+          href={project.link}
+          target="_blank"
+          rel="noreferrer noopener"
+          className="inline-flex items-center gap-2 text-sm text-cyan-400 hover:text-cyan-300 transition-colors font-mono"
+        >
+          <ExternalLinkIcon className="w-3.5 h-3.5" />
+          View Project →
+        </Link>
+      )}
     </motion.div>
   );
 };
@@ -171,10 +188,10 @@ const StandardProjectCard = ({
   project: (typeof PROJECTS)[number];
   index: number;
 }) => {
-  const badges = PROJECT_BADGES[project.title] || [];
-  const maxTech = 4;
+  const maxTech = 15;
   const visibleTech = project.tech.slice(0, maxTech);
   const remaining = project.tech.length - maxTech;
+  const hasLink = project.link && project.link !== "#";
 
   return (
     <motion.div
@@ -189,7 +206,11 @@ const StandardProjectCard = ({
         <span className="text-gray-500 font-mono text-[10px] tracking-[0.15em] uppercase">
           {"Mission " + String(index + 1).padStart(2, "0")}
         </span>
-        <ExternalLinkIcon className="w-3.5 h-3.5 text-gray-600" />
+        {hasLink && (
+          <Link href={project.link} target="_blank" rel="noreferrer noopener">
+            <ExternalLinkIcon className="w-3.5 h-3.5 text-gray-600 hover:text-white transition-colors" />
+          </Link>
+        )}
       </div>
 
       {/* Title */}
@@ -198,18 +219,16 @@ const StandardProjectCard = ({
       </h3>
 
       {/* Description */}
-      <p className="text-gray-400 text-[12px] leading-relaxed mb-4">
+      <p className="text-gray-400 text-[12px] leading-relaxed mb-3">
         {project.description}
       </p>
 
-      {/* Bullet features */}
-      <ul className="space-y-1.5 mb-4">
-        {badges.map((badge, i) => (
-          <li key={i} className="flex gap-2 text-[12px] text-gray-300">
-            <span className="text-purple-400 flex-shrink-0 text-[10px] mt-0.5">
-              ✦
-            </span>
-            <span>{badge}</span>
+      {/* Resume highlights */}
+      <ul className="space-y-2 mb-4">
+        {project.highlights.map((highlight, i) => (
+          <li key={i} className="flex gap-2 text-[12px] text-gray-300/90 leading-[1.7]">
+            <span className="text-purple-400 flex-shrink-0 text-[10px] mt-0.5">✦</span>
+            <span>{highlight}</span>
           </li>
         ))}
       </ul>
@@ -227,15 +246,17 @@ const StandardProjectCard = ({
       </div>
 
       {/* View link */}
-      <Link
-        href={project.link || "#"}
-        target={project.link !== "#" ? "_blank" : undefined}
-        rel="noreferrer noopener"
-        className="inline-flex items-center gap-1.5 text-xs text-cyan-400 hover:text-cyan-300 transition-colors font-mono"
-      >
-        <ExternalLinkIcon className="w-3 h-3" />
-        View
-      </Link>
+      {hasLink && (
+        <Link
+          href={project.link}
+          target="_blank"
+          rel="noreferrer noopener"
+          className="inline-flex items-center gap-1.5 text-xs text-cyan-400 hover:text-cyan-300 transition-colors font-mono"
+        >
+          <ExternalLinkIcon className="w-3 h-3" />
+          View Project →
+        </Link>
+      )}
     </motion.div>
   );
 };

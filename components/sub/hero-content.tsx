@@ -1,9 +1,11 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState, useEffect, useCallback } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { RxGithubLogo, RxLinkedinLogo } from "react-icons/rx";
 import { HiOutlineGlobeAlt } from "react-icons/hi";
+import { PERSONAL_INFO } from "@/constants";
 
 /* ─── Reusable Mini Code Terminal ─── */
 const MiniTerminal = ({
@@ -132,12 +134,16 @@ const CenterTerminal = () => (
     glowColor="rgba(139, 92, 246, 0.08)"
     codeLines={[
       { indent: 0, tokens: [{ text: "const", color: "rgba(198,160,221,0.7)" }, { text: " dev", color: "rgba(229,192,123,0.65)" }, { text: " = {", color: "rgba(171,178,191,0.5)" }] },
-      { indent: 1, tokens: [{ text: "name", color: "rgba(224,108,117,0.6)" }, { text: ": ", color: "rgba(171,178,191,0.4)" }, { text: "'Abhishek'", color: "rgba(152,195,121,0.65)" }, { text: ",", color: "rgba(171,178,191,0.4)" }] },
-      { indent: 1, tokens: [{ text: "role", color: "rgba(224,108,117,0.6)" }, { text: ": ", color: "rgba(171,178,191,0.4)" }, { text: "'FullStack'", color: "rgba(152,195,121,0.65)" }, { text: ",", color: "rgba(171,178,191,0.4)" }] },
-      { indent: 1, tokens: [{ text: "stack", color: "rgba(224,108,117,0.6)" }, { text: ": ", color: "rgba(171,178,191,0.4)" }, { text: "'React+AI'", color: "rgba(152,195,121,0.65)" }] },
+      { indent: 1, tokens: [{ text: "name", color: "rgba(224,108,117,0.6)" }, { text: ": ", color: "rgba(171,178,191,0.4)" }, { text: "'Abhishek Verma'", color: "rgba(152,195,121,0.65)" }, { text: ",", color: "rgba(171,178,191,0.4)" }] },
+      { indent: 1, tokens: [{ text: "role", color: "rgba(224,108,117,0.6)" }, { text: ": ", color: "rgba(171,178,191,0.4)" }, { text: "'Full Stack Dev'", color: "rgba(152,195,121,0.65)" }, { text: ",", color: "rgba(171,178,191,0.4)" }] },
+      { indent: 1, tokens: [{ text: "stack", color: "rgba(224,108,117,0.6)" }, { text: ": ", color: "rgba(171,178,191,0.4)" }, { text: "'React+Next+AI'", color: "rgba(152,195,121,0.65)" }, { text: ",", color: "rgba(171,178,191,0.4)" }] },
+      { indent: 1, tokens: [{ text: "exp", color: "rgba(224,108,117,0.6)" }, { text: ": ", color: "rgba(171,178,191,0.4)" }, { text: "'4+ years'", color: "rgba(152,195,121,0.65)" }, { text: ",", color: "rgba(171,178,191,0.4)" }] },
+      { indent: 1, tokens: [{ text: "focus", color: "rgba(224,108,117,0.6)" }, { text: ": ", color: "rgba(171,178,191,0.4)" }, { text: "'Perf & Design'", color: "rgba(152,195,121,0.65)" }, { text: ",", color: "rgba(171,178,191,0.4)" }] },
+      { indent: 1, tokens: [{ text: "clients", color: "rgba(224,108,117,0.6)" }, { text: ": ", color: "rgba(171,178,191,0.4)" }, { text: "'Enterprise'", color: "rgba(152,195,121,0.65)" }, { text: ",", color: "rgba(171,178,191,0.4)" }] },
+      { indent: 1, tokens: [{ text: "packages", color: "rgba(224,108,117,0.6)" }, { text: ": ", color: "rgba(171,178,191,0.4)" }, { text: "2", color: "rgba(209,154,102,0.65)" }] },
       { indent: 0, tokens: [{ text: "};", color: "rgba(171,178,191,0.5)" }] },
       { indent: 0, tokens: [] },
-      { indent: 0, tokens: [{ text: "export", color: "rgba(198,160,221,0.7)" }, { text: " dev", color: "rgba(229,192,123,0.65)" }, { text: ";", color: "rgba(171,178,191,0.5)" }] },
+      { indent: 0, tokens: [{ text: "export", color: "rgba(198,160,221,0.7)" }, { text: " default", color: "rgba(198,160,221,0.7)" }, { text: " dev", color: "rgba(229,192,123,0.65)" }, { text: ";", color: "rgba(171,178,191,0.5)" }] },
     ]}
   />
 );
@@ -159,7 +165,9 @@ const RoleTerminal = () => (
       { indent: 0, tokens: [{ text: "export", color: "rgba(103,232,249,0.6)" }, { text: " const", color: "rgba(198,160,221,0.6)" }, { text: " role", color: "rgba(229,192,123,0.55)" }, { text: " = {", color: "rgba(143,171,190,0.45)" }] },
       { indent: 1, tokens: [{ text: "company", color: "rgba(86,182,194,0.55)" }, { text: ": ", color: "rgba(143,171,190,0.4)" }, { text: "'Futurense'", color: "rgba(136,221,237,0.55)" }, { text: ",", color: "rgba(143,171,190,0.4)" }] },
       { indent: 1, tokens: [{ text: "group", color: "rgba(86,182,194,0.55)" }, { text: ": ", color: "rgba(143,171,190,0.4)" }, { text: "'Aditya Birla'", color: "rgba(136,221,237,0.55)" }, { text: ",", color: "rgba(143,171,190,0.4)" }] },
-      { indent: 1, tokens: [{ text: "title", color: "rgba(86,182,194,0.55)" }, { text: ": ", color: "rgba(143,171,190,0.4)" }, { text: "'Full Stack'", color: "rgba(136,221,237,0.55)" }] },
+      { indent: 1, tokens: [{ text: "title", color: "rgba(86,182,194,0.55)" }, { text: ": ", color: "rgba(143,171,190,0.4)" }, { text: "'Full Stack'", color: "rgba(136,221,237,0.55)" }, { text: ",", color: "rgba(143,171,190,0.4)" }] },
+      { indent: 1, tokens: [{ text: "location", color: "rgba(86,182,194,0.55)" }, { text: ": ", color: "rgba(143,171,190,0.4)" }, { text: "'Mumbai'", color: "rgba(136,221,237,0.55)" }, { text: ",", color: "rgba(143,171,190,0.4)" }] },
+      { indent: 1, tokens: [{ text: "lead", color: "rgba(86,182,194,0.55)" }, { text: ": ", color: "rgba(143,171,190,0.4)" }, { text: "true", color: "rgba(209,154,102,0.6)" }] },
       { indent: 0, tokens: [{ text: "};", color: "rgba(143,171,190,0.45)" }] },
     ]}
   />
@@ -181,8 +189,10 @@ const ExperienceTerminal = () => (
     codeLines={[
       { indent: 0, tokens: [{ text: "const", color: "rgba(110,231,183,0.6)" }, { text: " exp", color: "rgba(229,192,123,0.55)" }, { text: " = {", color: "rgba(143,187,170,0.45)" }] },
       { indent: 1, tokens: [{ text: "years", color: "rgba(85,185,138,0.55)" }, { text: ": ", color: "rgba(143,187,170,0.4)" }, { text: "4", color: "rgba(181,232,204,0.55)" }, { text: ",", color: "rgba(143,187,170,0.4)" }] },
-      { indent: 1, tokens: [{ text: "level", color: "rgba(85,185,138,0.55)" }, { text: ": ", color: "rgba(143,187,170,0.4)" }, { text: "'Production'", color: "rgba(134,239,172,0.5)" }, { text: ",", color: "rgba(143,187,170,0.4)" }] },
-      { indent: 1, tokens: [{ text: "apps", color: "rgba(85,185,138,0.55)" }, { text: ": ", color: "rgba(143,187,170,0.4)" }, { text: "'Enterprise'", color: "rgba(134,239,172,0.5)" }] },
+      { indent: 1, tokens: [{ text: "companies", color: "rgba(85,185,138,0.55)" }, { text: ": ", color: "rgba(143,187,170,0.4)" }, { text: "3", color: "rgba(181,232,204,0.55)" }, { text: ",", color: "rgba(143,187,170,0.4)" }] },
+      { indent: 1, tokens: [{ text: "clients", color: "rgba(85,185,138,0.55)" }, { text: ": ", color: "rgba(143,187,170,0.4)" }, { text: "'KPMG,RBL'", color: "rgba(134,239,172,0.5)" }, { text: ",", color: "rgba(143,187,170,0.4)" }] },
+      { indent: 1, tokens: [{ text: "perf", color: "rgba(85,185,138,0.55)" }, { text: ": ", color: "rgba(143,187,170,0.4)" }, { text: "'+50%'", color: "rgba(134,239,172,0.5)" }, { text: ",", color: "rgba(143,187,170,0.4)" }] },
+      { indent: 1, tokens: [{ text: "apps", color: "rgba(85,185,138,0.55)" }, { text: ": ", color: "rgba(143,187,170,0.4)" }, { text: "8", color: "rgba(181,232,204,0.55)" }] },
       { indent: 0, tokens: [{ text: "};", color: "rgba(143,187,170,0.45)" }] },
     ]}
   />
@@ -203,9 +213,12 @@ const AITerminal = () => (
     size="sm"
     codeLines={[
       { indent: 0, tokens: [{ text: "from", color: "rgba(251,191,36,0.6)" }, { text: " langchain ", color: "rgba(252,211,77,0.55)" }, { text: "import", color: "rgba(251,191,36,0.6)" }, { text: " LLM", color: "rgba(229,192,123,0.55)" }] },
+      { indent: 0, tokens: [{ text: "from", color: "rgba(251,191,36,0.6)" }, { text: " fastapi ", color: "rgba(252,211,77,0.55)" }, { text: "import", color: "rgba(251,191,36,0.6)" }, { text: " App", color: "rgba(229,192,123,0.55)" }] },
       { indent: 0, tokens: [] },
-      { indent: 0, tokens: [{ text: "model", color: "rgba(212,164,74,0.55)" }, { text: " = ", color: "rgba(187,162,110,0.4)" }, { text: "LLM", color: "rgba(229,192,123,0.55)" }, { text: "(", color: "rgba(187,162,110,0.4)" }] },
-      { indent: 1, tokens: [{ text: "engine", color: "rgba(212,164,74,0.55)" }, { text: "=", color: "rgba(187,162,110,0.4)" }, { text: "'GenAI'", color: "rgba(253,230,138,0.5)" }] },
+      { indent: 0, tokens: [{ text: "ai", color: "rgba(212,164,74,0.55)" }, { text: " = ", color: "rgba(187,162,110,0.4)" }, { text: "LLM", color: "rgba(229,192,123,0.55)" }, { text: "(", color: "rgba(187,162,110,0.4)" }] },
+      { indent: 1, tokens: [{ text: "engine", color: "rgba(212,164,74,0.55)" }, { text: "=", color: "rgba(187,162,110,0.4)" }, { text: "'GenAI'", color: "rgba(253,230,138,0.5)" }, { text: ",", color: "rgba(187,162,110,0.4)" }] },
+      { indent: 1, tokens: [{ text: "tasks", color: "rgba(212,164,74,0.55)" }, { text: "=", color: "rgba(187,162,110,0.4)" }, { text: "['chat',", color: "rgba(253,230,138,0.5)" }] },
+      { indent: 2, tokens: [{ text: "'doc_analysis']", color: "rgba(253,230,138,0.5)" }] },
       { indent: 0, tokens: [{ text: ")", color: "rgba(187,162,110,0.4)" }] },
     ]}
   />
@@ -369,8 +382,51 @@ const HeroScene = () => (
   </div>
 );
 
+/* ─── Typing Text Hook ─── */
+const useTypingText = (texts: string[], typingSpeed = 80, deletingSpeed = 40, pauseTime = 2000) => {
+  const [displayText, setDisplayText] = useState("");
+  const [textIndex, setTextIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  const tick = useCallback(() => {
+    const currentFullText = texts[textIndex];
+
+    if (!isDeleting) {
+      // Typing
+      setDisplayText(currentFullText.substring(0, displayText.length + 1));
+      if (displayText.length + 1 === currentFullText.length) {
+        setTimeout(() => setIsDeleting(true), pauseTime);
+        return;
+      }
+    } else {
+      // Deleting
+      setDisplayText(currentFullText.substring(0, displayText.length - 1));
+      if (displayText.length - 1 === 0) {
+        setIsDeleting(false);
+        setTextIndex((prev) => (prev + 1) % texts.length);
+        return;
+      }
+    }
+  }, [displayText, isDeleting, textIndex, texts, pauseTime]);
+
+  useEffect(() => {
+    const speed = isDeleting ? deletingSpeed : typingSpeed;
+    const timer = setTimeout(tick, speed);
+    return () => clearTimeout(timer);
+  }, [tick, isDeleting, typingSpeed, deletingSpeed]);
+
+  return displayText;
+};
+
 /* ─── Main HeroContent ─── */
 export const HeroContent = () => {
+  const typedText = useTypingText(
+    PERSONAL_INFO.typingTexts || ["Full Stack Developer"],
+    80,
+    40,
+    2000
+  );
+
   return (
     <div className="relative flex items-center justify-center w-full min-h-screen z-[20] px-6 md:px-12 lg:px-20 overflow-hidden">
       <div className="w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-8 lg:gap-8 mt-16 lg:mt-0">
@@ -390,19 +446,22 @@ export const HeroContent = () => {
           >
             <span className="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_3px_rgba(52,211,153,0.4)]" />
             <span className="text-emerald-400 text-[12px] font-mono tracking-wide">
-              Available for opportunities
+              Building Full Stack Web With Gen AI
             </span>
           </motion.div>
 
-          {/* Subtitle */}
-          <motion.p
+          {/* Typing subtitle */}
+          <motion.div
             initial={{ opacity: 0, y: -15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.35, duration: 0.6 }}
-            className="text-cyan-400/80 text-[12px] sm:text-[13px] font-mono tracking-[0.25em] uppercase mb-5"
+            className="h-6 mb-5 flex items-center"
           >
-            Full Stack Developer · AI Integrations
-          </motion.p>
+            <span className="text-cyan-400/80 text-[12px] sm:text-[13px] font-mono tracking-[0.25em] uppercase">
+              {typedText}
+            </span>
+            <span className="inline-block w-[2px] h-[14px] bg-cyan-400/70 ml-[2px] animate-pulse" />
+          </motion.div>
 
           {/* Name — pulled upward with stagger */}
           <motion.h1
@@ -483,7 +542,7 @@ export const HeroContent = () => {
             className="flex items-center gap-5 text-gray-500"
           >
             <Link
-              href="https://linkedin.com/in/abhishek-verma"
+              href="https://www.linkedin.com/in/abhishek-ayu"
               target="_blank"
               rel="noreferrer noopener"
               className="hover:text-blue-400 transition-colors duration-300"
@@ -491,7 +550,7 @@ export const HeroContent = () => {
               <RxLinkedinLogo className="w-[18px] h-[18px]" />
             </Link>
             <Link
-              href="https://github.com/abhishekverma"
+              href="https://github.com/abhishekayu"
               target="_blank"
               rel="noreferrer noopener"
               className="hover:text-white transition-colors duration-300"

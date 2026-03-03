@@ -115,6 +115,12 @@ export const About = () => {
             teams, and pushing the boundaries of what the web can do.
           </p>
 
+          <p className="text-gray-300 leading-relaxed text-[15px]">
+            Beyond the web, I&apos;ve developed and shipped{" "}
+            <strong className="text-white">Android and iOS applications</strong>,
+            ensuring feature parity and consistent performance across platforms.
+          </p>
+
           {/* Badges */}
           <div className="flex flex-wrap gap-3 pt-4">
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 text-sm">
@@ -168,6 +174,23 @@ export const About = () => {
               </svg>
               2 NPM Packages Published
             </span>
+
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-300 text-sm">
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
+                />
+              </svg>
+              Android & iOS Apps Shipped
+            </span>
           </div>
         </motion.div>
 
@@ -177,7 +200,7 @@ export const About = () => {
           <div className="grid grid-cols-2 gap-4">
             <StatCard value="4+" label="Years Experience" delay={0.2} />
             <StatCard value="8+" label="Enterprise Clients" delay={0.3} />
-            <StatCard value="50%" label="Bundle Size Reduction" delay={0.4} />
+            <StatCard value="7+" label="Projects Delivered" delay={0.4} />
             <StatCard value="8" label="GPA · BCA" delay={0.5} />
           </div>
 

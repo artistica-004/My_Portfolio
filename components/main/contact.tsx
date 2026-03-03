@@ -122,7 +122,7 @@ export const Contact = () => {
             </div>
             <div className="space-y-3">
               <Link
-                href="https://linkedin.com/in/abhishek-verma"
+                href="https://www.linkedin.com/in/abhishek-ayu"
                 target="_blank"
                 rel="noreferrer noopener"
                 className="flex items-center gap-3 group"
@@ -143,7 +143,7 @@ export const Contact = () => {
               </Link>
 
               <Link
-                href="https://github.com/abhishekverma"
+                href="https://github.com/abhishekayu"
                 target="_blank"
                 rel="noreferrer noopener"
                 className="flex items-center gap-3 group"

@@ -4,25 +4,26 @@
     "title": "Full Stack Developer",
     "phone": "+91 8874250240",
     "email": "abhishekayu3008@gmail.com",
-    "linkedin": "https://linkedin.com/in/abhishekverma",
-    "github": "https://github.com/abhishekverma",
+    "linkedin": "https://www.linkedin.com/in/abhishek-ayu",
+    "github": "https://github.com/abhishekayu",
     "portfolio": "#",
     "location": "Mumbai, Maharashtra, India",
-    "summary": "Full Stack Developer with 4+ years of experience building scalable, data-driven web applications using React, Next.js, Node.js, and Python. Experienced in integrating Generative AI features such as LLM-powered chat, document analysis, and AI scoring into production systems, with a strong focus on performance, system design, and real-world business use cases.",
+    "summary": "Full Stack Gen AI Developer with 4+ years of experience building scalable, data-driven web applications using React, Next.js, Node.js, and Python. Experienced in integrating Generative AI features such as LLM-powered chat, document analysis, and AI scoring into production systems, with a strong focus on performance, system design, and real-world business use cases.",
     "typingTexts": [
-      "Full Stack Developer",
-      "AI Integrator",
-      "Frontend Architect",
-      "Performance Engineer"
+      "Full Stack Gen AI Developer",
+      "Frontend Architect and Engineer",
+      "Performance Engineer",
+      "Generative AI Engineer",
+      "Mobile App Developer"
     ]
   },
 
   "siteConfig": {
-    "title": "Abhishek Verma | Full Stack Developer",
-    "description": "Full Stack Developer with 4+ years of experience building scalable web applications with React, Next.js, Node.js, and Generative AI integration.",
+    "title": "Abhishek Verma | Full Stack Gen AI Developer",
+    "description": "Full Stack Gen AI Developer with 4+ years of experience building scalable web applications with React, Next.js, Node.js, and Generative AI integration.",
     "keywords": [
       "abhishek verma",
-      "full stack developer",
+      "full stack gen ai developer",
       "react developer",
       "next.js developer",
       "generative ai",
@@ -39,8 +40,8 @@
   },
 
   "socials": [
-    { "name": "GitHub", "icon": "RxGithubLogo", "link": "https://github.com/abhishekverma" },
-    { "name": "LinkedIn", "icon": "RxLinkedinLogo", "link": "https://linkedin.com/in/abhishekverma" },
+    { "name": "GitHub", "icon": "RxGithubLogo", "link": "https://github.com/abhishekayu" },
+    { "name": "LinkedIn", "icon": "RxLinkedinLogo", "link": "https://www.linkedin.com/in/abhishek-ayu" },
     { "name": "Email", "icon": "SiGmail", "link": "mailto:abhishekayu3008@gmail.com" }
   ],
 
@@ -232,8 +233,8 @@
     {
       "title": "Connect",
       "data": [
-        { "name": "GitHub", "icon": "RxGithubLogo", "link": "https://github.com/abhishekverma" },
-        { "name": "LinkedIn", "icon": "RxLinkedinLogo", "link": "https://linkedin.com/in/abhishekverma" }
+        { "name": "GitHub", "icon": "RxGithubLogo", "link": "https://github.com/abhishekayu" },
+        { "name": "LinkedIn", "icon": "RxLinkedinLogo", "link": "https://www.linkedin.com/in/abhishek-ayu" }
       ]
     },
     {
@@ -253,6 +254,6 @@
   ],
 
   "links": {
-    "sourceCode": "https://github.com/abhishekverma"
+    "sourceCode": "https://github.com/abhishekayu"
   }
 }
