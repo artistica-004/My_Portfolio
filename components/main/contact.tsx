@@ -98,12 +98,17 @@ export const Contact = () => {
                 Direct Line
               </span>
             </div>
-            <Link
-              href={`tel:${PERSONAL_INFO.phone}`}
-              className="text-white text-lg sm:text-xl font-semibold hover:text-cyan-300 transition-colors duration-300"
-            >
-              {PERSONAL_INFO.phoneFormatted}
-            </Link>
+            <div className="relative group inline-block">
+              <a
+                href="#contact"
+                className="text-white text-lg sm:text-xl font-semibold hover:text-cyan-300 transition-colors duration-300 cursor-pointer"
+              >
+                +91 ******
+              </a>
+              <span className="absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap text-[11px] bg-purple-600/90 text-white px-3 py-1 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                Request to get → Contact me
+              </span>
+            </div>
           </div>
 
           <div>

@@ -642,9 +642,17 @@ export const HeroContent = () => {
               <RxGithubLogo className="w-[18px] h-[18px]" />
             </Link>
             <HiOutlineGlobeAlt className="w-[18px] h-[18px]" />
-            <span className="text-[12px] font-mono tracking-wide text-gray-500">
-              {PERSONAL_INFO.phoneFormatted}
-            </span>
+            <div className="relative group">
+              <a
+                href="#contact"
+                className="text-[12px] font-mono tracking-wide text-gray-500 hover:text-purple-400 transition-colors duration-300 cursor-pointer"
+              >
+                +91 ******
+              </a>
+              <span className="absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap text-[10px] bg-purple-600/90 text-white px-2.5 py-1 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                Request to get → Contact me
+              </span>
+            </div>
           </motion.div>
         </motion.div>
 
