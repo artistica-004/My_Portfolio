@@ -711,3 +711,6 @@ export const HeroContent = () => {
     </div>
   );
 };
+
+export { HeroContent };
+

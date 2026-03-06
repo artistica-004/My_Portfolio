@@ -1,55 +1,58 @@
 {
   "personalInfo": {
-    "name": "Abhishek Verma",
-    "firstName": "Abhishek",
-    "lastName": "Verma",
-    "title": "Full Stack Developer",
-    "phone": "+91 8874250240",
-    "phoneFormatted": "+91 88742 50240",
-    "email": "abhishekayu3008@gmail.com",
-    "linkedin": "https://www.linkedin.com/in/abhishek-ayu",
-    "linkedinHandle": "/in/abhishek-ayu",
-    "github": "https://github.com/abhishekayu",
-    "githubHandle": "/abhishekayu",
+    "name": "Shivani Chaudhary",
+    "firstName": "Shivani",
+    "lastName": "Chaudhary",
+    "title": "Generative AI Engineer",
+    "phone": "+91 8104893630",
+    "phoneFormatted": "+91 8104893630",
+    "email": "shivanichaudhary042215@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/cs-shivani/",
+    "linkedinHandle": "/in/cs-shivani/",
+    "github": "https://github.com/artistica-004",
+    "githubHandle": "/artistica-004",
     "portfolio": "#",
-    "location": "Mumbai, Maharashtra, India",
+    "location": "Navi Mumbai, Maharashtra, India",
     "timezone": "IST (UTC+5:30) · Open to remote globally",
-    "summary": "Full Stack Gen AI Developer with 4+ years of experience building scalable, data-driven web applications using React, Next.js, Node.js, and Python. Experienced in integrating Generative AI features such as LLM-powered chat, document analysis, and AI scoring into production systems, with a strong focus on performance, system design, and real-world business use cases.",
-    "shortSummary": "4+ years building scalable, data-driven web applications using React, Next.js, Node.js, and Python. Experienced in integrating Generative AI features such as LLM-powered chat, document analysis, and AI scoring into production systems, with a strong focus on performance, system design, and real-world business use cases.",
+    "summary": "Generative AI Engineer with hands-on experience building RAG systems and LLM-powered applications using LangChain, Groq, and Streamlit. Skilled in semantic retrieval, prompt optimization, and deploying scalable AI solutions with high accuracy and low latency.",
+    "shortSummary": "Hands-on experience building RAG systems and LLM-powered applications using LangChain, Groq, and Streamlit. Skilled in semantic retrieval, prompt optimization, and deploying scalable AI solutions with high accuracy and low latency.",
     "typingTexts": [
-      "Full Stack Gen AI Developer",
-      "Frontend Architect and Engineer",
-      "Performance Engineer",
       "Generative AI Engineer",
-      "Mobile App Developer"
+      "RAG Systems Developer",
+      "LLM Application Builder",
+      "Python Developer",
+      "AI Solutions Engineer"
     ]
   },
 
-  "siteConfig": {
-    "title": "Abhishek Verma | Full Stack Gen AI Developer",
-    "description": "Full Stack Gen AI Developer with 4+ years of experience building scalable web applications with React, Next.js, Node.js, and Generative AI integration.",
+   "siteConfig": {
+    "title": "Shivani Chaudhary | Generative AI Engineer",
+    "description": "Generative AI Engineer with hands-on experience building RAG systems and LLM-powered applications using LangChain, Groq, and Streamlit.",
     "keywords": [
-      "abhishek verma",
-      "full stack gen ai developer",
-      "react developer",
-      "next.js developer",
-      "generative ai",
-      "langchain",
-      "node.js",
-      "python",
+      "shivani chaudhary",
+      "generative ai engineer",
+      "rag systems",
+      "langchain developer",
+      "groq",
+      "streamlit",
+      "llm applications",
+      "python developer",
+      "prompt engineering",
+      "hugging face",
       "fastapi",
       "portfolio",
-      "frontend architect",
-      "web developer",
-      "javascript",
-      "typescript"
+      "ai developer",
+      "machine learning",
+      "fastapi",
+      "python"
     ]
   },
 
+
   "socials": [
-    { "name": "GitHub", "icon": "RxGithubLogo", "link": "https://github.com/abhishekayu" },
-    { "name": "LinkedIn", "icon": "RxLinkedinLogo", "link": "https://www.linkedin.com/in/abhishek-ayu" },
-    { "name": "Email", "icon": "SiGmail", "link": "mailto:abhishekayu3008@gmail.com" }
+    { "name": "GitHub", "icon": "RxGithubLogo", "link": "https://github.com/artistica-004" },
+    { "name": "LinkedIn", "icon": "RxLinkedinLogo", "link": "https://www.linkedin.com/in/cs-shivani/" },
+    { "name": "Email", "icon": "SiGmail", "link": "mailto:shivanichaudhary042215@gmail.com" }
   ],
 
   "navLinks": [
@@ -61,10 +64,18 @@
   ],
 
   "heroSection": {
-    "badge": "Building Full Stack Web With Gen AI",
+    "badge": "Building RAG Systems & LLM-Powered Applications",
     "ctaButtons": [
-      { "text": "View My Work", "href": "#projects", "primary": true },
-      { "text": "Get In Touch", "href": "#contact", "primary": false }
+      {
+        "text": "View My Work",
+        "href": "#projects",
+        "primary": true
+      },
+      {
+        "text": "Get In Touch",
+        "href": "#contact",
+        "primary": false
+      }
     ]
   },
 
@@ -78,7 +89,7 @@
       "label": "// 02. SKILLS",
       "heading": "Tech",
       "accent": "Constellation",
-      "description": "Every tool I've used in production across 4+ years of building enterprise applications."
+      "description": "Every tool I've used building AI-powered applications and RAG systems."
     },
     "experience": {
       "label": "// 03. EXPERIENCE",
@@ -89,281 +100,312 @@
       "label": "// 04. PROJECTS",
       "heading": "Space",
       "accent": "Missions",
-      "description": "Production-grade applications shipped for enterprise clients and built as flagship products."
+      "description": "AI-powered applications and projects built with real-world use cases."
     },
     "contact": {
       "label": "// 05. CONTACT",
       "heading": "Begin the",
       "accent": "Transmission",
-      "description": "Open to full-time roles, freelance projects, and interesting collaborations. Let's build something remarkable."
+      "description": "Open to full-time roles, internships, and interesting collaborations. Let's build something remarkable."
     },
     "innovation": {
       "label": "// AI & INNOVATION",
       "heading": "Building the",
       "accent": "Future",
       "suffix": "with AI",
-      "description": "Integrating Generative AI workflows, LLM-powered features, and intelligent automation into production applications that serve enterprise clients and millions of users."
+      "description": "Integrating Generative AI workflows, RAG pipelines, and LLM-powered features into production applications deployed on Hugging Face Spaces."
     }
   },
 
   "aboutSection": {
     "stats": [
-      { "value": "4+", "label": "Years Experience" },
-      { "value": "8+", "label": "Enterprise Clients" },
-      { "value": "7+", "label": "Projects Delivered" },
-      { "value": "8", "label": "GPA · BCA" }
+      { "value": "2+", "label": "AI Projects Shipped" },
+      { "value": "2", "label": "Intenships" },
+      { "value": "8.5", "label": "CGPA · B.Sc CS" }
     ],
     "badges": [
-      { "text": "Mumbai, Maharashtra", "colorScheme": "purple" },
-      { "text": "BCA · Integral University, Lucknow", "colorScheme": "cyan" },
-      { "text": "2 NPM Packages Published", "colorScheme": "emerald" },
-      { "text": "Android & iOS Apps Shipped", "colorScheme": "amber" }
+      { "text": "Navi Mumbai, Maharashtra", "colorScheme": "purple" },
+      {"text": "Deployed on Hugging Face Spaces", "colorScheme": "emerald" },
+      {"text": "RAG & LLM Applications","colorScheme": "amber"}
     ],
-    "enterpriseClients": ["KPMG", "RBL", "Vodafone", "Indian Oil", "American Express", "Croma", "Asian Paints"],
-    "currentCompany": "Futurense (Aditya Birla Group)",
-    "currentRole": "leading frontend development and shipping Generative AI features into production systems"
+   "enterpriseClients": [],
+    "currentCompany": "Pillai College of Arts, Science and Commerce",
+    "currentRole": "building RAG systems and LLM-powered applications as a Generative AI Engineer"
   },
 
-  "experience": [
+   "experience": [
     {
-      "company": "Futurense (Aditya Birla Group)",
-      "role": "Full Stack Developer",
-      "duration": "Jan 2024 – Present",
-      "location": "Mumbai, Maharashtra",
+      "company": "CodSoft",
+      "role": "Python & Generative AI Intern",
+      "duration": "Apr 2024 – May 2024",
+      "location": "Remote",
       "highlights": [
-        "Leading frontend development for web and mobile applications, focusing on scalable UI architecture, performance optimization, and maintainable component systems.",
-        "Built and delivered Generative AI–driven projects, integrating LLM-powered features such as AI analysis, multimedia responses, document research, summarization, and workflow automation into production applications.",
-        "Collaborated with backend and product teams to design APIs and data flows supporting AI-powered features and real-time interactions.",
-        "Owned frontend architecture decisions and mentored team members during feature development and releases."
+        "Developed AI-powered applications using LLM APIs for text generation and summarization, applying prompt engineering to improve output relevance.",
+        "Implemented RAG fundamentals including document chunking, embeddings, and semantic search in mini AI projects."
       ],
-      "tech": ["React.js", "Python", "FastAPI", "LangChain", "PostgreSQL", "Tailwind", "WebView"],
+      "tech": [
+        "Python",
+        "LLM APIs",
+        "Prompt Engineering",
+        "RAG",
+        "Embeddings",
+        "Semantic Search"
+      ],
       "color": "from-purple-500 to-cyan-500"
     },
     {
-      "company": "Lepton Software",
-      "role": "Full Stack Developer",
-      "duration": "April 2022 – Dec 2023",
-      "location": "Gurugram, Haryana",
+      "company": "Unified Mentor",
+      "role": "Python and AI Intern",
+      "duration": "Apr 2024 – Jul 2024",
+      "location": "Remote",
       "highlights": [
-        "Delivered full-stack solutions for enterprise clients, including KPMG, RBL, Vodafone, Indian Oil, American Express, Croma, and Asian Paints.",
-        "Led client discussions to gather requirements, proposed technical solutions, and owned the execution of key features across multiple projects.",
-        "Built scalable React and Next.js applications while integrating backend APIs and authentication flows."
+        "Designed AI-driven preprocessing pipelines using real-world datasets and applied NLP techniques for semantic similarity and text analysis.",
+        "Developed structured LLM workflows with LangChain and evaluated system performance based on latency and response accuracy."
       ],
-      "tech": ["React.js", "Next.js", "Node.js", "Express.js", "PostgreSQL", "DeckGL", "Google Maps"],
+      "tech": [
+        "Python",
+        "LangChain",
+        "NLP",
+        "Semantic Similarity",
+        "LLM Workflows",
+        "Performance Evaluation"
+      ],
       "color": "from-cyan-500 to-blue-500"
-    },
-    {
-      "company": "Newton School",
-      "role": "Full Stack Developer Intern",
-      "duration": "July 2021 – March 2022",
-      "location": "Bengaluru, Karnataka",
-      "highlights": [
-        "Worked on in-house full stack web applications, contributing to feature development, problem-solving, and clean code practices."
-      ],
-      "tech": ["React.js", "JavaScript", "Node.js", "Express.js"],
-      "color": "from-blue-500 to-violet-500"
     }
   ],
 
   "projects": [
     {
-      "title": "Sophius AI",
-      "description": "Led frontend development and took ownership of Sophius AI, redesigning the entire frontend architecture to improve scalability, maintainability, and performance.",
+      "title": "GenAI RAG Application",
+      "description": "Built a Generative AI web app using Streamlit and Groq LLM for real-time question answering with Retrieval-Augmented Generation.",
       "highlights": [
-        "Optimized the application by reducing bundle size and improving load performance by 50% through architectural refactoring, code splitting, and Service Worker implementation.",
-        "Built advanced interactive features including an in-browser code editor and runner, AI-integrated image editor, interactive Plotly dashboards, and Google Maps–based visualizations.",
-        "Integrated Generative AI workflows using LangChain and backend services to support AI responses, document research, multimedia multilanguage outputs, and data-driven analysis.",
-        "Developed and shipped Android and iOS applications using WebView-based architecture, ensuring feature and performance across platforms."
+        "Implemented RAG pipeline with LangChain, text chunking, and embeddings to improve answer accuracy and relevance.",
+        "Deployed on Hugging Face Spaces with secure API key management.",
+        "Built real-time question answering interface using Streamlit and Groq LLM backend."
       ],
-      "tech": ["React.js", "Redux", "JavaScript", "Python", "FastAPI", "PostgreSQL", "Tailwind", "Plotly", "Google Maps", "Service Workers", "WebView", "SEO"],
+      "tech": [
+        "Python",
+        "Streamlit",
+        "Groq",
+        "LangChain",
+        "RAG",
+        "Embeddings",
+        "Hugging Face Spaces"
+      ],
       "gradient": "from-purple-600 via-violet-600 to-indigo-600",
       "link": "#",
       "badges": [
-        "50% load performance improvement",
-        "LangChain AI workflow",
-        "Cross-platform mobile apps"
+        "RAG pipeline",
+        "Real-time Q&A",
+        "Deployed on HuggingFace"
       ]
     },
     {
-      "title": "Indian Oil",
-      "description": "Designed and implemented the frontend architecture of the application, ensuring optimal performance and scalability.",
+      "title": "AI Live Assistant",
+      "description": "Developed an AI chatbot using Python, Streamlit, Groq AI, and SerpAPI with real-time web search capabilities.",
       "highlights": [
-        "Designed and implemented the frontend architecture of the application, ensuring optimal performance and scalability.",
-        "After a year, optimized and redesigned several components, and redesigned the base using Vite.js, Web Workers and React Memoization Technique to enhance the performance and scalability of the UI and development by up to 50%."
+        "Integrated NLP and external APIs (SerpAPI) to enhance response accuracy with live web data.",
+        "Deployed on Hugging Face Spaces with secure API integration.",
+        "Achieved ~95% accuracy and under 3 seconds response time."
       ],
-      "tech": ["React.js", "Redux.js", "JavaScript", "Ant Design", "Antd Charts", "Google Maps API", "DeckGL", "Node.js", "Jest", "Express.js", "PostgreSQL"],
-      "gradient": "from-orange-600 via-red-600 to-rose-600",
-      "link": "#",
-      "badges": [
-        "50% performance uplift",
-        "DeckGL geo-visualization",
-        "Vite.js migration"
-      ]
-    },
-    {
-      "title": "Lepton Maps",
-      "description": "Developed a data visualization dashboard using DeckGL.js, providing stakeholders with real-time insights and improving decision-making processes.",
-      "highlights": [
-        "Developed a data visualization dashboard using DeckGL.js, providing stakeholders with real-time insights and improving decision-making processes and built role-based dynamic user interfaces.",
-        "Built a CI/CD pipeline using Git and Vercel, reducing deployment time by 40% and ensuring consistent and reliable releases."
+      "tech": [
+        "Python",
+        "Streamlit",
+        "Groq AI",
+        "SerpAPI",
+        "NLP",
+        "Hugging Face Spaces"
       ],
-      "tech": ["React.js", "Next.js", "JavaScript", "TypeScript", "Shadcn", "Tailwind", "Zustand", "TanStack", "Python", "DeckGL", "Google Maps", "Jest", "Charts"],
       "gradient": "from-emerald-600 via-teal-600 to-cyan-600",
       "link": "#",
       "badges": [
-        "40% faster deployments",
-        "Role-based dynamic UI",
-        "Real-time insights"
+        "~95% accuracy",
+        "<3s response time",
+        "Real-time web search"
       ]
     },
     {
-      "title": "Smart Market",
-      "description": "Enterprise application with role-based dynamic UI, resizable panels, data caching, and reusable component packages.",
+      "title": "Book Rental Website",
+      "description": "Developed a full-featured web-based Book Rental System with user authentication and role-based access control.",
       "highlights": [
-        "Developed a role-based dynamic UI with resizable panels, implemented data caching to enhance frontend data, integrated session timeout functionality, and created reusable packages and components for improved reusability.",
-        "Converted data fetching to TanStack (using Query) to enhance performance and handle large data amounts.",
-        "Implemented Web Workers and custom hooks and React Memoization Technique to enhance UI performance by 45%."
+        "Implemented user authentication and role-based access control for admin and user roles.",
+        "Built features for book browsing, renting, returning, and rental tracking.",
+        "Created an admin dashboard for complete rental management."
       ],
-      "tech": ["React.js", "Next.js", "JavaScript", "TypeScript", "Shadcn", "Tailwind", "Zustand", "TanStack", "Python", "DeckGL", "Google Maps", "Vite", "Jest"],
-      "gradient": "from-blue-600 via-indigo-600 to-purple-600",
+      "tech": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "PHP",
+        "MySQL"
+      ],
+      "gradient": "from-orange-600 via-red-600 to-rose-600",
       "link": "#",
       "badges": [
-        "45% UI performance gain",
-        "Web Workers + Memoization",
-        "TanStack Query migration"
-      ]
-    },
-    {
-      "title": "API Health and Consumption Monitor",
-      "description": "Built an API health check script and interface integrated with Slack and email for real-time API monitoring and failure tracking.",
-      "highlights": [
-        "Built an API health check script and interface integrated with Slack and email. Send markdown-designed messages to Slack and email regarding API failures.",
-        "Track records in a database to show tracking and API status on the UI."
-      ],
-      "tech": ["React.js", "JavaScript", "Tailwind", "Node.js", "Express", "SQLite", "Slack API", "Vite", "Jest"],
-      "gradient": "from-amber-600 via-yellow-600 to-orange-600",
-      "link": "#",
-      "badges": [
-        "Slack + Email alerts",
-        "Real-time health tracking",
-        "Markdown message design"
-      ]
-    },
-    {
-      "title": "RBL Gateway",
-      "description": "Implemented secure communication with encryption using OpenPGP and established a secure gateway.",
-      "highlights": [
-        "Implemented secure communication with encryption using OpenPGP and established a secure gateway."
-      ],
-      "tech": ["React.js", "JavaScript", "Tailwind", "Node.js", "Express", "SQLite", "Jest"],
-      "gradient": "from-rose-600 via-pink-600 to-fuchsia-600",
-      "link": "#",
-      "badges": [
-        "OpenPGP encryption",
-        "Banking-grade security",
-        "Secure gateway"
-      ]
-    },
-    {
-      "title": "Smart Campus",
-      "description": "Created 3D objects and buildings to enhance the visibility of telecom clients.",
-      "highlights": [
-        "Created 3D objects and buildings to enhance the visibility of telecom clients."
-      ],
-      "tech": ["React.js", "JavaScript", "Tailwind", "Three.js", "Supabase", "Jest"],
-      "gradient": "from-sky-600 via-blue-600 to-indigo-600",
-      "link": "#",
-      "badges": [
-        "Three.js 3D visualization",
-        "Telecom infrastructure map",
-        "Real-time Supabase data"
+        "Role-based access",
+        "Admin dashboard",
+        "Full CRUD system"
       ]
     }
   ],
-
-  "skillsCategories": [
+"skillsCategories": [
     {
       "title": "LANGUAGES",
-      "skills": ["JavaScript", "TypeScript", "Python"],
+      "skills": [
+        "Python",
+        "PHP",
+        "JavaScript",
+        "HTML",
+        "CSS"
+      ],
       "color": "#7042f8"
     },
     {
-      "title": "TECHNOLOGIES",
-      "skills": ["React.js", "Jest", "Redux.js", "Zustand", "TanStack (UseQuery)", "FastAPI", "Next.js", "Ant Design", "Shadcn", "Tailwind CSS", "Playwright Automation Testing", "Node.js", "Express.js", "Bootstrap", "Antd Charts", "React Charts", "Google Maps API", "DeckGL", "Git", "REST API", "HTML", "CSS"],
-      "color": "#06b6d4"
-    },
-    {
-      "title": "CONCEPTS & DATABASE",
-      "skills": ["PostgreSQL", "SQLite", "Cache Memory", "Agile Methodology", "ES6"],
-      "color": "#f59e0b"
-    },
-    {
       "title": "GENERATIVE AI",
-      "skills": ["LLM API Integration", "Prompt Engineering", "LangChain Workflows"],
+      "skills": [
+        "Generative AI",
+        "LLMs (Groq)",
+        "Retrieval-Augmented Generation (RAG)",
+        "Prompt Engineering",
+        "Context Optimization",
+        "Semantic Search",
+        "Embeddings",
+        "Document Chunking"
+      ],
       "color": "#10b981"
     },
     {
-      "title": "SHOWCASE",
-      "skills": ["Sophius AI", "Smart Market", "Indian Oil", "Lepton Maps"],
-      "color": "#8b5cf6"
+      "title": "FRAMEWORKS & TOOLS",
+      "skills": [
+        "Streamlit",
+        "LangChain",
+        "FastAPI",
+        "Bootstrap"
+      ],
+      "color": "#06b6d4"
     },
     {
-      "title": "PERFORMANCE & TOOLS",
-      "skills": ["Web Workers", "Service Workers", "React Memoization", "Code Splitting", "Vite", "Plotly", "Three.js", "SEO", "WebView", "Vercel", "CI/CD"],
+      "title": "DEPLOYMENT & PLATFORMS",
+      "skills": [
+        "Hugging Face (Model Hosting & Deployment)",
+        "Git",
+        "GitHub",
+        "VS Code",
+        "API Integration"
+      ],
+      "color": "#f59e0b"
+    },
+    {
+      "title": "DATABASES",
+      "skills": [
+        "SQL",
+        "MySQL",
+        "PostgreSQL"
+      ],
       "color": "#ec4899"
+    },
+    {
+      "title": "WEB DEVELOPMENT",
+      "skills": [
+        "Web Development (Basics)",
+        "REST API"
+      ],
+      "color": "#8b5cf6"
     }
   ],
-
   "techTicker": [
-    "JavaScript", "TypeScript", "Python", "React.js", "Next.js",
-    "Node.js", "Express.js", "FastAPI", "Redux.js", "Zustand",
-    "TanStack", "LangChain", "PostgreSQL", "SQLite", "DeckGL",
-    "Google Maps API", "Plotly", "Three.js", "Tailwind CSS", "Shadcn",
-    "Ant Design", "Jest", "Playwright", "Vite", "Git",
-    "Service Workers", "Web Workers", "WebView", "SEO", "Bootstrap"
+    "Python",
+    "LangChain",
+    "Groq",
+    "Streamlit",
+    "RAG",
+    "Prompt Engineering",
+    "Hugging Face",
+    "FastAPI",
+    "SerpAPI",
+    "NLP",
+    "Embeddings",
+    "PostgreSQL",
+    "MySQL",
+    "PHP",
+    "JavaScript",
+    "HTML",
+    "CSS",
+    "Bootstrap",
+    "Git",
+    "GitHub",
+    "LLM APIs",
+    "Semantic Search",
+    "Context Optimization",
+    "API Integration",
+    "VS Code"
   ],
-
   "aiInnovation": {
-    "badges": ["LangChain", "LLM APIs", "Prompt Engineering", "Document Analysis", "AI Scoring", "Workflow Automation"]
-  },
-
-  "education": {
-    "degree": "Bachelor of Computer Applications",
-    "university": "Integral University",
-    "location": "Lucknow, Uttar Pradesh",
-    "duration": "July 2018 – June 2021",
-    "gpa": "8.0",
-    "npmPackages": [
-      { "name": "secured-storage-web", "link": "https://www.npmjs.com/package/secured-storage-web" },
-      { "name": "npm-profiler", "link": "https://www.npmjs.com/package/npm-profiler" }
+    "badges": [
+      "LangChain",
+      "Groq LLM",
+      "Prompt Engineering",
+      "RAG Pipelines",
+      "Semantic Search",
+      "Hugging Face Deployment"
     ]
   },
-
+  "education": {
+    "degree": "Bachelor of Computer Science",
+    "university": "Pillai College of Arts, Science and Commerce",
+    "location": "Panvel, Maharashtra",
+    "duration": "June 2025",
+    "gpa": "8.5",
+    "npmPackages": []
+  },
   "footerData": [
     {
       "title": "Connect",
       "data": [
-        { "name": "GitHub", "icon": "RxGithubLogo", "link": "https://github.com/abhishekayu" },
-        { "name": "LinkedIn", "icon": "RxLinkedinLogo", "link": "https://www.linkedin.com/in/abhishek-ayu" }
+        {
+          "name": "GitHub",
+          "icon": "RxGithubLogo",
+          "link": "https://github.com/artistica-004"
+        },
+        {
+          "name": "LinkedIn",
+          "icon": "RxLinkedinLogo",
+          "link": "https://www.linkedin.com/in/cs-shivani/"
+        }
       ]
     },
     {
-      "title": "Published Packages",
+      "title": "Certifications",
       "data": [
-        { "name": "secured-storage-web", "icon": "FaNpm", "link": "https://www.npmjs.com/package/secured-storage-web" },
-        { "name": "npm-profiler", "icon": "FaNpm", "link": "https://www.npmjs.com/package/npm-profiler" }
+        {
+          "name": "Complete Generative AI Certification",
+          "icon": "SiGmail",
+          "link": "#"
+        },
+        {
+          "name": "Python Programming Certification",
+          "icon": "SiGmail",
+          "link": "#"
+        }
       ]
     },
     {
       "title": "Contact",
       "data": [
-        { "name": "abhishekayu3008@gmail.com", "icon": "SiGmail", "link": "mailto:abhishekayu3008@gmail.com" },
-        { "name": "+91 8874250240", "icon": "BsPhone", "link": "tel:+918874250240" }
+        {
+          "name": "shivanichaudhary042215@gmail.com",
+          "icon": "SiGmail",
+          "link": "mailto:shivanichaudhary042215@gmail.com"
+        },
+        {
+          "name": "+91 8104893630",
+          "icon": "BsPhone",
+          "link": "tel:+918104893630"
+        }
       ]
     }
   ],
-
   "links": {
-    "sourceCode": "https://github.com/abhishekayu"
+    "sourceCode": "https://github.com/artistica-004/"
   }
 }
