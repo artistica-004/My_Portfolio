@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { PERSONAL_INFO, EDUCATION, ABOUT_SECTION, SECTIONS } from "@/constants";
 
 const BADGE_STYLES: Record<string, { bg: string; border: string; text: string }> = {
@@ -63,7 +62,6 @@ const StatCard = ({
 
 export const About = () => {
   const section = SECTIONS.about;
-  const clients = ABOUT_SECTION.enterpriseClients;
 
   return (
     <section
@@ -104,49 +102,40 @@ export const About = () => {
           className="space-y-6"
         >
           <p className="text-gray-300 leading-relaxed text-[15px]">
-            {PERSONAL_INFO.title} with{" "}
-            <strong className="text-white">4+ years of experience</strong>{" "}
-            building scalable, data-driven web applications using React, Next.js,
-            Node.js, and Python. Currently at{" "}
+            {PERSONAL_INFO.title} based in{" "}
+            <strong className="text-white">{PERSONAL_INFO.location}</strong>,
+            currently pursuing my{" "}
             <strong className="text-white">
-              {ABOUT_SECTION.currentCompany}
-            </strong>
-            , {ABOUT_SECTION.currentRole}.
-          </p>
-
-          <p className="text-gray-300 leading-relaxed text-[15px]">
-            Experienced in integrating Generative AI features such as LLM-powered
-            chat, document analysis, and AI scoring into production systems, with
-            a strong focus on performance, system design, and real-world business
-            use cases. I&apos;ve delivered solutions for enterprise clients including{" "}
-            <strong className="text-white">
-              {clients.slice(0, -1).join(", ")},
+              {EDUCATION.degree}
             </strong>{" "}
-            and <strong className="text-white">{clients[clients.length - 1]}</strong>.
+            at {EDUCATION.university} with a CGPA of{" "}
+            <strong className="text-white">{EDUCATION.gpa}</strong>.
           </p>
 
           <p className="text-gray-300 leading-relaxed text-[15px]">
-            I&apos;ve published open-source NPM packages (
-            {EDUCATION.npmPackages.map((pkg, i) => (
-              <span key={pkg.name}>
-                {i > 0 && " and "}
-                <Link
-                  href={pkg.link}
-                  target="_blank"
-                  className="text-purple-400 underline underline-offset-2 hover:text-purple-300 transition-colors font-mono text-sm"
-                >
-                  {pkg.name}
-                </Link>
-              </span>
-            ))}
-            ), and I&apos;m passionate about performance optimization, mentoring
-            teams, and pushing the boundaries of what the web can do.
+            I specialize in building{" "}
+            <strong className="text-white">RAG systems and LLM-powered applications</strong>{" "}
+            using LangChain, Groq, and Streamlit. Skilled in semantic retrieval,
+            prompt optimization, and deploying scalable AI solutions with{" "}
+            <strong className="text-white">high accuracy and low latency</strong>.
           </p>
 
           <p className="text-gray-300 leading-relaxed text-[15px]">
-            Beyond the web, I&apos;ve developed and shipped{" "}
-            <strong className="text-white">Android and iOS applications</strong>,
-            ensuring feature parity and consistent performance across platforms.
+            During my internships at{" "}
+            <strong className="text-white">CodSoft</strong> and{" "}
+            <strong className="text-white">Unified Mentor</strong>, I developed
+            AI-powered applications using LLM APIs, implemented RAG fundamentals
+            including document chunking and embeddings, and built structured LLM
+            workflows evaluated on latency and response accuracy.
+          </p>
+
+          <p className="text-gray-300 leading-relaxed text-[15px]">
+            I&apos;ve deployed projects on{" "}
+            <strong className="text-white">Hugging Face Spaces</strong> with
+            secure API integration, achieving approximately{" "}
+            <strong className="text-white">95% accuracy</strong> and under{" "}
+            <strong className="text-white">3 seconds response time</strong> in
+            production AI applications.
           </p>
 
           <div className="flex flex-wrap gap-3 pt-4">
@@ -181,35 +170,20 @@ export const About = () => {
             className="glass-card p-6"
           >
             <h4 className="text-xs uppercase tracking-wider text-purple-400 font-mono mb-4">
-              Published Packages
+              Certifications
             </h4>
             <div className="space-y-3">
-              {EDUCATION.npmPackages.map((pkg) => (
-                <Link
-                  key={pkg.name}
-                  href={pkg.link}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors group"
+              {[
+                "Complete Generative AI Certification",
+                "Python Programming Certification",
+              ].map((cert) => (
+                <div
+                  key={cert}
+                  className="flex items-center gap-3 text-gray-300"
                 >
                   <span className="text-purple-400">•</span>
-                  <span className="font-mono text-sm group-hover:text-purple-300 transition-colors">
-                    {pkg.name}
-                  </span>
-                  <svg
-                    className="w-3 h-3 text-gray-600 group-hover:text-purple-400 transition-colors ml-auto"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                    />
-                  </svg>
-                </Link>
+                  <span className="font-mono text-sm">{cert}</span>
+                </div>
               ))}
             </div>
           </motion.div>

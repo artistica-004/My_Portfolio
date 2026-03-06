@@ -46,7 +46,7 @@ const MiniTerminal = ({
         className="w-full h-full rounded-xl overflow-hidden backdrop-blur-xl relative"
         style={{ background: bgColor, border: `1px solid ${borderColor}` }}
       >
-          <div
+        <div
           className="flex items-center gap-1.5 px-2.5 py-1.5 border-b"
           style={{ borderColor, background: `${bgColor}` }}
         >
@@ -118,8 +118,8 @@ const MiniTerminal = ({
 
 const CenterTerminal = () => (
   <MiniTerminal
-    fileName="developer.ts"
-    lang="TypeScript"
+    fileName="developer.py"
+    lang="Python"
     statusText="ready"
     accentColor="rgba(196, 181, 253, 0.7)"
     bgColor="rgba(10, 10, 26, 0.75)"
@@ -128,24 +128,22 @@ const CenterTerminal = () => (
     cursorColor="rgba(167, 139, 250, 0.6)"
     glowColor="rgba(139, 92, 246, 0.08)"
     codeLines={[
-      { indent: 0, tokens: [{ text: "const", color: "rgba(198,160,221,0.7)" }, { text: " dev", color: "rgba(229,192,123,0.65)" }, { text: " = {", color: "rgba(171,178,191,0.5)" }] },
-      { indent: 1, tokens: [{ text: "name", color: "rgba(224,108,117,0.6)" }, { text: ": ", color: "rgba(171,178,191,0.4)" }, { text: "'Abhishek Verma'", color: "rgba(152,195,121,0.65)" }, { text: ",", color: "rgba(171,178,191,0.4)" }] },
-      { indent: 1, tokens: [{ text: "role", color: "rgba(224,108,117,0.6)" }, { text: ": ", color: "rgba(171,178,191,0.4)" }, { text: "'Full Stack Dev'", color: "rgba(152,195,121,0.65)" }, { text: ",", color: "rgba(171,178,191,0.4)" }] },
-      { indent: 1, tokens: [{ text: "stack", color: "rgba(224,108,117,0.6)" }, { text: ": ", color: "rgba(171,178,191,0.4)" }, { text: "'React+Next+AI'", color: "rgba(152,195,121,0.65)" }, { text: ",", color: "rgba(171,178,191,0.4)" }] },
-      { indent: 1, tokens: [{ text: "exp", color: "rgba(224,108,117,0.6)" }, { text: ": ", color: "rgba(171,178,191,0.4)" }, { text: "'4+ years'", color: "rgba(152,195,121,0.65)" }, { text: ",", color: "rgba(171,178,191,0.4)" }] },
-      { indent: 1, tokens: [{ text: "focus", color: "rgba(224,108,117,0.6)" }, { text: ": ", color: "rgba(171,178,191,0.4)" }, { text: "'Perf & Design'", color: "rgba(152,195,121,0.65)" }, { text: ",", color: "rgba(171,178,191,0.4)" }] },
-      { indent: 1, tokens: [{ text: "clients", color: "rgba(224,108,117,0.6)" }, { text: ": ", color: "rgba(171,178,191,0.4)" }, { text: "'Enterprise'", color: "rgba(152,195,121,0.65)" }, { text: ",", color: "rgba(171,178,191,0.4)" }] },
-      { indent: 1, tokens: [{ text: "packages", color: "rgba(224,108,117,0.6)" }, { text: ": ", color: "rgba(171,178,191,0.4)" }, { text: "2", color: "rgba(209,154,102,0.65)" }] },
-      { indent: 0, tokens: [{ text: "};", color: "rgba(171,178,191,0.5)" }] },
-      { indent: 0, tokens: [] },
-      { indent: 0, tokens: [{ text: "export", color: "rgba(198,160,221,0.7)" }, { text: " default", color: "rgba(198,160,221,0.7)" }, { text: " dev", color: "rgba(229,192,123,0.65)" }, { text: ";", color: "rgba(171,178,191,0.5)" }] },
+      { indent: 0, tokens: [{ text: "dev", color: "rgba(229,192,123,0.65)" }, { text: " = {", color: "rgba(171,178,191,0.5)" }] },
+      { indent: 1, tokens: [{ text: "name", color: "rgba(224,108,117,0.6)" }, { text: ": ", color: "rgba(171,178,191,0.4)" }, { text: "'Shivani'", color: "rgba(152,195,121,0.65)" }, { text: ",", color: "rgba(171,178,191,0.4)" }] },
+      { indent: 1, tokens: [{ text: "role", color: "rgba(224,108,117,0.6)" }, { text: ": ", color: "rgba(171,178,191,0.4)" }, { text: "'GenAI Eng'", color: "rgba(152,195,121,0.65)" }, { text: ",", color: "rgba(171,178,191,0.4)" }] },
+      { indent: 1, tokens: [{ text: "stack", color: "rgba(224,108,117,0.6)" }, { text: ": ", color: "rgba(171,178,191,0.4)" }, { text: "'RAG+LLM'", color: "rgba(152,195,121,0.65)" }, { text: ",", color: "rgba(171,178,191,0.4)" }] },
+      { indent: 1, tokens: [{ text: "tools", color: "rgba(224,108,117,0.6)" }, { text: ": ", color: "rgba(171,178,191,0.4)" }, { text: "'LangChain'", color: "rgba(152,195,121,0.65)" }, { text: ",", color: "rgba(171,178,191,0.4)" }] },
+      { indent: 1, tokens: [{ text: "llm", color: "rgba(224,108,117,0.6)" }, { text: ": ", color: "rgba(171,178,191,0.4)" }, { text: "'Groq'", color: "rgba(152,195,121,0.65)" }, { text: ",", color: "rgba(171,178,191,0.4)" }] },
+      { indent: 1, tokens: [{ text: "deploy", color: "rgba(224,108,117,0.6)" }, { text: ": ", color: "rgba(171,178,191,0.4)" }, { text: "'HuggingFace'", color: "rgba(152,195,121,0.65)" }, { text: ",", color: "rgba(171,178,191,0.4)" }] },
+      { indent: 1, tokens: [{ text: "cgpa", color: "rgba(224,108,117,0.6)" }, { text: ": ", color: "rgba(171,178,191,0.4)" }, { text: "8.5", color: "rgba(209,154,102,0.65)" }] },
+      { indent: 0, tokens: [{ text: "}", color: "rgba(171,178,191,0.5)" }] },
     ]}
   />
 );
 
 const RoleTerminal = () => (
   <MiniTerminal
-    fileName="role.config.ts"
+    fileName="role.config.py"
     lang="Config"
     statusText="active"
     accentColor="rgba(103, 232, 249, 0.6)"
@@ -156,20 +154,20 @@ const RoleTerminal = () => (
     glowColor="rgba(6, 182, 212, 0.06)"
     size="sm"
     codeLines={[
-      { indent: 0, tokens: [{ text: "export", color: "rgba(103,232,249,0.6)" }, { text: " const", color: "rgba(198,160,221,0.6)" }, { text: " role", color: "rgba(229,192,123,0.55)" }, { text: " = {", color: "rgba(143,171,190,0.45)" }] },
-      { indent: 1, tokens: [{ text: "company", color: "rgba(86,182,194,0.55)" }, { text: ": ", color: "rgba(143,171,190,0.4)" }, { text: "'Futurense'", color: "rgba(136,221,237,0.55)" }, { text: ",", color: "rgba(143,171,190,0.4)" }] },
-      { indent: 1, tokens: [{ text: "group", color: "rgba(86,182,194,0.55)" }, { text: ": ", color: "rgba(143,171,190,0.4)" }, { text: "'Aditya Birla'", color: "rgba(136,221,237,0.55)" }, { text: ",", color: "rgba(143,171,190,0.4)" }] },
-      { indent: 1, tokens: [{ text: "title", color: "rgba(86,182,194,0.55)" }, { text: ": ", color: "rgba(143,171,190,0.4)" }, { text: "'Full Stack'", color: "rgba(136,221,237,0.55)" }, { text: ",", color: "rgba(143,171,190,0.4)" }] },
+      { indent: 0, tokens: [{ text: "role", color: "rgba(229,192,123,0.55)" }, { text: " = {", color: "rgba(143,171,190,0.45)" }] },
+      { indent: 1, tokens: [{ text: "college", color: "rgba(86,182,194,0.55)" }, { text: ": ", color: "rgba(143,171,190,0.4)" }, { text: "'Pillai'", color: "rgba(136,221,237,0.55)" }, { text: ",", color: "rgba(143,171,190,0.4)" }] },
+      { indent: 1, tokens: [{ text: "degree", color: "rgba(86,182,194,0.55)" }, { text: ": ", color: "rgba(143,171,190,0.4)" }, { text: "'B.Sc CS'", color: "rgba(136,221,237,0.55)" }, { text: ",", color: "rgba(143,171,190,0.4)" }] },
+      { indent: 1, tokens: [{ text: "focus", color: "rgba(86,182,194,0.55)" }, { text: ": ", color: "rgba(143,171,190,0.4)" }, { text: "'GenAI'", color: "rgba(136,221,237,0.55)" }, { text: ",", color: "rgba(143,171,190,0.4)" }] },
       { indent: 1, tokens: [{ text: "location", color: "rgba(86,182,194,0.55)" }, { text: ": ", color: "rgba(143,171,190,0.4)" }, { text: "'Mumbai'", color: "rgba(136,221,237,0.55)" }, { text: ",", color: "rgba(143,171,190,0.4)" }] },
-      { indent: 1, tokens: [{ text: "lead", color: "rgba(86,182,194,0.55)" }, { text: ": ", color: "rgba(143,171,190,0.4)" }, { text: "true", color: "rgba(209,154,102,0.6)" }] },
-      { indent: 0, tokens: [{ text: "};", color: "rgba(143,171,190,0.45)" }] },
+      { indent: 1, tokens: [{ text: "open", color: "rgba(86,182,194,0.55)" }, { text: ": ", color: "rgba(143,171,190,0.4)" }, { text: "True", color: "rgba(209,154,102,0.6)" }] },
+      { indent: 0, tokens: [{ text: "}", color: "rgba(143,171,190,0.45)" }] },
     ]}
   />
 );
 
 const ExperienceTerminal = () => (
   <MiniTerminal
-    fileName="experience.ts"
+    fileName="internships.py"
     lang="Runtime"
     statusText="verified"
     accentColor="rgba(110, 231, 183, 0.6)"
@@ -180,20 +178,20 @@ const ExperienceTerminal = () => (
     glowColor="rgba(16, 185, 129, 0.06)"
     size="sm"
     codeLines={[
-      { indent: 0, tokens: [{ text: "const", color: "rgba(110,231,183,0.6)" }, { text: " exp", color: "rgba(229,192,123,0.55)" }, { text: " = {", color: "rgba(143,187,170,0.45)" }] },
-      { indent: 1, tokens: [{ text: "years", color: "rgba(85,185,138,0.55)" }, { text: ": ", color: "rgba(143,187,170,0.4)" }, { text: "4", color: "rgba(181,232,204,0.55)" }, { text: ",", color: "rgba(143,187,170,0.4)" }] },
-      { indent: 1, tokens: [{ text: "companies", color: "rgba(85,185,138,0.55)" }, { text: ": ", color: "rgba(143,187,170,0.4)" }, { text: "3", color: "rgba(181,232,204,0.55)" }, { text: ",", color: "rgba(143,187,170,0.4)" }] },
-      { indent: 1, tokens: [{ text: "clients", color: "rgba(85,185,138,0.55)" }, { text: ": ", color: "rgba(143,187,170,0.4)" }, { text: "'KPMG,RBL'", color: "rgba(134,239,172,0.5)" }, { text: ",", color: "rgba(143,187,170,0.4)" }] },
-      { indent: 1, tokens: [{ text: "perf", color: "rgba(85,185,138,0.55)" }, { text: ": ", color: "rgba(143,187,170,0.4)" }, { text: "'+50%'", color: "rgba(134,239,172,0.5)" }, { text: ",", color: "rgba(143,187,170,0.4)" }] },
-      { indent: 1, tokens: [{ text: "apps", color: "rgba(85,185,138,0.55)" }, { text: ": ", color: "rgba(143,187,170,0.4)" }, { text: "8", color: "rgba(181,232,204,0.55)" }] },
-      { indent: 0, tokens: [{ text: "};", color: "rgba(143,187,170,0.45)" }] },
+      { indent: 0, tokens: [{ text: "exp", color: "rgba(110,231,183,0.6)" }, { text: " = {", color: "rgba(143,187,170,0.45)" }] },
+      { indent: 1, tokens: [{ text: "intern1", color: "rgba(85,185,138,0.55)" }, { text: ": ", color: "rgba(143,187,170,0.4)" }, { text: "'CodSoft'", color: "rgba(181,232,204,0.55)" }, { text: ",", color: "rgba(143,187,170,0.4)" }] },
+      { indent: 1, tokens: [{ text: "intern2", color: "rgba(85,185,138,0.55)" }, { text: ": ", color: "rgba(143,187,170,0.4)" }, { text: "'Unified'", color: "rgba(181,232,204,0.55)" }, { text: ",", color: "rgba(143,187,170,0.4)" }] },
+      { indent: 1, tokens: [{ text: "accuracy", color: "rgba(85,185,138,0.55)" }, { text: ": ", color: "rgba(143,187,170,0.4)" }, { text: "'95%'", color: "rgba(134,239,172,0.5)" }, { text: ",", color: "rgba(143,187,170,0.4)" }] },
+      { indent: 1, tokens: [{ text: "latency", color: "rgba(85,185,138,0.55)" }, { text: ": ", color: "rgba(143,187,170,0.4)" }, { text: "'<3s'", color: "rgba(134,239,172,0.5)" }, { text: ",", color: "rgba(143,187,170,0.4)" }] },
+      { indent: 1, tokens: [{ text: "projects", color: "rgba(85,185,138,0.55)" }, { text: ": ", color: "rgba(143,187,170,0.4)" }, { text: "3", color: "rgba(181,232,204,0.55)" }] },
+      { indent: 0, tokens: [{ text: "}", color: "rgba(143,187,170,0.45)" }] },
     ]}
   />
 );
 
 const AITerminal = () => (
   <MiniTerminal
-    fileName="ai-engine.py"
+    fileName="rag-engine.py"
     lang="Python"
     statusText="running"
     accentColor="rgba(252, 211, 77, 0.6)"
@@ -204,13 +202,13 @@ const AITerminal = () => (
     glowColor="rgba(245, 158, 11, 0.06)"
     size="sm"
     codeLines={[
-      { indent: 0, tokens: [{ text: "from", color: "rgba(251,191,36,0.6)" }, { text: " langchain ", color: "rgba(252,211,77,0.55)" }, { text: "import", color: "rgba(251,191,36,0.6)" }, { text: " LLM", color: "rgba(229,192,123,0.55)" }] },
-      { indent: 0, tokens: [{ text: "from", color: "rgba(251,191,36,0.6)" }, { text: " fastapi ", color: "rgba(252,211,77,0.55)" }, { text: "import", color: "rgba(251,191,36,0.6)" }, { text: " App", color: "rgba(229,192,123,0.55)" }] },
+      { indent: 0, tokens: [{ text: "from", color: "rgba(251,191,36,0.6)" }, { text: " langchain ", color: "rgba(252,211,77,0.55)" }, { text: "import", color: "rgba(251,191,36,0.6)" }, { text: " RAG", color: "rgba(229,192,123,0.55)" }] },
+      { indent: 0, tokens: [{ text: "from", color: "rgba(251,191,36,0.6)" }, { text: " groq ", color: "rgba(252,211,77,0.55)" }, { text: "import", color: "rgba(251,191,36,0.6)" }, { text: " LLM", color: "rgba(229,192,123,0.55)" }] },
       { indent: 0, tokens: [] },
-      { indent: 0, tokens: [{ text: "ai", color: "rgba(212,164,74,0.55)" }, { text: " = ", color: "rgba(187,162,110,0.4)" }, { text: "LLM", color: "rgba(229,192,123,0.55)" }, { text: "(", color: "rgba(187,162,110,0.4)" }] },
-      { indent: 1, tokens: [{ text: "engine", color: "rgba(212,164,74,0.55)" }, { text: "=", color: "rgba(187,162,110,0.4)" }, { text: "'GenAI'", color: "rgba(253,230,138,0.5)" }, { text: ",", color: "rgba(187,162,110,0.4)" }] },
-      { indent: 1, tokens: [{ text: "tasks", color: "rgba(212,164,74,0.55)" }, { text: "=", color: "rgba(187,162,110,0.4)" }, { text: "['chat',", color: "rgba(253,230,138,0.5)" }] },
-      { indent: 2, tokens: [{ text: "'doc_analysis']", color: "rgba(253,230,138,0.5)" }] },
+      { indent: 0, tokens: [{ text: "ai", color: "rgba(212,164,74,0.55)" }, { text: " = ", color: "rgba(187,162,110,0.4)" }, { text: "RAG", color: "rgba(229,192,123,0.55)" }, { text: "(", color: "rgba(187,162,110,0.4)" }] },
+      { indent: 1, tokens: [{ text: "llm", color: "rgba(212,164,74,0.55)" }, { text: "=", color: "rgba(187,162,110,0.4)" }, { text: "'groq'", color: "rgba(253,230,138,0.5)" }, { text: ",", color: "rgba(187,162,110,0.4)" }] },
+      { indent: 1, tokens: [{ text: "embed", color: "rgba(212,164,74,0.55)" }, { text: "=", color: "rgba(187,162,110,0.4)" }, { text: "True", color: "rgba(253,230,138,0.5)" }, { text: ",", color: "rgba(187,162,110,0.4)" }] },
+      { indent: 1, tokens: [{ text: "deploy", color: "rgba(212,164,74,0.55)" }, { text: "=", color: "rgba(187,162,110,0.4)" }, { text: "'hf'", color: "rgba(253,230,138,0.5)" }] },
       { indent: 0, tokens: [{ text: ")", color: "rgba(187,162,110,0.4)" }] },
     ]}
   />
@@ -518,199 +516,124 @@ const useTypingText = (texts: string[], typingSpeed = 80, deletingSpeed = 40, pa
 
 export const HeroContent = () => {
   const typedText = useTypingText(
-    PERSONAL_INFO.typingTexts || ["Full Stack Developer"],
+    PERSONAL_INFO.typingTexts || ["Generative AI Engineer"],
     80,
-    40,
-    2000
   );
 
   return (
-    <div className="relative flex items-center justify-center w-full min-h-screen z-[20] px-6 md:px-12 lg:px-20 overflow-hidden">
-      <div className="w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-8 lg:gap-8 mt-16 lg:mt-0">
+    <div className="flex flex-col lg:flex-row items-center justify-between w-full max-w-7xl mx-auto px-6 md:px-16 lg:px-24 pt-32 pb-16 gap-12 lg:gap-8">
+      <motion.div
+        initial={{ opacity: 0, x: -40 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+        className="flex flex-col gap-6 max-w-2xl"
+      >
         <motion.div
-          initial={{ opacity: 0, y: 60 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
-          className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left"
+          transition={{ delay: 0.2 }}
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-purple-500/20 bg-purple-500/5 w-fit"
         >
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex items-center gap-2 px-4 py-2 rounded-full border border-emerald-500/30 bg-emerald-500/5 mb-6"
-          >
-            <span className="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_3px_rgba(52,211,153,0.4)]" />
-            <span className="text-emerald-400 text-[12px] font-mono tracking-wide">
-              {HERO_SECTION.badge}
-            </span>
-          </motion.div>
+          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+          <span className="text-purple-300 text-xs font-mono tracking-wider">
+            {HERO_SECTION.badge}
+          </span>
+        </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: -15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.35, duration: 0.6 }}
-            className="h-6 mb-5 flex items-center"
-          >
-            <span className="text-cyan-400/80 text-[12px] sm:text-[13px] font-mono tracking-[0.25em] uppercase">
-              {typedText}
-            </span>
-            <span className="inline-block w-[2px] h-[14px] bg-cyan-400/70 ml-[2px] animate-pulse" />
-          </motion.div>
-
+        <div>
           <motion.h1
-            className="text-6xl sm:text-7xl md:text-8xl lg:text-[6.5rem] font-bold leading-[0.95] tracking-tight mb-7 font-serif"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.7 }}
+            className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight"
           >
-            <motion.span
-              initial={{ opacity: 0, y: 80 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 1, ease: [0.22, 1, 0.36, 1] }}
-              className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-300"
-            >
-              {PERSONAL_INFO.firstName}
-            </motion.span>
-            <motion.span
-              initial={{ opacity: 0, y: 100 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.45, duration: 1, ease: [0.22, 1, 0.36, 1] }}
-              className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-300"
-            >
-              {PERSONAL_INFO.lastName}
-            </motion.span>
+            {PERSONAL_INFO.firstName}{" "}
+            <span className="gradient-text">{PERSONAL_INFO.lastName}</span>
           </motion.h1>
-
-          <motion.div
-            animate={{ y: [0, -6, 0] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-          >
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.7 }}
-              className="text-gray-400 text-[15px] md:text-base leading-relaxed max-w-[480px] mb-9"
-            >
-              {PERSONAL_INFO.shortSummary}
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.75, duration: 0.5 }}
-              className="flex flex-wrap gap-4 mb-10"
-            >
-              <Link
-                href={HERO_SECTION.ctaButtons[0].href}
-                className="flex items-center gap-2 py-3 px-7 rounded-full bg-gradient-to-r from-purple-600 to-purple-500
-                  text-white text-[14px] font-semibold hover:shadow-lg hover:shadow-purple-500/25
-                  hover:scale-105 active:scale-[0.98] transition-all duration-300"
-              >
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
-                </svg>
-                {HERO_SECTION.ctaButtons[0].text}
-              </Link>
-              <Link
-                href={HERO_SECTION.ctaButtons[1].href}
-                className="py-3 px-7 rounded-full border border-white/[0.12] text-white text-[14px] font-semibold
-                  hover:bg-white/[0.05] hover:border-white/[0.2] hover:scale-105
-                  active:scale-[0.98] transition-all duration-300"
-              >
-                {HERO_SECTION.ctaButtons[1].text}
-              </Link>
-            </motion.div>
-          </motion.div>
 
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 1.0, duration: 0.5 }}
-            className="flex items-center gap-5 text-gray-500"
+            transition={{ delay: 0.5 }}
+            className="mt-3 h-8 flex items-center"
           >
-            <Link
-              href={PERSONAL_INFO.linkedin}
-              target="_blank"
-              rel="noreferrer noopener"
-              className="hover:text-blue-400 transition-colors duration-300"
-            >
-              <RxLinkedinLogo className="w-[18px] h-[18px]" />
-            </Link>
-            <Link
-              href={PERSONAL_INFO.github}
-              target="_blank"
-              rel="noreferrer noopener"
-              className="hover:text-white transition-colors duration-300"
-            >
-              <RxGithubLogo className="w-[18px] h-[18px]" />
-            </Link>
-            <HiOutlineGlobeAlt className="w-[18px] h-[18px]" />
-            <div className="relative group">
-              <a
-                href="#contact"
-                className="text-[12px] font-mono tracking-wide text-gray-500 hover:text-purple-400 transition-colors duration-300 cursor-pointer"
-              >
-                +91 ******
-              </a>
-              <span className="absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap text-[10px] bg-purple-600/90 text-white px-2.5 py-1 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                Request to get → Contact me
-              </span>
-            </div>
+            <span className="text-xl md:text-2xl text-gray-400 font-mono">
+              {typedText}
+              <span className="animate-typewriter-blink border-r-2 border-purple-400 ml-0.5" />
+            </span>
           </motion.div>
+        </div>
+
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6, duration: 0.6 }}
+          className="text-gray-400 text-[15px] leading-relaxed max-w-lg"
+        >
+          {PERSONAL_INFO.shortSummary}
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.7 }}
+          className="flex flex-wrap gap-4"
+        >
+          {HERO_SECTION.ctaButtons.map((btn) => (
+            <Link
+              key={btn.text}
+              href={btn.href}
+              className={
+                btn.primary
+                  ? "px-6 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-purple-500 text-white font-semibold text-sm hover:from-purple-500 hover:to-purple-400 hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300"
+                  : "px-6 py-3 rounded-xl border border-white/10 bg-white/[0.03] text-gray-300 font-semibold text-sm hover:bg-white/[0.06] hover:border-white/20 transition-all duration-300"
+              }
+            >
+              {btn.text}
+            </Link>
+          ))}
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.85 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.4, duration: 1, ease: "easeOut" }}
-          className="flex-shrink-0 hidden md:flex items-center justify-center"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.9 }}
+          className="flex items-center gap-5 pt-2"
         >
-          <HeroScene />
+          <Link
+            href={PERSONAL_INFO.github}
+            target="_blank"
+            rel="noreferrer noopener"
+            className="text-gray-500 hover:text-white transition-colors duration-300"
+          >
+            <RxGithubLogo size={20} />
+          </Link>
+          <Link
+            href={PERSONAL_INFO.linkedin}
+            target="_blank"
+            rel="noreferrer noopener"
+            className="text-gray-500 hover:text-blue-400 transition-colors duration-300"
+          >
+            <RxLinkedinLogo size={20} />
+          </Link>
+          <Link
+            href={`mailto:${PERSONAL_INFO.email}`}
+            className="text-gray-500 hover:text-purple-400 transition-colors duration-300"
+          >
+            <HiOutlineGlobeAlt size={20} />
+          </Link>
+          <span className="text-gray-700 text-xs font-mono">{PERSONAL_INFO.location}</span>
         </motion.div>
-      </div>
+      </motion.div>
 
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+        initial={{ opacity: 0, x: 40 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.4, duration: 0.8 }}
+        className="hidden lg:flex items-center justify-center"
       >
-        <motion.div
-          animate={{ y: [0, 6, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <svg width="18" height="28" viewBox="0 0 18 28" fill="none">
-            <path
-              d="M9 2C9 2 3 7 3 14c0 4 2.5 7 6 10 3.5-3 6-6 6-10 0-7-6-12-6-12z"
-              fill="none"
-              stroke="rgba(139,92,246,0.4)"
-              strokeWidth="1.2"
-            />
-            <path
-              d="M3 14l-2 4 3-1z"
-              fill="none"
-              stroke="rgba(139,92,246,0.25)"
-              strokeWidth="0.8"
-            />
-            <path
-              d="M15 14l2 4-3-1z"
-              fill="none"
-              stroke="rgba(139,92,246,0.25)"
-              strokeWidth="0.8"
-            />
-            <circle cx="9" cy="9" r="2" fill="rgba(139,92,246,0.5)" />
-            <motion.line
-              x1="9" x2="9" y1="22" y2="28"
-              stroke="rgba(139,92,246,0.3)"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-            />
-          </svg>
-        </motion.div>
-        <span className="text-[9px] font-mono tracking-[0.2em] text-purple-400/40 uppercase">
-          scroll
-        </span>
+        <HeroScene />
       </motion.div>
     </div>
   );
 };
-
-export { HeroContent };
-
