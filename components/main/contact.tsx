@@ -99,14 +99,17 @@ export const Contact = () => {
               </span>
             </div>
             <div className="relative group inline-block">
-              <a
-                href="#contact"
-                className="text-white text-lg sm:text-xl font-semibold hover:text-cyan-300 transition-colors duration-300 cursor-pointer"
+              <button
+                onClick={() => {
+                  navigator.clipboard.writeText(PERSONAL_INFO.phone);
+                  alert("Phone number copied to clipboard!");
+                }}
+                className="text-white text-lg sm:text-xl font-semibold hover:text-cyan-300 transition-colors duration-300 cursor-pointer bg-none border-none p-0"
               >
                 +91 ******
-              </a>
+              </button>
               <span className="absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap text-[11px] bg-purple-600/90 text-white px-3 py-1 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                Request to get → Contact me
+                Click to copy phone number
               </span>
             </div>
           </div>

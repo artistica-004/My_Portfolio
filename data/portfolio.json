@@ -193,7 +193,8 @@
         "Hugging Face Spaces"
       ],
       "gradient": "from-purple-600 via-violet-600 to-indigo-600",
-      "link": "#",
+      "link": "https://huggingface.co/spaces/artistica-004/multi-pdf-chatbot",
+      "sourceCode": "https://github.com/artistica-004/multi-pdf-chatbot",
       "badges": [
         "RAG pipeline",
         "Real-time Q&A",
@@ -217,7 +218,8 @@
         "Hugging Face Spaces"
       ],
       "gradient": "from-emerald-600 via-teal-600 to-cyan-600",
-      "link": "#",
+      "link": "https://huggingface.co/spaces/artistica-004/ai-assistant-live",
+      "sourceCode": "https://github.com/artistica-004/ai-assistant-project",
       "badges": [
         "~95% accuracy",
         "<3s response time",
@@ -240,11 +242,37 @@
         "MySQL"
       ],
       "gradient": "from-orange-600 via-red-600 to-rose-600",
-      "link": "#",
+      "sourceCode": "https://github.com/artistica-004/book-rental-system",
       "badges": [
         "Role-based access",
         "Admin dashboard",
         "Full CRUD system"
+      ]
+    },
+    {
+      "title": "AI Resume Analyzer",
+      "description": "Built an AI Resume Analyzer using Groq LLM and Pydantic that scores resume-JD match, flags missing keywords, and rewrites weak bullet points with structured JSON output.",
+      "highlights": [
+        "Implemented multi-step prompt engineering to extract validated structured data from unstructured resumes using Pydantic models.",
+        "Built resume-JD matching algorithm that scores alignment, identifies missing keywords, and suggests improvements.",
+        "Deployed on Hugging Face Spaces with secure secret management and Git-based version control."
+      ],
+      "tech": [
+        "Python",
+        "Streamlit",
+        "Groq LLM",
+        "Pydantic",
+        "JSON",
+        "Prompt Engineering",
+        "Hugging Face Spaces"
+      ],
+      "gradient": "from-blue-600 via-purple-600 to-pink-600",
+      "link": "https://huggingface.co/spaces/artistica-004/ai-resume-analyzer",
+      "sourceCode": "https://github.com/artistica-004/ai-resume-analyzer",
+      "badges": [
+        "Resume-JD matching",
+        "Structured output",
+        "Pydantic validation"
       ]
     }
   ],
